@@ -15,7 +15,8 @@ const nl = {
         }   
     },
     translated: "Zoek je een vertaalde versie van deze pagina?",
-    archive: "Laatste Archief"
+    archive: "Laatste Archief",
+    discord: "Join onze Discord Community"
 };
 
 export default nl;

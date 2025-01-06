@@ -15,7 +15,8 @@ const en = {
         }
     },
     translated: "Need a translated version of this page?",
-    archive: "Latest Archive"
+    archive: "Latest Archive",
+    discord: "Join our Discord Community"
 }
 
 export default en;
