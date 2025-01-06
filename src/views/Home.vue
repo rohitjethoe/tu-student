@@ -6,7 +6,6 @@ import Footer from '@/components/Footer.vue';
 
 const { locale } = useI18n();
 
-const host = window.location.host;
 const filter = ref("");
 
 const archives = [
@@ -15,9 +14,9 @@ const archives = [
 		style: "text-purple-400 border-purple-400 bg-purple-400/10",
 		posts: [
 			{
-				title: "What Is A Function?",
+				title: "What Is Mathematical Modeling?",
 				date: "2025-01-06T20:53:04.188Z",
-				slug: "what-is-a-function"
+				slug: "what-is-mathematical-modeling"
 			}
 		]
 	}
