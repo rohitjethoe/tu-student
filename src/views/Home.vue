@@ -16,7 +16,7 @@
                     <br><br>
                     <i>{{ $t('translated') }}</i>
                     <ul class="list-disc pl-4">
-                        <li ><a :href=""https://nl." + window.location.host">Nederlands</a> (Dutch)</li>
+                        <li ><a :href="'https://nl.' + window.location.host">Nederlands</a> (Dutch)</li>
                     </ul>
                 </p>
             </div>
