@@ -3,8 +3,8 @@ import { onMounted, ref } from 'vue';
 import { useRoute } from 'vue-router';
 import { useI18n } from 'vue-i18n';
 import { marked } from 'marked';
-import katex from 'katex';  // Importing KaTeX
-import 'katex/dist/katex.min.css';  // Importing KaTeX CSS
+import katex from 'katex'; 
+import 'katex/dist/katex.min.css'; 
 
 const { locale } = useI18n();
 const route = useRoute();
@@ -13,54 +13,55 @@ const slug = route.params.slug;
 const module = ref(null);
 const content = ref('null');
 
-// Import all markdown files
 const markdownFiles = import.meta.glob(`@/archive/**/*.md`, { as: 'raw' });
 
-// Function to render markdown and handle LaTeX expressions
 const loadMarkdown = async () => {
   const filePath = `/src/archive/${locale.value}/${slug}.md`;
 
   if (filePath in markdownFiles) {
-    module.value = await markdownFiles[filePath](); // Load the markdown file dynamically
+    module.value = await markdownFiles[filePath](); 
   } else {
     module.value = null;
   }
 
   if (module.value !== null) {
-    // Step 1: Render Markdown content using marked
     let renderedMarkdown = marked(module.value);
 
-    // Step 2: Process Inline LaTeX (e.g., \( ... \)) using regex
     renderedMarkdown = renderedMarkdown.replace(/\\\((.*?)\\\)/g, (match, latex) => {
       try {
-        return katex.renderToString(latex, { displayMode: false }); // Render inline math
+        return katex.renderToString(latex, { displayMode: false }); 
       } catch (error) {
         console.error("Error rendering inline LaTeX:", error);
-        return match; // Fallback to original if error occurs
+        return match;
       }
     });
 
-    // Step 3: Process Block LaTeX (e.g., $$ ... $$) using regex
     renderedMarkdown = renderedMarkdown.replace(/\$\$(.*?)\$\$/g, (match, latex) => {
       try {
         return `<div class="katex-block">${katex.renderToString(latex, { displayMode: true })}</div>`; // Render block math
       } catch (error) {
         console.error("Error rendering block LaTeX:", error);
-        return match; // Fallback to original if error occurs
+        return match;
       }
     });
 
-    // Step 4: Update the content to render the final result
     content.value = renderedMarkdown;
   }
 };
 
-// Load markdown on component mount
 onMounted(() => {
   loadMarkdown();
 });
 </script>
 
 <template>
-  <div v-html="content"></div>
+  <div class="w-11/12 mt-4 sm:w-4/5 mx-auto sm:mt-32">
+    <div class="pb-3 border-b-2 border-b-dark dark:border-b-light mb-3">
+      <h1 class="text-3xl font-bold italic">{{ $t('title')}}</h1>
+    </div>
+    <div class="pb-4 italic">
+      /archive/en/{{ slug }}.md
+    </div>
+    <div class="tu-markdown" v-html="content"></div>
+  </div>
 </template>
