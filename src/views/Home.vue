@@ -1,5 +1,11 @@
 <script setup>
+import { onMounted } from 'vue';
+
 const host = window.location.host;
+
+onMounted(() => {
+	window.document.title = "home | tustudent.blog";
+})
 </script>
 
 <template>

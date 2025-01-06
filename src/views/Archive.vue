@@ -51,6 +51,7 @@ const loadMarkdown = async () => {
 
 onMounted(() => {
   loadMarkdown();
+  window.document.title = `${route.params.slug}.md | tustudent.blog`;
 });
 </script>
 
