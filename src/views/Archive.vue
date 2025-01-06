@@ -3,6 +3,8 @@ import { onMounted, ref } from 'vue';
 import { useRoute } from 'vue-router';
 import { useI18n } from 'vue-i18n';
 import { marked } from 'marked';
+import Header from '@/components/Header.vue';
+import Footer from '@/components/Footer.vue';
 import katex from 'katex'; 
 import 'katex/dist/katex.min.css'; 
 
@@ -56,13 +58,12 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="w-11/12 mt-4 sm:w-4/5 mx-auto sm:mt-32">
-    <div class="pb-3 border-b-2 border-b-dark dark:border-b-light mb-3">
-      <h1 class="text-3xl font-bold italic">{{ $t('title')}}</h1>
-    </div>
-    <div class="pb-4 italic">
+  <div class="min-h-[100svh] w-11/12 mt-4 sm:w-4/5 mx-auto sm:mt-32">
+    <Header />
+    <div class="pb-4 mt-3 italic">
       /archive/en/{{ slug }}.md
     </div>
     <div class="tu-markdown" v-html="content"></div>
   </div>
+  <Footer />
 </template>
