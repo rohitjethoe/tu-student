@@ -2,6 +2,16 @@
 
 <iframe width="100%" height="300px" src="https://www.youtube.com/embed/UvpH5Uj7BuE?si=KS6remMqtdfoFAAx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><br />
 
-A function takes in a set and outputs another set. Each item in the one set points to an item in the other set.
+What is the role of functions in mathematical modeling?
 
-$$ f(x) = y $$
+The famous TU Delft Solar Team built the Nuna 7. 
+How was Calculus important to building it? 
+
+World Solar Challenge:
+
+- Takes place in Australia, from Darwin to Adelaide
+- As fast as possible
+- Only power source: Sun
+
+
+
