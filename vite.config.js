@@ -5,7 +5,7 @@ import raw from 'vite-plugin-raw'
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [vue(), raw()],
+  plugins: [vue(), raw({ match: /\.md$/, })],
   resolve: {
     alias: {
       '@': resolve(__dirname, 'src')
