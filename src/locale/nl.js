@@ -2,7 +2,7 @@ const nl = {
     title: "TU Student Blog",
     update: "Laatst geupdate in januari 2025",
     biography: {
-        main: `Momenteel volg ik de WO Bacheloropleiding Technische Informatica, ook wel bekend als <i>Computer Science and Engineering</i>bij een onderzoeksuniversiteit in Europa 🇪🇺`,
+        main: `Momenteel volg ik de WO Bacheloropleiding Technische Informatica, ook wel bekend als Computer Science and Engineering bij een onderzoeksuniversiteit in Europa 🇪🇺`,
         references: {
             textual: "Wat is",
             textual2: "Wikipedia zegt dat",
