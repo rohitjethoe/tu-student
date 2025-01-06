@@ -13,7 +13,9 @@ const nl = {
             information: "informatie",
             automation: "automatisering"
         }   
-    }
+    },
+    translated: "Zoek je een vertaalde versie van deze pagina?",
+    archive: "Laatste Archief"
 };
 
 export default nl;

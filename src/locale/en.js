@@ -12,8 +12,10 @@ const en = {
             computation: "computation",
             information: "information",
             automation: "automation"
-        }   
-    }
+        }
+    },
+    translated: "Need a translated version of this page?",
+    archive: "Latest Archive"
 }
 
 export default en;
