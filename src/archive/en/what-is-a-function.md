@@ -3,7 +3,7 @@
 <iframe width="100%" height="300" src="https://www.youtube.com/embed/M3R7hhQFM4Y?si=NmL7TnM63LntoWet" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 <br />
 
-Power input of the Nuna 7:
+_Power input_ of the __Nuna 7__:
 
 $$ P_{in} = \eta_{eff} * A * P_{sun}(\alpha_{sun}) * cos(\alpha_{sun}) $$
 

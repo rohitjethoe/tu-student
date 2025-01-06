@@ -11,6 +11,7 @@ const filter = ref("");
 
 const basic = [
 {
+	title: 'What Is A Function?',
 	slug: 'what-is-a-function',
 	date: "2025-01-06T20:53:04.188Z",
 	tags: [
@@ -92,7 +93,7 @@ onMounted(() => {
 				<div class="flex flex-wrap gap-4 items-center" v-for="archive in archives">
 					<div>
 						<a :href="'/archive/' + archive.slug">
-							/archive/{{ archive.slug }}
+							{{ archive.title }}
 						</a> 
 						— 
 						<span class="italic">
