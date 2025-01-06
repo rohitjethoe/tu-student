@@ -1,10 +1,13 @@
 <script setup>
 import { onMounted } from 'vue';
+import { useI18n } from 'vue-i18n';
+
+const { locale } = useI18n();
 
 const host = window.location.host;
 
 onMounted(() => {
-	window.document.title = "home | tustudent.blog";
+	window.document.title = `home | ${locale.value === "en" ? 'www' : locale.value}.tustudent.blog`;
 })
 </script>
 

@@ -51,7 +51,7 @@ const loadMarkdown = async () => {
 
 onMounted(() => {
   loadMarkdown();
-  window.document.title = `${route.params.slug}.md | tustudent.blog`;
+  window.document.title = `${slug.replace(/-/g, ' ').replace(/\b\w/g, char => char.toUpperCase())} | ${locale.value === "en" ? 'www' : locale.value}.tustudent.blog`;
 });
 </script>
 
