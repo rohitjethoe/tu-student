@@ -9,18 +9,19 @@ const { locale } = useI18n();
 const host = window.location.host;
 const filter = ref("");
 
-const basic = [
-{
-	title: 'What Is A Function?',
-	slug: 'what-is-a-function',
-	date: "2025-01-06T20:53:04.188Z",
-	tags: [
-		{
-			title: 'pre-university calculus',
-			color: 'text-purple-400 border-purple-400 bg-purple-400/10'
-		}
-	]
-}]
+const archives = [
+	{
+		title: "pre-university calculus",
+		style: "text-purple-400 border-purple-400 bg-purple-400/10",
+		posts: [
+			{
+				title: "What Is A Function?",
+				date: "2025-01-06T20:53:04.188Z",
+				slug: "what-is-a-function"
+			}
+		]
+	}
+]
 
 const months = {
 	en: ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'],
@@ -30,26 +31,6 @@ const months = {
 const days = {
 	en: ['0', '1st', '2nd', '3rd', '4th', '5th', '6th', '7th', '8th', '9th', '10th', '11th', '12th', '13th', '14th', '15th', '16th', '17th', '18th', '19th', '20th', '21st', '22nd', '23rd', '24th', '25th', '26th', '27th', '28th', '29th', '30th', '31st'],
 	nl: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31']
-}
-
-const archives = ref(basic)
-const filtered = ref([]);
-
-const filterArchives = () => {
-	archives.value.forEach(archive => {
-
-		archive.tags.forEach(tag => {
-			console.log(filter.value);
-			if (tag.title === filter.value) {
-				console.log(true);
-
-				filtered.value.push(archive);
-			}
-
-			// console.log(filtered.value);
-			// archives.value = filtered.value;
-		})
-	})
 }
 
 onMounted(() => {
@@ -86,22 +67,20 @@ onMounted(() => {
 				<div class="flex gap-2 pb-4">
 					<p>filter by tag: </p>
 					<select v-model="filter" @input="filterArchives">
-						<option value=""></option>
-						<option v-for="tag in archives.flatMap(archive => archive.tags.map(tag => tag.title))" :value="tag">{{ tag }}</option>
+						<option value="">all</option>
+						<option v-for="archive in archives" :value="archive.title">{{ archive.title }}</option>
 					</select>
 				</div>
 				<div class="flex flex-wrap gap-4 items-center" v-for="archive in archives">
-					<div>
-						<a :href="'/archive/' + archive.slug">
-							{{ archive.title }}
-						</a> 
-						— 
-						<span class="italic">
-							{{ months[locale][new Date(archive.date).getMonth()] }} {{ days[locale][new Date(archive.date).getDate()] }} {{ new Date(archive.date).getFullYear() }}
-						</span>
-					</div>
-					<div>
-						<div v-for="tag in archive.tags" class="p-3 pt-1.5 pb-2 px-4 border rounded-full inline" :class="tag.color">{{ tag.title }}</div> 
+					<div v-if="filter !== '' ? archive.title === filter : true">
+						<div class="p-3 pt-1.5 pb-2 px-4 border rounded-full inline" :class="archive.style">{{ archive.title }}</div> 
+						<div v-for="post in archive.posts" class="py-6">
+							<a :href="`/archive/${post.slug}`">{{ post.title }}</a>
+							— 
+							<span class="italic">
+								{{ months[locale][new Date(post.date).getMonth()] }} {{ days[locale][new Date(post.date).getDate()] }} {{ new Date(post.date).getFullYear() }}
+							</span>
+						</div>
 					</div>
 				</div>
 			</div>
