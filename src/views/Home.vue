@@ -1,10 +1,41 @@
 <script setup>
-import { onMounted } from 'vue';
+import { onMounted, ref } from 'vue';
 import { useI18n } from 'vue-i18n';
 
 const { locale } = useI18n();
 
 const host = window.location.host;
+const filter = ref("");
+
+const basic = [{
+	slug: 'what-is-a-function',
+	tags: [
+		{
+			title: 'pre-university calculus',
+			color: 'text-purple-400'
+		}
+	]
+}]
+
+const archives = ref(basic)
+const filtered = ref([]);
+
+const filterArchives = () => {
+	archives.value.forEach(archive => {
+
+		archive.tags.forEach(tag => {
+			console.log(filter.value);
+			if (tag.title === filter.value) {
+				console.log(true);
+
+				filtered.value.push(archive);
+			}
+
+			// console.log(filtered.value);
+			// archives.value = filtered.value;
+		})
+	})
+}
 
 onMounted(() => {
 	window.document.title = `home | ${locale.value === "en" ? 'www' : locale.value}.tustudent.blog`;
@@ -39,7 +70,19 @@ onMounted(() => {
 				</h2>
 			</div>
 			<div>
-				<a href="/archive/what-is-a-function">/archive/what-is-a-function</a>
+				<div class="flex gap-2">
+					<p>filter by tag: </p>
+					<select v-model="filter" @input="filterArchives">
+						<option value=""></option>
+						<option v-for="tag in archives.flatMap(archive => archive.tags.map(tag => tag.title))" :value="tag">{{ tag }}</option>
+					</select>
+				</div>
+				<div v-for="archive in archives">
+					<a :href="archive.slug">
+						/archive/{{ archive.slug }}
+					</a> —
+					<span v-for="tag in archive.tags" :class="tag.color">{{ tag.title }}</span>
+				</div>
 			</div>
 		</div>
 		<div class="flex gap-2 items-center text-sm p-3 font-medium w-11/12 mb-4 sm:w-4/5 mx-auto sm:mb-32">
