@@ -17,7 +17,7 @@ const host = window.location.host;
                     <br><br>
                     <i>{{ $t('translated') }}</i>
                     <ul class="list-disc pl-4">
-                        <li ><a :href="'https://nl.' + host">Nederlands</a> (Dutch)</li>
+                        <li><a href="https://nl.tustudent.blog">Nederlands</a> (Dutch)</li>
                     </ul>
                 </p>
             </div>
