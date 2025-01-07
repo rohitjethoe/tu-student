@@ -36,7 +36,7 @@ _Formula_ = describes what a function does to it's possible inputs
 
 Notations of a formula:
 
-$$ f : x \rightarrow x^2 $$
+$$ f : x /rightarrow x^2 $$
 
 is read as 'f colon x to x squared'.
 
