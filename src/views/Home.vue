@@ -99,7 +99,7 @@ onMounted(() => {
 								<a :href="`/archive/${post.slug}`">{{ post.title }}</a>
 								— 
 								<span class="italic">
-									{{ months[locale][new Date(post.date).getMonth()] }} {{ days[locale][new Date(post.date).getDate()] }} {{ new Date(post.date).getFullYear() }}
+									{{ (locale === "nl") ? new Date(post.date).getDate() : '' }} {{ months[locale][new Date(post.date).getMonth()] }} {{ locale === "en" ? days[locale][new Date(post.date).getDate()] : '' }} {{ new Date(post.date).getFullYear() }}
 								</span>
 							</div>
 						</div>
