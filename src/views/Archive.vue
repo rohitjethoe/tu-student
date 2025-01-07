@@ -58,12 +58,10 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="min-h-[100svh] w-11/12 mt-4 sm:w-4/5 mx-auto sm:mt-32 lg:max-w-[740px]">
-    <Header />
+  <div>
     <div class="pb-4 mt-3 italic">
       /archive/{{ locale }}/{{ slug }}.md
     </div>
     <div class="tu-markdown" v-html="content"></div>
   </div>
-  <Footer />
 </template>

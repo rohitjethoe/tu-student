@@ -17,7 +17,26 @@ const nl = {
     translated: "Zoek je een vertaalde versie van deze pagina?",
     archive: "Laatste Archief",
     filter: "alle",
-    substack: "Meld aan bij mijn substack voor notificaties"
+    substack: "Meld aan bij mijn substack voor notificaties",
+    posts: [{
+		title: "vwo wiskunde b",
+		style: "text-purple-400 border-purple-400 bg-purple-400/10",
+		posts: [
+			{
+				title: "Wat Is Een Functie?",
+				date: "2025-01-07T20:53:04.188Z",
+				slug: "what-is-a-function"
+			},
+			{
+				title: "Wat Is Wiskundige Modellering?",
+				date: "2025-01-06T20:53:04.188Z",
+				slug: "what-is-mathematical-modeling"
+			}
+		]
+	}],
+    months: ['januari', 'februari', 'maart', 'april', 'mei', 'juni', 'juli', 'augustus', 'september', 'oktober', 'november', 'december'],
+    days: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31'],
+	error: "Oeps, helaas niet gevonden",
 };
 
 export default nl;

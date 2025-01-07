@@ -1,10 +1,13 @@
 <script setup>
+import Header from '@/components/Header.vue';
+import Footer from '@/components/Footer.vue';
 </script>
 
 <template>
-  <router-view>
-  </router-view>
+	<div class="min-h-[100svh] w-11/12 mt-4 sm:w-4/5 mx-auto sm:mt-32 lg:max-w-[740px]">
+		<Header />
+		<router-view>
+		</router-view>
+		<Footer />
+	</div>
 </template>
-
-<style scoped>
-</style>
