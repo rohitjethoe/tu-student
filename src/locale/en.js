@@ -17,7 +17,7 @@ const en = {
     translated: "Need a translated version of this page?",
     archive: "Latest Archive",
     filter: 'all',
-    substack: "Subscribe to our substack for notifications",
+    substack: "Subscribe to my substack for notifications",
 }
 
 export default en;
