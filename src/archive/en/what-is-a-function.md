@@ -42,6 +42,8 @@ is read as 'f colon x to x squared'.
 $$ f(x) = x^2 $$
 
 is read as 'f(x) is equal to x squared'
+
+__Tables__
   
 <table>
     <thead>
