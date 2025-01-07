@@ -22,11 +22,11 @@ _Power loss_ of the __Nuna 7__:
 
 $$ P_{loss} = P_{roll} + P-{air} + P_{elec} $$
 
-This course is ofcourse called calculus, so once we've modeled our problem into functions, we can start making _calculations_.
+This course is ofcourse called _calculus_, so once we've modeled our problem into functions, we can start making _calculations_.
 <br /><br />
 These calculations can then be _interpretted_, to make _real-world predictions_, s.t. these can be used in _real-world problems_ again.
 <br /><br />
-Mathematical modeling is used in __medicine__, __economics__, __science__ and __engineering__.
+Mathematical modeling is used in __medicine__, __economics__, __science__ and __engineering__:
 
 <ul class="list-disc pl-4">
     <li>"What is the optimum dose for this medicine?"</li>
