@@ -17,7 +17,7 @@ const nl = {
     translated: "Zoek je een vertaalde versie van deze pagina?",
     archive: "Laatste Archief",
     filter: "alle",
-    substack: "Meld aan bij onze substack voor notificaties"
+    substack: "Meld aan bij mijn substack voor notificaties"
 };
 
 export default nl;
