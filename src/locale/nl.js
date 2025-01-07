@@ -1,6 +1,28 @@
 const nl = {
     title: "TU Student Blog",
-    login: "Inloggen",
+    login: {
+        title: "Inloggen",
+        meta: {
+            ifAccount: {
+                "title": "Met een account",
+                "details": {
+                    "emojis": "emoji-markeringen blijven bewaard in je account",
+                    "exercises": "maak oefenopgaven",
+                    "and": "en is er",
+                    "waitingTime": "geen wachttijd"
+                }
+            },
+            ifNoAccount: {
+                "title": "Zonder een account",
+                "details": {
+                    "emojis": "geen toegang tot emoji-markeringen",
+                    "exercises": "geen oefenopgaven",
+                    "and": "en is er",
+                    "waitingTime": "wachttijd van 5 seconden"
+                }
+            }
+        }
+    },
     update: "Laatst geupdate in januari 2025",
     biography: {
         main: `Momenteel volg ik de WO Bacheloropleiding Technische Informatica, ook wel bekend als Computer Science and Engineering bij een onderzoeksuniversiteit in Europa. 🇪🇺`,

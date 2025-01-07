@@ -1,6 +1,22 @@
 const en = {
     title: "TU Student Blog",
-    login: "Login",
+    login: {
+        title: "Login",
+        meta: {
+            ifAccount: {
+                "title": "With an account",
+                "details": {
+                    "emojis": "emoji markings are saved in your account",
+                    "exercises": "make exercises",
+                    "and": "and there is",
+                    "waitingTime": "no waiting time"
+                }
+            },
+            ifNoAccount: {
+                "title": "Without an account",
+            }
+        }
+    },
     update: "Latest update in January 2025",
     biography: {
         main: `Currently following a Bachelor's degree about Computer Science and Engineering also called "Technische Informatica" at a research university in Europe. 🇪🇺`,
