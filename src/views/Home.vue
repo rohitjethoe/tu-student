@@ -14,6 +14,11 @@ const archives = [
 		style: "text-purple-400 border-purple-400 bg-purple-400/10",
 		posts: [
 			{
+				title: "What Is A Function?",
+				date: "2025-01-07T20:53:04.188Z",
+				slug: "what-is-a-function"
+			},
+			{
 				title: "What Is Mathematical Modeling?",
 				date: "2025-01-06T20:53:04.188Z",
 				slug: "what-is-mathematical-modeling"
@@ -73,12 +78,14 @@ onMounted(() => {
 				<div class="flex flex-wrap gap-4 items-center" v-for="archive in archives">
 					<div v-if="filter !== '' ? archive.title === filter : true">
 						<div class="p-3 pt-1.5 pb-2 px-4 border rounded-full inline" :class="archive.style">{{ archive.title }}</div> 
-						<div v-for="post in archive.posts" class="py-6">
-							<a :href="`/archive/${post.slug}`">{{ post.title }}</a>
-							— 
-							<span class="italic">
-								{{ months[locale][new Date(post.date).getMonth()] }} {{ days[locale][new Date(post.date).getDate()] }} {{ new Date(post.date).getFullYear() }}
-							</span>
+						<div class="mt-4">
+							<div v-for="post in archive.posts" class="py-2">
+								<a :href="`/archive/${post.slug}`">{{ post.title }}</a>
+								— 
+								<span class="italic">
+									{{ months[locale][new Date(post.date).getMonth()] }} {{ days[locale][new Date(post.date).getDate()] }} {{ new Date(post.date).getFullYear() }}
+								</span>
+							</div>
 						</div>
 					</div>
 				</div>
