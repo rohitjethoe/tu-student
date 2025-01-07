@@ -38,3 +38,35 @@ a:hover {
     background-color: #f9f9f9;
   }
 }
+
+@layer base {
+  .tu-markdown p {
+    @apply py-2;
+  }
+
+  .tu-markdown iframe {
+    @apply py-2;
+  }
+
+  .tu-markdown ul {
+    @apply list-disc pl-6;
+  }
+
+  .tu-markdown li {
+    @apply py-1;
+  }
+
+  .tu-markdown table {
+    @apply my-2 rounded-sm border-collapse w-full;
+  }
+
+  .tu-markdown th {
+    @apply bg-[#383838] py-1 font-normal;
+    @apply border border-[#555555];
+  }
+
+  .tu-markdown td {
+    @apply py-1 pl-2;
+    @apply border border-[#555555];
+  }
+}
