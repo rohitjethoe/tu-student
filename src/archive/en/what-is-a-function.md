@@ -30,3 +30,52 @@ in Calculus, we're concerned with functions that send real numbers to real numbe
 <br />
 <iframe width="100%" height="300" src="https://www.youtube.com/embed/isqc36BSKWo?si=K_PHZjYYaDP-nceH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
+We only consider functions to send numbers to numbers.
+
+_Formula_ = describes what a function does to it's possible inputs
+
+Notations of a formula:
+
+$$ f : x \rightarrow x^2 $$
+
+is read as 'f colon x to x squared'.
+
+$$ f(x) = x^2 $$
+
+is read as 'f(x) is equal to x squared'
+
+<table>
+    <thead>
+        <tr>
+            <th>Time</th>
+            <th>World Population</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1000 AD</td>
+            <td>310,000,000</td>
+        </tr>
+        <tr>
+            <td>1500 AD</td>
+            <td>460,000,000</td>
+        </tr>
+        <tr>
+            <td>1800 AD</td>
+            <td>1,000,000,000</td>
+        </tr>
+        <tr>
+            <td>1900 AD</td>
+            <td>1,650,000,000</td>
+        </tr>
+        <tr>
+            <td>2000 AD</td>
+            <td>6,000,000,000</td>
+        </tr>
+        <tr>
+            <td>2025 AD</td>
+            <td>8,100,000,000</td>
+        </tr>
+    </tbody>
+</table>
+
