@@ -22,7 +22,7 @@ _Energieverlies_ van de __Nuna 7__:
 
 $$ P_{loss} = P_{roll} + P-{air} + P_{elec} $$
 
-Deze cursus heet natuurlijk rekening, dus zodra we ons probleem hebben gemodelleerd in functies, kunnen we beginnen met _berekeningen_.
+Deze cursus heet natuurlijk _rekening_, dus zodra we ons probleem hebben gemodelleerd in functies, kunnen we beginnen met _berekeningen_.
 <br /><br />
 Deze berekeningen kunnen vervolgens worden _geïnterpreteerd_ om _realistische voorspellingen_ te maken, zodat deze weer kunnen worden gebruikt in _realistische problemen_.
 <br /><br />
