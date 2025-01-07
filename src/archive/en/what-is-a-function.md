@@ -27,3 +27,6 @@ so a _function_ consits of the following data:
 more about _domain_ & _codomain_ in section 1.6.
 <br /><br />
 in Calculus, we're concerned with functions that send real numbers to real numbers.
+
+<iframe width="100%" height="300" src="https://www.youtube.com/embed/isqc36BSKWo?si=K_PHZjYYaDP-nceH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
