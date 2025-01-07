@@ -32,5 +32,5 @@ Mathematical modeling is used in __medicine__, __economics__, __science__ and __
     <li>"What is the optimum dose for this medicine?"</li>
     <li>"How can this company maximize profit?"</li>
 </ul>
-
+<br />
 <a href="/archive/what-is-a-function">Go to next (What Is A Function?)</a>
