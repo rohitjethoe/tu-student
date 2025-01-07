@@ -16,7 +16,8 @@ const en = {
     },
     translated: "Need a translated version of this page?",
     archive: "Latest Archive",
-    substack: "Subscribe to our substack for notifications"
+    filter: 'all',
+    substack: "Subscribe to our substack for notifications",
 }
 
 export default en;

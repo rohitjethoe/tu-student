@@ -8,8 +8,8 @@ const { locale } = useI18n();
 
 const filter = ref("");
 
-const archives = [
-	{
+const archives = {
+	en: [{
 		title: "pre-university calculus",
 		style: "text-purple-400 border-purple-400 bg-purple-400/10",
 		posts: [
@@ -24,8 +24,24 @@ const archives = [
 				slug: "what-is-mathematical-modeling"
 			}
 		]
-	}
-]
+	}],
+	nl: [{
+		title: "vwo wiskunde b",
+		style: "text-purple-400 border-purple-400 bg-purple-400/10",
+		posts: [
+			{
+				title: "Wat Is Een Functie?",
+				date: "2025-01-07T20:53:04.188Z",
+				slug: "what-is-a-function"
+			},
+			{
+				title: "Wat Is Wiskundige Modellering?",
+				date: "2025-01-06T20:53:04.188Z",
+				slug: "what-is-mathematical-modeling"
+			}
+		]
+	}]
+}
 
 const months = {
 	en: ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'],
@@ -71,11 +87,11 @@ onMounted(() => {
 				<div class="flex gap-2 pb-4">
 					<p>filter by tag: </p>
 					<select v-model="filter" @input="filterArchives">
-						<option value="">all</option>
-						<option v-for="archive in archives" :value="archive.title">{{ archive.title }}</option>
+						<option value="">{{ $t('filter') }}</option>
+						<option v-for="archive in archives[locale]" :value="archive.title">{{ archive.title }}</option>
 					</select>
 				</div>
-				<div class="flex flex-wrap gap-4 items-center" v-for="archive in archives">
+				<div class="flex flex-wrap gap-4 items-center" v-for="archive in archives[locale]">
 					<div v-if="filter !== '' ? archive.title === filter : true">
 						<div class="p-3 pt-1.5 pb-2 px-4 border rounded-full inline" :class="archive.style">{{ archive.title }}</div> 
 						<div class="mt-4">
