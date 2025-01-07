@@ -32,3 +32,5 @@ Wiskundige modellering wordt gebruikt in __geneeskunde__, __economie__, __wetens
     <li>"Wat is de optimale dosis voor dit medicijn?"</li>
     <li>"Hoe kan dit bedrijf de winst maximaliseren?"</li>
 </ul>
+
+<a href="/archive/what-is-a-function">Ga naar volgende (Wat Is Een Functie?)</a>
