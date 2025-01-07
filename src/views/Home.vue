@@ -93,7 +93,7 @@ onMounted(() => {
 				</div>
 				<div class="flex flex-wrap gap-4 items-center" v-for="archive in archives[locale]">
 					<div v-if="filter !== '' ? archive.title === filter : true">
-						<div class="p-3 pt-1.5 pb-2 px-4 border rounded-full inline" :class="archive.style">{{ archive.title }}</div> 
+						<div class="p-3 pt-1.5 pb-2 px-4 border rounded-full inline font-medium" :class="archive.style">{{ archive.title }}</div> 
 						<div class="mt-4">
 							<div v-for="post in archive.posts" class="py-2">
 								<a :href="`/archive/${post.slug}`">{{ post.title }}</a>
