@@ -9,7 +9,7 @@ Dit is wat wiskundigen een _real-world problem_ zouden noemen.
 <br /><br />
 We willen de energie-invoer maximaliseren en het energieverlies minimaliseren:
 <ul class="list-disc pl-4">
-    <li>Hoeveel energie wordt geoogst?</li>
+    <li>Hoeveel energie wordt gewonnen?</li>
     <li>Hoeveel energieverlies door wrijving?</li>
 </ul>
 <br />
