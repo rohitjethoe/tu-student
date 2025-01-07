@@ -1,5 +1,5 @@
 <template>
     <div class="py-4 pt-20">
-        www.tustudent.blog &copy; {{ new Date().getFullYear() }} 
+        {{ new Date().getFullYear() }} &copy; www.tustudent.blog
     </div>
 </template>
