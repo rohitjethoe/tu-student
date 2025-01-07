@@ -23,6 +23,7 @@ so a _function_ consits of the following data:
     <li>a rule that associates every element in the first set, to an element in the second set.</li>
 </ul>
 <br />
+
 more about _domain_ & _codomain_ in section 1.6.
 <br /><br />
 in Calculus, we're concerned with functions that send real numbers to real numbers.
