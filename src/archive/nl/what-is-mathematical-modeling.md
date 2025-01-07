@@ -26,7 +26,7 @@ Deze cursus heet natuurlijk _rekening_, dus zodra we ons probleem hebben gemodel
 <br /><br />
 Deze berekeningen kunnen vervolgens worden _geïnterpreteerd_ om _realistische voorspellingen_ te maken, zodat deze weer kunnen worden gebruikt in _realistische problemen_.
 <br /><br />
-Wiskundige modellering wordt gebruikt in __geneeskunde__, __economie__, __wetenschap__ en __techniek__.
+Wiskundige modellering wordt gebruikt in __geneeskunde__, __economie__, __wetenschap__ en __techniek__:
 
 <ul class="list-disc pl-4">
     <li>"Wat is de optimale dosis voor dit medicijn?"</li>
