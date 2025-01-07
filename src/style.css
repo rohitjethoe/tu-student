@@ -40,12 +40,36 @@ a:hover {
 }
 
 @layer base {
+  .tu-markdown h1 {
+    @apply py-2 text-2xl;
+  }
+
+  .tu-markdown h2 {
+    @apply py-2 text-xl;
+  }
+
+  .tu-markdown h3 {
+    @apply py-2 text-lg;
+  }
+
+  .tu-markdown h4 {
+    @apply py-2 text-base;
+  }
+
+  .tu-markdown h5 {
+    @apply py-2 text-sm;
+  }
+
+  .tu-markdown h6 {
+    @apply py-2 text-xs;
+  }
+
   .tu-markdown p {
     @apply py-2;
   }
 
   .tu-markdown iframe {
-    @apply py-2;
+    @apply my-2;
   }
 
   .tu-markdown ul {
