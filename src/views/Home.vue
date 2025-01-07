@@ -84,8 +84,8 @@ onMounted(() => {
 				</h2>
 			</div>
 			<div>
-				<div class="flex gap-2 pb-4">
-					<p>filter by tag: </p>
+				<div class="flex gap-2 pb-6">
+					<p>filter: </p>
 					<select v-model="filter" @input="filterArchives">
 						<option value="">{{ $t('filter') }}</option>
 						<option v-for="archive in archives[locale]" :value="archive.title">{{ archive.title }}</option>
