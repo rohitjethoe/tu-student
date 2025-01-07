@@ -1,9 +1,9 @@
-import { createRouter, createWebHistory } from 'vue-router'
-
 import Home from '@/views/Home.vue'
 import Archive from '@/views/Archive.vue'
 import Substack from '@/views/Substack.vue'
 import Error from '@/views/Error.vue'
+import Login from '@/views/Login.vue'
+import { createRouter, createWebHistory } from 'vue-router'
 
 const routes = [
     { 
@@ -20,6 +20,11 @@ const routes = [
         path: '/archive/:slug', 
         name: 'Archive',
         component: Archive 
+    },
+    { 
+        path: '/login',
+        name: 'Login', 
+        component: Login 
     },
     { 
         path: '/:pathMatch(.*)*', 

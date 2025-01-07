@@ -3,8 +3,6 @@ import { onMounted, ref } from 'vue';
 import { useRoute } from 'vue-router';
 import { useI18n } from 'vue-i18n';
 import { marked } from 'marked';
-import Header from '@/components/Header.vue';
-import Footer from '@/components/Footer.vue';
 import katex from 'katex'; 
 import 'katex/dist/katex.min.css'; 
 
@@ -12,10 +10,9 @@ const { locale } = useI18n();
 const route = useRoute();
 const slug = route.params.slug;
 
+const markdownFiles = import.meta.glob(`@/archive/**/*.md`, { as: 'raw' });
 const module = ref(null);
 const content = ref('null');
-
-const markdownFiles = import.meta.glob(`@/archive/**/*.md`, { as: 'raw' });
 
 const loadMarkdown = async () => {
   const filePath = `/src/archive/${locale.value}/${slug}.md`;

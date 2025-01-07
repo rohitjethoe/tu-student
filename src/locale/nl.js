@@ -1,5 +1,6 @@
 const nl = {
     title: "TU Student Blog",
+    login: "Inloggen",
     update: "Laatst geupdate in januari 2025",
     biography: {
         main: `Momenteel volg ik de WO Bacheloropleiding Technische Informatica, ook wel bekend als Computer Science and Engineering bij een onderzoeksuniversiteit in Europa. 🇪🇺`,
@@ -36,7 +37,7 @@ const nl = {
 	}],
     months: ['januari', 'februari', 'maart', 'april', 'mei', 'juni', 'juli', 'augustus', 'september', 'oktober', 'november', 'december'],
     days: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31'],
-	error: "Oeps, helaas niet gevonden",
+	error: "Oeps, helaas niet gevonden, ga terug naar",
 };
 
 export default nl;

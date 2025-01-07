@@ -1,5 +1,6 @@
 const en = {
     title: "TU Student Blog",
+    login: "Login",
     update: "Latest update in January 2025",
     biography: {
         main: `Currently following a Bachelor's degree about Computer Science and Engineering also called "Technische Informatica" at a research university in Europe. 🇪🇺`,
@@ -36,7 +37,7 @@ const en = {
 	}],
     months: ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'],
     days: ['0', '1st', '2nd', '3rd', '4th', '5th', '6th', '7th', '8th', '9th', '10th', '11th', '12th', '13th', '14th', '15th', '16th', '17th', '18th', '19th', '20th', '21st', '22nd', '23rd', '24th', '25th', '26th', '27th', '28th', '29th', '30th', '31st'],
-    error: "Oops, didn't found this page"
+    error: "Oops, didn't found this page, return to"
 }
 
 export default en;
