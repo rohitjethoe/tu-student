@@ -39,7 +39,7 @@ const en = {
     error: "Oops, didn't found this page, return to",
     login: {
         title: "Login",
-        button: "Sign in with Google"
+        button: "Sign in with"
     }
 }
 

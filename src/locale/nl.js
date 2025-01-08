@@ -39,7 +39,7 @@ const nl = {
 	error: "Oeps, helaas niet gevonden, ga terug naar",
     login: {
         title: "Inloggen",
-        button: "Inloggen met Google"
+        button: "Inloggen met"
     }
 };
 
