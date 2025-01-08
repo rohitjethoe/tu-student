@@ -3,8 +3,11 @@ import { onMounted, ref } from 'vue';
 import { useRoute } from 'vue-router';
 import { useI18n } from 'vue-i18n';
 import { marked } from 'marked';
+import { useAuthStore } from '@/stores/authStore.js';
 import katex from 'katex'; 
 import 'katex/dist/katex.min.css'; 
+
+const authStore = useAuthStore();
 
 const { locale } = useI18n();
 const route = useRoute();
@@ -56,9 +59,27 @@ onMounted(() => {
 
 <template>
   <div>
+    <div class="flex gap-3 pt-4">
+      <div class="button text-sm py-1.5 px-3 rounded-md cursor-pointer transition-all ease-in">💭 Add thought</div>
+    </div>
     <div class="pb-4 mt-3 italic">
       /archive/{{ locale }}/{{ slug }}.md
     </div>
     <div class="tu-markdown" v-html="content"></div>
   </div>
 </template>
+
+<style lang="scss" scoped> 
+.button {
+  @apply bg-gray-100;
+  &:hover {
+    @apply bg-gray-200;
+  }
+  @media (prefers-color-scheme: dark) {
+    background-color: rgba(#000, 0.25);
+    &:hover {
+      background-color: rgba(#000, 0.75);
+    }
+  }
+}
+</style>
