@@ -45,6 +45,7 @@ const nl = {
     },
     account: {
         details: "Accountgegevens",
+        markings: "Markeringen",
         login: {
             title: "Inloggen",
             button: "Inloggen met"
@@ -54,6 +55,48 @@ const nl = {
         },
     },
     about: 'over',
+    terms: {
+        title: "Algemene voorwaarden",
+        update: "Laatst bijgewerkt op 8 januari 2025",
+        definitions: {
+            title: "Definities",
+            list: [
+                {
+                    by: "Website",
+                    textual: "nl.tustudent.blog"
+                },
+                {
+                    by: "Diensten",
+                    textual: "De blog en bijbehorende diensten, toegankelijk via nl.tustudent.blog."
+                },
+                {
+                    by: "Beheerder",
+                    textual: "De natuurlijke persoon die de website beheert en diensten aanbiedt."
+                },
+                {
+                    by: "Gebruiker",
+                    textual: "Iedere natuurlijke of rechtspersoon die de website bezoekt of de diensten gebruikt."
+                },
+                {
+                    by: "Abonnement",
+                    textual: "Toegang tot specifieke functionaliteiten gedurende een overeengekomen periode."
+                }
+            ]
+        },
+        applicability: {
+            title: "Toepasselijkheid",
+            list: ["Deze algemene voorwaarden zijn van toepassing op alle gebruikers van de website en diensten.", "Afwijkingen van deze voorwaarden zijn alleen geldig als deze schriftelijk door de beheerder zijn bevestigd."]
+        },
+        rightOfUse: {
+            title: "Gebruiksrecht",
+            list: [
+                "Gebruikers zonder abonnement kunnen beperkte functionaliteiten van de website gebruiken.",
+                "Gebruikers met een abonnement ontvangen toegangsgegevens waarmee zij gebruik kunnen maken van de specifieke functionaliteiten.",
+                "Het is niet toegestaan toegangsgegevens te delen met derden of te gebruiken voor andere doeleinden dan overeengekomen.",
+                "Bij misbruik of ongeautoriseerd gebruik kan de beheerder het gebruik opschorten of beëindigen."
+            ]
+        }
+    },
 };
 
 export default nl;

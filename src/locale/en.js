@@ -45,6 +45,7 @@ const en = {
     },
     account: {
         details: "Account details",
+        markings: "Markings",
         login: {
             title: "Login",
             button: "Sign in with"
@@ -54,6 +55,48 @@ const en = {
         },
     },
     about: "about",
+    terms: {
+        title: "Terms of service",
+        update: "Last updated on January 2025",
+        definitions: {
+            title: "Definities",
+            list: [
+                {
+                    by: "Website",
+                    textual: "www.tustudent.blog"
+                },
+                {
+                    by: "Services",
+                    textual: "The blog and associated services, accessible via www.tustudent.blog."
+                },
+                {
+                    by: "Administrator",
+                    textual: "The natural person managing the website and offering the services."
+                },
+                {
+                    by: "User",
+                    textual: "Any natural or legal person who visits the website or uses the services."
+                },
+                {
+                    by: "Subscription",
+                    textual: "Access to specific functionalities for an agreed-upon period."
+                }
+            ]
+        },
+        applicability: {
+            title: "Applicability",
+            list: ["These terms and conditions apply to all users of the website and services.", "Deviations from these terms are only valid if confirmed in writing by the administrator."]
+        },
+        rightOfUse: {
+            title: "Right of use",
+            list: [
+                "Users without a subscription can use limited functionalities of the website.",
+                "Users with a subscription receive login credentials to access specific functionalities.",
+                "Sharing login credentials with third parties or using them for purposes other than agreed upon is prohibited.",
+                "In case of misuse or unauthorized use, the administrator may suspend or terminate access."
+            ]
+        }
+    },
 };
 
 export default en;

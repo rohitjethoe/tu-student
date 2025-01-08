@@ -20,10 +20,13 @@ onMounted(() => authStore.initialize());
                 {{ $t('account.logout.title') }}
             </div>
         </div>
-        <div class="h-0 px-4 py-2 transition-bg transition-text ease-in" :class="menuOpened ? 'h-full bg-gray-100 text-black/100 dark:bg-black/75 dark:text-white/100' : 'bg-gray-100/0 text-black/0 dark:bg-black/0 dark:text-white/0'">
+        <div class="h-0 transition-bg transition-text ease-in" :class="menuOpened ? 'h-full bg-gray-100 text-black/100 dark:bg-black/75 dark:text-white/100 pointer-events-all' : 'bg-gray-100/0 text-black/0 dark:bg-black/0 dark:text-white/0 pointer-events-none'">
             <ul>
-                <li class="text-sm">
+                <li class="text-sm px-4 py-2">
                     {{ $t('account.details') }}
+                </li>
+                <li class="text-sm px-4 py-2">
+                    {{ $t('account.markings') }}
                 </li>
             </ul>
         </div>
