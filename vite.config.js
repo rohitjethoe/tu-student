@@ -17,5 +17,9 @@ export default defineConfig({
         api: 'modern-compiler' // or "modern"
       }
     }
-  }
+  },
+  define: {
+    "process.env": process.env,
+    ENV_KEY: process.env.ENV_KEY,
+  },
 })
