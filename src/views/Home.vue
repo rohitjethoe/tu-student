@@ -7,7 +7,7 @@ import nl from '@/locale/nl.js';
 const { locale } = useI18n();
 
 const filter = ref("");
-const archives = { en: en.posts, nl: nl.posts }
+const archives = { en: en.archive.posts, nl: nl.archive.posts }
 
 onMounted(() => {
 	window.document.title = `home | ${locale.value === "en" ? 'www' : locale.value}.tustudent.blog`;
@@ -17,11 +17,11 @@ onMounted(() => {
 <template>
 	<div>
 		<div class="py-3">
-			<p class="text-red-400 font-bold italic">{{ $t('update') }}</p>
+			<p class="text-red-400 font-bold italic">{{ $t('home.update') }}</p>
 		</div>
 		<div class="pb-3">
 			<p>
-				{{ $t('biography.main') }} <br><br>{{ $t('biography.references.textual') }} <a href="https://en.wikipedia.org/wiki/Computer_science" target="_blank">{{ $t('biography.references.computerscience') }}</a>? {{ $t('biography.references.textual2') }} {{ $t('biography.references.computerscience') }} {{ $t('biography.references.textual3') }} <a href="https://en.wikipedia.org/wiki/Computation" target="_blank">{{ $t('biography.references.computation') }}</a>, <a href="https://en.wikipedia.org/wiki/Information" target="_blank">{{ $t('biography.references.information') }}</a> {{ $t('biography.references.textual4') }} <a href="https://en.wikipedia.org/wiki/Automation" target="_blank">{{ $t('biography.references.automation') }}</a>.<br><br><i>{{ $t('translated') }}</i>
+				{{ $t('home.biography.main') }} <br><br>{{ $t('home.biography.references.textual') }} <a href="https://en.wikipedia.org/wiki/Computer_science" target="_blank">{{ $t('home.biography.references.computerscience') }}</a>? {{ $t('home.biography.references.textual2') }} {{ $t('home.biography.references.computerscience') }} {{ $t('home.biography.references.textual3') }} <a href="https://en.wikipedia.org/wiki/Computation" target="_blank">{{ $t('home.biography.references.computation') }}</a>, <a href="https://en.wikipedia.org/wiki/Information" target="_blank">{{ $t('home.biography.references.information') }}</a> {{ $t('home.biography.references.textual4') }} <a href="https://en.wikipedia.org/wiki/Automation" target="_blank">{{ $t('home.biography.references.automation') }}</a>.<br><br><i>{{ $t('translated') }}</i>
 			</p>
 			<ul class="list-disc pl-4">
 				<li>
@@ -34,14 +34,14 @@ onMounted(() => {
 		</div>
 		<div class="py-3">
 			<h2 class="text-lg font-bold italic">
-				{{ $t('archive') }}
+				{{ $t('home.archive.title') }}
 			</h2>
 		</div>
 		<div>
 			<div class="flex gap-2 pb-6">
 				<p>filter: </p>
 				<select v-model="filter" @input="filterArchives">
-					<option value="">{{ $t('filter') }}</option>
+					<option value="">{{ $t('home.archive.filter') }}</option>
 					<option v-for="archive in archives[locale]" :value="archive.title">{{ archive.title }}</option>
 				</select>
 			</div>
@@ -53,7 +53,7 @@ onMounted(() => {
 							<a :href="`/archive/${post.slug}`">{{ post.title }}</a>
 							— 
 							<span class="italic">
-								{{ (locale === "nl") ? $t(`days[${new Date(post.date).getDate()}]`) : '' }} {{ $t(`months[${new Date(post.date).getMonth()}]`) }} {{ locale === "en" ? $t(`days[${new Date(post.date).getDate()}]`) : '' }} {{ new Date(post.date).getFullYear() }}
+								{{ (locale === "nl") ? $t(`home.archive.days[${new Date(post.date).getDate()}]`) : '' }} {{ $t(`home.archive.months[${new Date(post.date).getMonth()}]`) }} {{ locale === "en" ? $t(`home.archive.days[${new Date(post.date).getDate()}]`) : '' }} {{ new Date(post.date).getFullYear() }}
 							</span>
 						</div>
 					</div>

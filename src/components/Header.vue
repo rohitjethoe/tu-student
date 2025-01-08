@@ -26,8 +26,8 @@ onMounted(() => {
 <template>
     <div class="pb-3 border-b-2 border-b-dark dark:border-b-light flex justify-between items-center" :class="loginIsVisible ? '' : 'pt-8'">
         <a class="text-dark dark:text-white no-underline hover:text-dark dark:hover:text-white hover:opacity-80" href="/">
-            <h1 class="text-3xl font-bold italic">{{ $t('title')}}</h1>
+            <h1 class="text-3xl font-bold italic">{{ $t('appName')}}</h1>
         </a>
-        <a v-if="loginIsVisible" href="/login">{{ $t('login.title') }}</a>
+        <a v-if="loginIsVisible" href="/login">{{ $t('account.login.title') }}</a>
     </div>
 </template>

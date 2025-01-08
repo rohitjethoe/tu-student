@@ -35,13 +35,13 @@ onMounted(() => {
                 {{ user.email }}
             </div>
             <div @click="logout" class="select-none hover:cursor-pointer">
-                {{ $t('logout.title') }}
+                {{ $t('account.logout.title') }}
             </div>
         </div>
         <div class="h-0 bg-[rgba(0,0,0,0)] text-[rgba(255,255,255,0)] px-4 py-2 transition-bg transition-text ease-in" :class="menuOpened ? 'h-full bg-[rgba(0,0,0,0.75)] text-[rgba(255,255,255,1)]' : ''">
             <ul>
                 <li>
-                    
+                    {{ $t('account.details') }}
                 </li>
             </ul>
         </div>

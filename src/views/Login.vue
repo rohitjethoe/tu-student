@@ -69,14 +69,14 @@ onMounted(() => {
         <button @click="googleSignIn" class="flex items-center gap-3 outline-none bg-[#242424] dark:bg-white py-3 px-12 rounded w-full justify-center opacity-100 transition-opacity ease-in hover:opacity-90">
             <img class="w-3 h-3" src="@/assets/google-icon.png" alt="">
             <span class="text-white dark:text-[#242424] text-sm font-medium">
-                {{ $t('login.button') }} Google
+                {{ $t('account.login.button') }} Google
             </span>
         </button>
         <button @click="githubSignIn" class="flex items-center gap-3 outline-none bg-[#242424] dark:bg-white py-3 px-12 rounded w-full justify-center opacity-100 transition-opacity ease-in hover:opacity-90">
             <img class="hidden dark:block w-3 h-3" src="@/assets/github-icon.svg" alt="">
             <img class="block dark:hidden w-3 h-3" src="@/assets/github-iconLight.svg" alt="">
             <span class="text-white dark:text-[#242424] text-sm font-medium">
-                {{ $t('login.button') }} Github
+                {{ $t('account.login.button') }} Github
             </span>
         </button>
         <a class="text-sm text-[#242424] dark:text-white" href="/about">{{ $t('about') }} tustudent.blog</a>
