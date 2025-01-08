@@ -1,5 +1,5 @@
 <script setup>
-import Account from '@/views/Account.vue';
+import Account from '@/components/Account.vue';
 import Header from '@/components/Header.vue';
 import Footer from '@/components/Footer.vue';
 </script>
