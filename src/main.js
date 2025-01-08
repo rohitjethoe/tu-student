@@ -1,10 +1,12 @@
 import { createApp } from 'vue'
 import { createI18n } from 'vue-i18n'
+import { createPinia } from 'pinia';
 import './style.css'
 import App from './App.vue'
 import router from './routes'
-import en from '@/locale/en.js'
-import nl from '@/locale/nl.js'
+import { en, nl } from '@/locale/index.js';
+
+const pinia = createPinia();
 
 const i18n = createI18n({
     locale: 'en',
@@ -25,4 +27,5 @@ if (subdomain.length === 2) {
 createApp(App)
     .use(i18n)
     .use(router)
+    .use(pinia)
     .mount('#app')
