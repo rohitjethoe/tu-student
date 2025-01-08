@@ -1,5 +1,5 @@
 <template>
-    <div class="py-4 pt-20 text-xs">
-        <a href="#">about tustudent.blog</a>
+    <div class="footer pb-4 text-xs">
+        <a href="/about">about tustudent.blog</a>
     </div>
 </template>

@@ -1,28 +1,5 @@
 const nl = {
     title: "TU Student Blog",
-    login: {
-        title: "Inloggen",
-        meta: {
-            ifAccount: {
-                "title": "Met een account",
-                "details": {
-                    "emojis": "emoji-markeringen blijven bewaard in je account",
-                    "exercises": "maak oefenopgaven",
-                    "and": "en is er",
-                    "waitingTime": "geen wachttijd"
-                }
-            },
-            ifNoAccount: {
-                "title": "Zonder een account",
-                "details": {
-                    "emojis": "geen toegang tot emoji-markeringen",
-                    "exercises": "geen oefenopgaven",
-                    "and": "en is er",
-                    "waitingTime": "wachttijd van 5 seconden"
-                }
-            }
-        }
-    },
     update: "Laatst geupdate in januari 2025",
     biography: {
         main: `Momenteel volg ik de WO Bacheloropleiding Technische Informatica, ook wel bekend als Computer Science and Engineering bij een onderzoeksuniversiteit in Europa. 🇪🇺`,
@@ -60,6 +37,10 @@ const nl = {
     months: ['januari', 'februari', 'maart', 'april', 'mei', 'juni', 'juli', 'augustus', 'september', 'oktober', 'november', 'december'],
     days: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31'],
 	error: "Oeps, helaas niet gevonden, ga terug naar",
+    login: {
+        title: "Inloggen",
+        button: "Inloggen met Google"
+    }
 };
 
 export default nl;

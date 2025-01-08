@@ -10,7 +10,7 @@ const { locale } = useI18n();
 const route = useRoute();
 const slug = route.params.slug;
 
-const markdownFiles = import.meta.glob(`@/archive/**/*.md`, { as: 'raw' });
+const markdownFiles = import.meta.glob(`@/archive/**/*.md`, { query: '?raw', import: 'default' });
 const module = ref(null);
 const content = ref('null');
 

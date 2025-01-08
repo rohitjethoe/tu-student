@@ -1,35 +1,35 @@
-import Home from '@/views/Home.vue'
-import Archive from '@/views/Archive.vue'
-import Substack from '@/views/Substack.vue'
-import Error from '@/views/Error.vue'
-import Login from '@/views/Login.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 
 const routes = [
     { 
         path: '/', 
         name: 'Home',
-        component: Home,
+        component: () => import('@/views/Home.vue')
+    },
+    {
+        path: '/about',
+        name: 'About',
+        component: () => import('@/views/About.vue')
     },
     { 
         path: '/substack',
         name: 'Substack', 
-        component: Substack 
+        component: () => import('@/views/Substack.vue')
     },
     { 
         path: '/archive/:slug', 
         name: 'Archive',
-        component: Archive 
+        component: () => import('@/views/Archive.vue')
     },
     { 
         path: '/login',
         name: 'Login', 
-        component: Login 
+        component: () => import('@/views/Login.vue')
     },
     { 
         path: '/:pathMatch(.*)*', 
         name: 'Error',
-        component: Error 
+        component: () => import('@/views/Error.vue')
     }
 ]
 

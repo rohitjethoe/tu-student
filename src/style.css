@@ -39,6 +39,10 @@ a:hover {
   }
 }
 
+.container {
+  min-height: calc(100svh - 60px);
+}
+
 @layer base {
   .tu-markdown h1 {
     @apply py-2 text-2xl;
