@@ -79,6 +79,6 @@ onMounted(() => {
                 {{ $t('login.button') }} Github
             </span>
         </button>
-        <a class="text-sm" href="/about">about tustudent.blog</a>
+        <a class="text-sm text-[#242424] dark:text-white" href="/about">{{ $t('about') }} tustudent.blog</a>
     </div>
 </template>

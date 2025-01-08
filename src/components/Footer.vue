@@ -12,6 +12,6 @@ onMounted(() => {
 
 <template>
     <div v-if="footerIsVisible" class="footer pt-12 pb-4 text-xs">
-        <a href="/about">about tustudent.blog</a>
+        <a href="/about">{{ $t('about')}} tustudent.blog</a>
     </div>
 </template>

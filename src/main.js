@@ -4,17 +4,21 @@ import { createPinia } from 'pinia';
 import './style.css'
 import App from './App.vue'
 import router from './routes'
-import { en, nl } from '@/locale/index.js';
 
 const pinia = createPinia();
+
+const messages = {};
+const localeModules = import.meta.glob('./locale/*.js', { eager: true });
+
+Object.entries(localeModules).forEach(([path, module]) => {
+    const locale = path.match(/\/locale\/(.*)\.js$/)[1];
+    messages[locale] = module.default;
+});
 
 const i18n = createI18n({
     locale: 'en',
     fallbackLocale: 'nl',
-    messages: {
-        en,
-        nl,
-    }
+    messages
 })
 
 var host = window.location.host
