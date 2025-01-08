@@ -5,7 +5,7 @@
             {{ $t('terms.update') }}
         </div>
 
-        <ul class="list-decimal pl-4 pt-1">
+        <ul class="list-decimal pl-8 pt-1">
             <li>
                 <strong> {{ $t('terms.definitions.title') }}</strong>
                 <ul class="list-decimal pl-4 pt-1">
