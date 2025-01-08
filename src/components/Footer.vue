@@ -1,5 +1,17 @@
+<script setup>
+import { onMounted, ref } from 'vue';
+
+const footerIsVisible = ref(true);
+
+onMounted(() => {
+   if (window.location.pathname === "/login") {
+        footerIsVisible.value = false;
+   }
+});
+</script>
+
 <template>
-    <div class="footer pb-4 text-xs">
+    <div v-if="footerIsVisible" class="footer pt-12 pb-4 text-xs">
         <a href="/about">about tustudent.blog</a>
     </div>
 </template>
