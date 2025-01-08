@@ -1,16 +1,20 @@
 <script setup>
-import { onMounted } from "vue";
+import { watch } from "vue";
 import { useRouter } from "vue-router";
 import { useAuthStore } from '@/stores/authStore';
 
 const authStore = useAuthStore();
 const router = useRouter();
 
-onMounted(() => {
-  if (authStore.user === null) {
-    router.push({ name: "Home" });
-  }
-});
+watch(
+  () => authStore.user,
+  (user) => {
+    if (user) {
+      router.push({ name: "Home" });
+    }
+  },
+  { immediate: true }
+);
 </script>
 
 <template>
