@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="pt-2">
+        <div class="pt-2 pb-4">
             <strong>{{ $t('terms.title') }}</strong><br />
             {{ $t('terms.update') }}
         </div>
