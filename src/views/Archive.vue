@@ -56,6 +56,8 @@ const loadMarkdown = async () => {
   }
 };
 
+const thoughtsOpened = ref(false);
+
 const addThought = async () => {
   await accountStore.addThought(slug);
   await accountStore.getThoughts(slug);
@@ -83,23 +85,25 @@ onMounted(() => {
 <template>
   <div>
     <div class="pt-4">
-      <div v-for="thought in accountStore.thoughts" class="flex items-center gap-2 py-0.5">
-        <div class="flex-1 flex items-center gap-2 justify-end">
-          <div class="text-xs text-gray-500 dark:text-gray-400">
-            {{ thought.icon }}
+      <div v-if="thoughtsOpened" class="pb-2">
+        <div v-for="thought in accountStore.thoughts" class="flex items-center gap-2 py-0.5">
+          <div class="text-xs text-black dark:text-white text-left">
+            {{ $t('archive.addedOn') }} {{ locale === "nl" ? $t(`archive.days[${new Date(thought.createdAt.seconds).getDay()}]`) : '' }}
+            {{ $t(`archive.months[${new Date(thought.createdAt.seconds).getMonth()}]`).toLowerCase() }}
+            {{ locale === "en" ? $t(`archive.days[${new Date(thought.createdAt.seconds).getDay()}]`) : '' }}
           </div>
-          <div class="text-xs text-gray-500 dark:text-gray-400">
-            {{ thought.value }}
+          <div class="flex items-center gap-2 justify-end">
+            <div class="text-xs text-gray-500 dark:text-gray-400">
+              {{ thought.icon }}
+            </div>
+            <div class="text-xs text-gray-500 dark:text-gray-400">
+              {{ thought.value }}
+            </div>
           </div>
-        </div>
-        <div class="text-xs text-black dark:text-white text-left">
-          — {{ $t('archive.addedOn') }} {{ locale === "nl" ? $t(`archive.days[${new Date(thought.createdAt.seconds).getDay()}]`) : '' }}
-          {{ $t(`archive.months[${new Date(thought.createdAt.seconds).getMonth()}]`).toLowerCase() }}
-          {{ locale === "en" ? $t(`archive.days[${new Date(thought.createdAt.seconds).getDay()}]`) : '' }}
         </div>
       </div>
-      <div class="pt-4">
-        <a class="text-xs group" href="/account/markings">{{$t('archive.seeAll')}} →</a>
+      <div class="flex">
+        <a class="text-xs group" href="#" @click="thoughtsOpened = !thoughtsOpened">{{thoughtsOpened ? $t('archive.seeAll.opened') : $t('archive.seeAll.closed')}}</a>
       </div>
     </div>
 

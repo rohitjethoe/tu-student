@@ -59,7 +59,15 @@ a:hover {
     @apply py-2 transition-all ease-in;
   }
 
+  .tu-markdown li {
+    @apply transition-all ease-in;
+  }
+
   .tu-markdown p:hover {
+    @apply text-gray-400 cursor-pointer;
+  }
+
+  .tu-markdown li:hover {
     @apply text-gray-400 cursor-pointer;
   }
 
@@ -109,6 +117,10 @@ a:hover {
   }
 
   .tu-markdown p:hover {
+    @apply text-gray-500;
+  }
+
+  .tu-markdown li:hover {
     @apply text-gray-500;
   }
 }
