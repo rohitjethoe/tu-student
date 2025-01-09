@@ -70,7 +70,7 @@ a:hover {
   }
 
   .tu-markdown iframe {
-    @apply mt-4 mb-2;
+    @apply mt-2 mb-2;
   }
 
   .tu-markdown ul {

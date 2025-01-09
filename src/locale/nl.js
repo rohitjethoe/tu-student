@@ -99,7 +99,50 @@ const nl = {
                 "Het is niet toegestaan toegangsgegevens te delen met derden of te gebruiken voor andere doeleinden dan overeengekomen.",
                 "Bij misbruik of ongeautoriseerd gebruik kan de beheerder het gebruik opschorten of beëindigen."
             ]
-        }
+        },
+        availability: {
+            title: "Beschikbaarheid",
+            list: [
+                "De beheerder streeft naar maximale beschikbaarheid van de website, maar kan ononderbroken toegang niet garanderen.",
+                "Onderhoudswerkzaamheden zullen indien mogelijk vooraf worden aangekondigd."
+            ]
+        },
+        payment: {
+            title: "Betaling",
+            list: [
+                "Eventuele betalingen voor abonnementen of diensten moeten volledig worden voldaan voordat toegang wordt verleend.",
+                "Alle tarieven worden vooraf aan de gebruiker gecommuniceerd en kunnen worden gewijzigd met voorafgaande kennisgeving."
+            ]
+        },
+        liability: {
+            title: "Aansprakelijkheid",
+            list: [
+                "De beheerder biedt de diensten aan “zoals ze zijn” en is niet aansprakelijk voor directe of indirecte schade voortvloeiend uit het gebruik van de website of diensten, tenzij deze schade te wijten is aan opzet of grove nalatigheid.",
+                "De gebruiker is zelf verantwoordelijk voor het juiste gebruik van de website en de verstrekte gegevens."
+            ]
+        },
+        duration: {
+            title: "Duur en beëindiging",
+            list: [
+                "Abonnementen worden aangegaan voor de duur zoals overeengekomen bij het afsluiten ervan.",
+                "De gebruiker kan het abonnement beëindigen met inachtneming van een opzegtermijn van 30 dagen.",
+                "De beheerder behoudt zich het recht voor om de diensten of website op elk moment stop te zetten."
+            ]
+        },
+        force: {
+            title: "Overmacht",
+            list: [
+                "De beheerder is niet aansprakelijk voor tekortkomingen in de nakoming van verplichtingen door overmacht, waaronder storingen, technische problemen of andere buitengewone omstandigheden."
+            ]
+        },
+        law: {
+            title: "Toepasselijk recht",
+            list: [
+                "Op deze algemene voorwaarden is het Nederlands recht van toepassing.",
+                "Geschillen die voortvloeien uit het gebruik van de website of diensten zullen worden voorgelegd aan de bevoegde rechter in Nederland."
+            ]
+        },
+        continue: "Door gebruik te maken van de website en diensten, verklaart de gebruiker akkoord te gaan met deze algemene voorwaarden."
     },
 };
 

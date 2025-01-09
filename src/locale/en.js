@@ -63,7 +63,7 @@ const en = {
         title: "Terms of service",
         update: "Last updated on January 8th 2025",
         definitions: {
-            title: "Definities",
+            title: "Definitions",
             list: [
                 {
                     by: "Website",
@@ -99,7 +99,50 @@ const en = {
                 "Sharing login credentials with third parties or using them for purposes other than agreed upon is prohibited.",
                 "In case of misuse or unauthorized use, the administrator may suspend or terminate access."
             ]
-        }
+        },
+        availability: {
+            title: "Availability",
+            list: [
+                "The administrator strives for maximum availability of the website but cannot guarantee uninterrupted access.",
+                "Maintenance work will be announced in advance whenever possible."
+            ]
+        },
+        payment: {
+            title: "Payment",
+            list: [
+                "Any payments for subscriptions or services must be made in full before access is granted.",
+                "All fees will be communicated to the user in advance and may be subject to change with prior notice."
+            ]
+        },
+        liability: {
+            title: "Liability",
+            list: [
+                "The administrator provides the services “as is” and is not liable for direct or indirect damages resulting from the use of the website or services, unless such damages are due to intent or gross negligence.",
+                "Users are responsible for the proper use of the website and the provided information."
+            ]
+        },
+        duration: {
+            title: "Duration and Termination",
+            list: [
+                "Subscriptions are valid for the period agreed upon at the time of purchase.",
+                "Users may terminate their subscription with a notice period of 30 days.",
+                "The administrator reserves the right to discontinue the services or website at any time."
+            ]
+        },
+        force: {
+            title: "Force Majeure",
+            list: [
+                "The administrator is not liable for failures to meet obligations due to force majeure, including outages, technical issues, or other extraordinary circumstances."
+            ]
+        },
+        law: {
+            title: "Governing Law",
+            list: [
+                "These terms and conditions are governed by Dutch law.",
+                "Disputes arising from the use of the website or services will be submitted to the competent court in the Netherlands."
+            ]
+        },
+        continue: "By using the website and services, the user agrees to these terms and conditions."
     },
 };
 

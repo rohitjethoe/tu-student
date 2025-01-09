@@ -13,11 +13,11 @@ export const useAuthStore = defineStore('user', {
                 .then(() => {
                     onAuthStateChanged(auth, (currentUser) => {
                         if (currentUser) {
-                          this.user = currentUser; // Set the user in the store
-                          this.isLoggedIn = true;  // Update the login status
+                          this.user = currentUser;
+                          this.isLoggedIn = true;
                         //   console.log("User restored from persistence:", currentUser);
                         } else {
-                          this.user = null;      // No user is logged in
+                          this.user = null;
                           this.isLoggedIn = false;
                         //   console.log("No user is signed in.");
                         }

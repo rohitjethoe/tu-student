@@ -4,9 +4,11 @@ import { useRoute } from 'vue-router';
 import { useI18n } from 'vue-i18n';
 import { marked } from 'marked';
 import { useAuthStore } from '@/stores/authStore.js';
+import { useAccountStore } from '@/stores/accountStore.js';
 import katex from 'katex';
 
 const authStore = useAuthStore();
+const accountStore = useAccountStore();
 
 const { locale } = useI18n();
 const route = useRoute();
@@ -57,6 +59,10 @@ const loadMarkdown = async () => {
 onMounted(() => {
   loadMarkdown();
   window.document.title = `${slug.replace(/-/g, ' ').replace(/\b\w/g, char => char.toUpperCase())} | ${locale.value === "en" ? 'www' : locale.value}.tustudent.blog`;
+
+  setTimeout(() => {
+    accountStore.getThoughts(slug);
+  }, 500)
 });
 </script>
 
@@ -66,7 +72,7 @@ onMounted(() => {
       <div @click="thoughtBoxIsVisible = !thoughtBoxIsVisible" class="button text-sm py-1.5 px-3 rounded-md cursor-pointer transition-all ease-in">
         💭 {{ $t('archive.thought') }}
       </div>
-      <div :class="thoughtBoxIsVisible ? 'opacity-100 pointer-events-all' : 'opacity-0 pointer-events-none'" class="absolute top-4 left-0 flex items-center justify-between bg-gray-200 dark:bg-[#1b1b1b] w-full py-2 sm:py-4 px-3 sm:px-6 rounded transition-all ease-in">
+      <div :class="thoughtBoxIsVisible ? 'opacity-100 pointer-events-all' : 'opacity-0 pointer-events-none'" class="absolute top-2.5 left-0 flex items-center justify-between bg-gray-200 dark:bg-[#1b1b1b] w-full py-2 sm:py-4 px-3 sm:px-6 rounded transition-all ease-in">
         <div class="flex items-center gap-1.5 sm:gap-3">
           <div>
             ✨
@@ -75,10 +81,11 @@ onMounted(() => {
             class="bg-gray-200 text-black dark:bg-[#1b1b1b] dark:text-white text-xs p-1.5 focus:outline-none" 
             :placeholder="$t('archive.placeholder')" 
             type="text"
+            v-model="accountStore.thought.value"
           >
         </div>
         <div class="flex items-center">
-          <div class="bg-blue-600 text-white dark:text-black text-xs py-1 sm:py-1.5 px-2 sm:px-4 transition-all ease-in hover:bg-blue-700 cursor-pointer rounded">
+          <div @click="accountStore.addThought(slug)" class="bg-blue-600 text-white dark:text-black text-xs py-1 sm:py-1.5 px-2 sm:px-4 transition-all ease-in hover:bg-blue-700 cursor-pointer rounded">
             {{ $t('archive.submit') }}
           </div>
           <div @click="thoughtBoxIsVisible = !thoughtBoxIsVisible" class="text-xs py-1.5 px-4 transition-all ease-in hover:text-orange-800 cursor-pointer rounded">
