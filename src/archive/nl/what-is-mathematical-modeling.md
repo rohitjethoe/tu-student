@@ -2,35 +2,42 @@
 
 <iframe width="100%" height="300" src="https://www.youtube.com/embed/M3R7hhQFM4Y?si=NmL7TnM63LntoWet" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
  
+Wiskunde, met name calculus, wordt gebruikt om real-world problemen op te lossen door middel van *wiskundige modellering*.
 
-World Solar Challenge: Bouw de snelste auto met alleen de zon als energiebron.
-  
-Dit is wat wiskundigen een _real-world problem_ zouden noemen.
-  
-We willen de energie-invoer maximaliseren en het energieverlies minimaliseren:
-<ul class="list-disc pl-4">
-    <li>Hoeveel energie wordt gewonnen?</li>
-    <li>Hoeveel energieverlies door wrijving?</li>
-</ul>
- 
+Bijvoorbeeld analyseren van een probleem, het opdelen in kleinere vragen en het beschrijven van relaties tussen variabelen door middel van *functies*.
 
-_Energie-invoer_ van de __Nuna 7__:
+Bijvoorbeeld, het optimaliseren van de prestaties van een zonneauto vereist het *modelleren* van de energie-invoer en -verliezen door factoren zoals lucht- en rolweerstand.
 
-$$ P_{in} = \eta_{eff} * A * P_{sun}(\alpha_{sun}) * cos(\alpha_{sun}) $$
+Het oplossen van dergelijke modellen omvat vaak vergelijkingen om optimale oplossingen te vinden, zoals het maximaliseren van de snelheid onder bepaalde omstandigheden.
 
-_Energieverlies_ van de __Nuna 7__:
+Energie-invoer van **de Nuna 7**:
 
-$$ P_{loss} = P_{roll} + P-{air} + P_{elec} $$
+$$
+P_{in}=\eta_{eff}∗A∗P_{sun}(\alpha_{sun})∗cos(\alpha_{sun})
+$$
 
-Deze cursus heet natuurlijk _rekening_, dus zodra we ons probleem hebben gemodelleerd in functies, kunnen we beginnen met _berekeningen_.
-  
-Deze berekeningen kunnen vervolgens worden _geïnterpreteerd_ om _realistische voorspellingen_ te maken, zodat deze weer kunnen worden gebruikt in _realistische problemen_.
-  
-Wiskundige modellering wordt gebruikt in __geneeskunde__, __economie__, __wetenschap__ en __techniek__:
+Energieverlies van **de Nuna 7**:
 
-<ul class="list-disc pl-4">
-    <li>"Wat is de optimale dosis voor dit medicijn?"</li>
-    <li>"Hoe kan dit bedrijf de winst maximaliseren?"</li>
-</ul>
+$$
+P_{loss}=P_{roll}+P_{air}+P_{elec}
+$$
+
+Toepassingen beslaan velden zoals techniek, geneeskunde en economie, met vragen als het minimaliseren van energieverbruik, het maximaliseren van winst, of het ontwerpen van efficiënte systemen.
+
+Kernonderwerpen omvatten de eigenschappen en toepassingen van functies zoals:
+
+*polynoomfuncties*
+
+$$
+f(x) = x^3
+$$
+
+*exponentiële functies*
+
+$$
+f(x) = e^x
+$$
+
+goniometrische functies
  
 <a href="/archive/what-is-a-function">Ga naar volgende (Wat Is Een Functie?)</a>
