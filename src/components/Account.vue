@@ -7,7 +7,7 @@ const menuOpened = ref(false)
 
 const pages = [
     { title: 'account.details', path: '/account/details' },
-    { title: 'account.markings', path: '/account/markings' }
+    { title: 'account.thoughts', path: '/account/thoughts' }
 ]
 
 const logout = async () => authStore.logout()
