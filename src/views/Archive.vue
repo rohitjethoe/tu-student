@@ -9,19 +9,16 @@ import katex from 'katex';
 
 const authStore = useAuthStore();
 const accountStore = useAccountStore();
-
 const { locale } = useI18n();
 const route = useRoute();
 const slug = route.params.slug;
-
 const thoughtBoxIsVisible = ref(false);
-
-const markdownFiles = import.meta.glob(`@/archive/**/*.md`, { query: '?raw', import: 'default' });
+const archivedFiles = import.meta.glob(`@/archive/**/*.md`, { query: '?raw', import: 'default' });
 const module = ref(null);
 const content = ref('null');
-
 const INLINE_MATH_REGEX = /\$([^\$]+)\$/g;
 const BLOCK_MATH_REGEX = /\$\$([\s\S]+?)\$\$/g;
+const thoughtsOpened = ref(false);
 
 const renderKaTeX = (latex, displayMode = false) => {
   try {
@@ -38,8 +35,8 @@ const renderKaTeX = (latex, displayMode = false) => {
 
 const loadMarkdown = async () => {
   const filePath = `/src/archive/${locale.value}/${slug}.md`;
-  if (filePath in markdownFiles) {
-    module.value = await markdownFiles[filePath]();
+  if (filePath in archivedFiles) {
+    module.value = await archivedFiles[filePath]();
   } else {
     module.value = null;
     return;
@@ -56,8 +53,6 @@ const loadMarkdown = async () => {
   }
 };
 
-const thoughtsOpened = ref(false);
-
 const addThought = async () => {
   await accountStore.addThought(slug);
   await accountStore.getThoughts(slug);
@@ -65,8 +60,8 @@ const addThought = async () => {
 };
 
 onMounted(() => {
-  loadMarkdown();
   window.document.title = `${slug.replace(/-/g, ' ').replace(/\b\w/g, char => char.toUpperCase())} | ${locale.value === "en" ? 'www' : locale.value}.tustudent.blog`;
+  loadMarkdown();
 
   const unsubscribe = authStore.$subscribe((mutation, state) => {
     if (state.user) {
@@ -107,13 +102,13 @@ onMounted(() => {
       </div>
     </div>
 
-    <div v-if="authStore.user" class="flex gap-3 pt-4 relative">
-      <div @click="thoughtBoxIsVisible = !thoughtBoxIsVisible" class="button text-sm py-1.5 px-3 rounded-md cursor-pointer transition-all ease-in">
-        💭 {{ $t('archive.thought') }}
-      </div>
+    <div class="flex gap-3 pt-4 relative">
       <a :href="`/exercises/${slug}`" class="button text-sm py-1.5 px-3 rounded-md cursor-pointer transition-all ease-in no-underline font-[400]">
         ⭐️ {{ $t('archive.exercises') }}
       </a>
+      <div v-if="authStore.user" @click="thoughtBoxIsVisible = !thoughtBoxIsVisible" class="button text-sm py-1.5 px-3 rounded-md cursor-pointer transition-all ease-in">
+        💭 {{ $t('archive.thought') }}
+      </div>
       <div :class="thoughtBoxIsVisible ? 'opacity-100 pointer-events-all' : 'opacity-0 pointer-events-none'" class="absolute top-2.5 left-0 flex items-center justify-between bg-gray-200 dark:bg-[#1b1b1b] w-full py-2 sm:py-4 px-3 sm:px-6 rounded transition-all ease-in">
         <div class="flex items-center gap-1.5 sm:gap-3">
           <div>
