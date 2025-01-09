@@ -71,6 +71,10 @@ a:hover {
     @apply text-gray-400 cursor-pointer;
   }
 
+  .tu-markdown ol {
+    @apply list-decimal pl-6;
+  }
+
   @media (min-width: 768px) {
    .tu-markdown p {
     @apply w-2/3;
@@ -122,5 +126,9 @@ a:hover {
 
   .tu-markdown li:hover {
     @apply text-gray-500;
+  }
+
+  .tu-markdown th {
+    @apply bg-[#f9f9f9];
   }
 }

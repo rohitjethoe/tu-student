@@ -1,30 +1,79 @@
-<span style="font-weight: 500; background-color:rgba(155, 126, 222, 0.1); color: #c084fc; margin-right: 5px; padding: 5px 10px 7px; border: 1px solid #c084fc; border-radius: 1rem;">vwo wiskunde b</span> <span style="font-weight: 500; background-color:rgba(126, 171, 222, 0.1); color: #7eabde; padding: 5px 10px 7px; border: 1px solid #7eabde; border-radius: 1rem;">functies</span>    
-
 <iframe width="100%" height="300" src="https://www.youtube.com/embed/UvpH5Uj7BuE?si=WjKBYlQln08lJPr7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
- 
 
-_functies_ zijn hulpmiddelen om afhankelijkheden tussen hoeveelheden te beschrijven en om de echte wereld te modelleren.
-  
-_polynoomfuncties_:
-$$f(x) = x^2$$
-  
-_goniometrische functies_:
-$$f(x) = sin(x)$$
-  
-_exponentiële functies_:
-$$f(x) = e^x$$
-  
-_een functie_ = een regel die twee gegeven verzamelingen relateert. Aan elk object uit de ene verzameling koppelt het precies één object uit de andere verzameling.
-  
-Dus een _functie_ bestaat uit de volgende gegevens:
-<ul class="pl-4 list-disc">
-    <li>domein = een verzameling van mogelijke invoerwaarden</li>
-    <li>codomein = een verzameling waarin de uitvoerwaarden terechtkomen</li>
-    <li>een regel die elk element in de eerste verzameling koppelt aan een element in de tweede verzameling.</li>
-</ul>
- 
+Wiskunde gebruikt functies om relaties tussen grootheden te beschrijven en *de realiteit te modelleren*. 
 
-Meer over _domein_ en _codomein_ in sectie 1.6.
+Een **functie** is een regel die elk object in een invoerset koppelt aan precies één object in een uitvoerset. Functies kunnen worden gezien als machines: ze nemen een invoer en produceren een specifieke uitvoer. 
 
+Bijvoorbeeld, een databaseprogramma dat alleen de eerste film van een acteur retourneert, definieert een functie. 
+
+In de calculus worden functies beperkt tot reële getallen, waarbij elke invoer precies één uitvoer produceert. 
+
+Bijvoorbeeld, de "kwadratische functie" neemt een getal zoals 3 en geeft 9 als uitvoer, waarbij zowel de *domein* als de *codomein* de verzameling reële getallen \$\\R\$ is.
+
+Samenvattend: een functie is een machine die een relatie legt tussen twee verzamelingen, met de voorwaarde dat elke invoer precies één uitvoer oplevert.
  
-In Calculus houden we ons bezig met functies die reële getallen naar reële getallen sturen.
+ 
+<iframe width="100%" height="300" src="https://www.youtube.com/embed/isqc36BSKWo?si=K_PHZjYYaDP-nceH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+ 
+Hoe beschrijven we een functie? We zullen ons beperken tot functies die getallen naar getallen sturen.
+
+Een natuurlijke vraag: gegeven een functie, hoe beschrijven we wat het doet met zijn mogelijke invoerwaarden?
+
+Functies kunnen op vier manieren worden beschreven:
+
+1. __Formule__: Biedt een beknopte, universele regel voor alle invoerwaarden. De kwadratische functie kan worden uitgedrukt als \$f(x) = x^2\$, waarbij \$x\$ de invoer is en \$x^2\$ de uitvoer; of als:
+
+$$ f : x → x^2 $$
+
+Dit wordt gelezen als 'f(x) naar x kwadraat'.
+
+Formules zijn krachtig, maar niet altijd praktisch of mogelijk voor gegevens uit de echte wereld.
+
+2. __Tabel__: Vat relaties samen tussen specifieke invoer- en uitvoerwaarden, zoals rondetijden bij een race of bevolkingsgegevens over de jaren.
+
+<table>
+    <thead>
+        <tr>
+            <th>Tijd</th>
+            <th>Wereldbevolking</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1000 AD</td>
+            <td>310.000.000</td>
+        </tr>
+        <tr>
+            <td>1500 AD</td>
+            <td>460.000.000</td>
+        </tr>
+        <tr>
+            <td>1800 AD</td>
+            <td>1.000.000.000</td>
+        </tr>
+        <tr>
+            <td>1900 AD</td>
+            <td>1.650.000.000</td>
+        </tr>
+        <tr>
+            <td>2000 AD</td>
+            <td>6.000.000.000</td>
+        </tr>
+        <tr>
+            <td>2025 AD</td>
+            <td>8.100.000.000</td>
+        </tr>
+    </tbody>
+</table>
+
+Tabellen hebben als nadeel dat ze alleen eindige punten representeren; zoals bij onze functie \$x^2\$, is het onpraktisch.
+
+3. __Grafiek__: Biedt een visueel overzicht van het gedrag van een functie, zoals <u>stijging</u>, <u>daling</u> of <u>extrema</u>. 
+
+Grafieken maken eigenschappen gemakkelijk te interpreteren; __maar__ missen <u>precisie</u> en kunnen niet het volledige domein weergeven.
+
+4. __Woorden__: Beschrijf het gedrag van de functie in <u>eenvoudige taal</u>.
+
+Bijvoorbeeld, de _floor function_ stelt dat \$x\$ gelijk is aan het grootste gehele getal dat kleiner is dan of gelijk is aan \$x\$. Woorden kunnen verduidelijken wat tabellen, grafieken of formules mogelijk <u>verborgen houden</u>.
+
+Het is nuttig en belangrijk om tussen deze vier manieren te kunnen schakelen bij het beschrijven van een functie, vooral bij standaardfuncties.

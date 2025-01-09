@@ -1,6 +1,7 @@
 <script setup>
 import { onMounted, ref } from 'vue';
 import { useI18n } from 'vue-i18n';
+
 import en from '@/locale/en.js';
 import nl from '@/locale/nl.js';
 
