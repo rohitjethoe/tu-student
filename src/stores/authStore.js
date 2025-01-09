@@ -7,11 +7,6 @@ export const useAuthStore = defineStore('user', {
         user: null,
         isLoggedIn: false,
     }),
-
-    getters: {
-        userName: (state) => state.user?.name || 'Guest',
-    },
-
     actions: {
         initialize() {
             setPersistence(auth, browserLocalPersistence)
