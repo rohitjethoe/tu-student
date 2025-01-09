@@ -12,15 +12,11 @@ Het oplossen van dergelijke modellen omvat vaak vergelijkingen om optimale oplos
 
 Energie-invoer van **de Nuna 7**:
 
-$$
-P_{in}=\eta_{eff}∗A∗P_{sun}(\alpha_{sun})∗cos(\alpha_{sun})
-$$
+$$ P_{in}=\eta_{eff}∗A∗P_{sun}(\alpha_{sun})∗cos(\alpha_{sun}) $$
 
 Energieverlies van **de Nuna 7**:
 
-$$
-P_{loss}=P_{roll}+P_{air}+P_{elec}
-$$
+$$ P_{loss}=P_{roll}+P_{air}+P_{elec} $$
 
 Toepassingen beslaan velden zoals techniek, geneeskunde en economie, met vragen als het minimaliseren van energieverbruik, het maximaliseren van winst, of het ontwerpen van efficiënte systemen.
 
@@ -28,15 +24,11 @@ Kernonderwerpen omvatten de eigenschappen en toepassingen van functies zoals:
 
 *polynoomfuncties*
 
-$$
-f(x) = x^3
-$$
+$$ f(x) = x^3 $$
 
 *exponentiële functies*
 
-$$
-f(x) = e^x
-$$
+$$ f(x) = e^x $$
 
 goniometrische functies
  
