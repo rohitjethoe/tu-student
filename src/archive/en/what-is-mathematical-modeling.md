@@ -18,7 +18,7 @@ Power loss of **the Nuna 7:**
 
 $$P_{loss}=P_{roll}+P_{air}+P_{elec}$$
 
-Applications span fields like engineering, medicine, and economics, addressing questions such as minimizing energy use, maximizing profit, or designing efficient systems. 
+Applications span fields like <a href="https://en.m.wikipedia.org/wiki/Engineering" target="_blank">engineering</a>, <a href="https://en.m.wikipedia.org/wiki/Medicine" target="_blank">medicine</a>, and <a href="https://en.m.wikipedia.org/wiki/Economics" target="_blank">economics</a>, addressing questions such as minimizing energy use, maximizing profit, or designing efficient systems. 
 
 Core topics include the properties and applications of functions like:
 
@@ -31,5 +31,7 @@ $$f(x) = x^3$$
 $$f(x) = e^x$$
 
 *trigonometric functions*
+
+$$f(x) = sin(x)$$
  
 <a href="/archive/what-is-a-function">Go to next (What Is A Function?)</a>
