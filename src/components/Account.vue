@@ -14,7 +14,7 @@ onMounted(() => authStore.initialize());
     <div v-if="authStore.user" class="fixed w-full top-0 left-0 z-10">
         <div class="bg-gray-200 text-black dark:bg-black dark:text-white w-full px-4 py-2 text-sm flex justify-between items-center">
             <div @click="menuOpened = !menuOpened" class="toggle select-none hover:cursor-pointer font-medium">
-                {{ authStore.user.email }}
+                {{ authStore.userName }}
             </div>
             <div @click="logout" class="select-none hover:cursor-pointer">
                 {{ $t('account.logout.title') }}
