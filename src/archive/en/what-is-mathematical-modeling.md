@@ -12,15 +12,11 @@ Solving such models often involves equations to find optimal solutions, like max
 
 Power input of **the Nuna 7:**
 
-$$
-P_{in}=\eta_{eff}∗A∗P_{sun}(\alpha_{sun})∗cos(\alpha_{sun})
-$$
+$$P_{in}=\\eta_{eff}∗A∗P_{sun}(\\alpha_{sun})∗cos(\\alpha_{sun})$$
 
 Power loss of **the Nuna 7:**
 
-$$
-P_{loss}=P_{roll}+P_{air}+P_{elec}
-$$
+$$P_{loss}=P_{roll}+P_{air}+P_{elec}$$
 
 Applications span fields like engineering, medicine, and economics, addressing questions such as minimizing energy use, maximizing profit, or designing efficient systems. 
 
@@ -28,15 +24,11 @@ Core topics include the properties and applications of functions like:
 
 *polynomials functions*
 
-$$
-f(x) = x^3
-$$
+$$f(x) = x^3$$
 
 *exponential functions*
 
-$$
-f(x) = e^x
-$$
+$$f(x) = e^x$$
 
 *trigonometric functions*
  
