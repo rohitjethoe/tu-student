@@ -45,7 +45,11 @@ const nl = {
         thought: "Voeg gedachte toe",
         placeholder: "Voeg je gedachte toe...",
         submit: "Voeg toe",
-        cancel: "Verwerp"
+        cancel: "Verwerp",
+        months: ['januari', 'februari', 'maart', 'april', 'mei', 'juni', 'juli', 'augustus', 'september', 'oktober', 'november', 'december'],
+        days: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31'],
+        addedOn: "toegevoegd op",
+        seeAll: "Bekijk alle markeringen"    
     },
     account: {
         details: "Accountgegevens",

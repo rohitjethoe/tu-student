@@ -56,18 +56,53 @@ const loadMarkdown = async () => {
   }
 };
 
+const addThought = async () => {
+  await accountStore.addThought(slug);
+  await accountStore.getThoughts(slug);
+  thoughtBoxIsVisible.value = false;
+};
+
 onMounted(() => {
   loadMarkdown();
   window.document.title = `${slug.replace(/-/g, ' ').replace(/\b\w/g, char => char.toUpperCase())} | ${locale.value === "en" ? 'www' : locale.value}.tustudent.blog`;
 
-  setTimeout(() => {
+  const unsubscribe = authStore.$subscribe((mutation, state) => {
+    if (state.user) {
+      accountStore.getThoughts(slug);
+      unsubscribe();
+    }
+  });
+
+  if (authStore.user) {
     accountStore.getThoughts(slug);
-  }, 500)
+    unsubscribe();
+  }
 });
 </script>
 
 <template>
   <div>
+    <div class="pt-4">
+      <div v-for="thought in accountStore.thoughts" class="flex items-center gap-2 py-0.5">
+        <div class="flex-1 flex items-center gap-2 justify-end">
+          <div class="text-xs text-gray-500 dark:text-gray-400">
+            {{ thought.icon }}
+          </div>
+          <div class="text-xs text-gray-500 dark:text-gray-400">
+            {{ thought.value }}
+          </div>
+        </div>
+        <div class="text-xs text-black dark:text-white text-left">
+          — {{ $t('archive.addedOn') }} {{ locale === "nl" ? $t(`archive.days[${new Date(thought.createdAt.seconds).getDay()}]`) : '' }}
+          {{ $t(`archive.months[${new Date(thought.createdAt.seconds).getMonth()}]`).toLowerCase() }}
+          {{ locale === "en" ? $t(`archive.days[${new Date(thought.createdAt.seconds).getDay()}]`) : '' }}
+        </div>
+      </div>
+      <div>
+        <a class="text-xs group" href="/account/markings">{{$t('archive.seeAll')}} →</a>
+      </div>
+    </div>
+
     <div v-if="authStore.user" class="flex gap-3 pt-4 relative">
       <div @click="thoughtBoxIsVisible = !thoughtBoxIsVisible" class="button text-sm py-1.5 px-3 rounded-md cursor-pointer transition-all ease-in">
         💭 {{ $t('archive.thought') }}
@@ -85,7 +120,7 @@ onMounted(() => {
           >
         </div>
         <div class="flex items-center">
-          <div @click="accountStore.addThought(slug)" class="bg-blue-600 text-white dark:text-black text-xs py-1 sm:py-1.5 px-2 sm:px-4 transition-all ease-in hover:bg-blue-700 cursor-pointer rounded">
+          <div @click="addThought" class="bg-blue-600 text-white dark:text-black text-xs py-1 sm:py-1.5 px-2 sm:px-4 transition-all ease-in hover:bg-blue-700 cursor-pointer rounded">
             {{ $t('archive.submit') }}
           </div>
           <div @click="thoughtBoxIsVisible = !thoughtBoxIsVisible" class="text-xs py-1.5 px-4 transition-all ease-in hover:text-orange-800 cursor-pointer rounded">

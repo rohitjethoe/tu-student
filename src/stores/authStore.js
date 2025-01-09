@@ -5,7 +5,7 @@ import { signInWithPopup, signOut, onAuthStateChanged, GoogleAuthProvider, Githu
 export const useAuthStore = defineStore('user', {
     state: () => ({
         user: null,
-        isLoggedIn: false,
+        isLoggedIn: false
     }),
     actions: {
         initialize() {

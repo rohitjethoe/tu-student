@@ -48,16 +48,12 @@ export const useAccountStore = defineStore('account', {
                 console.error('User must be logged in to add a thought.');
                 return;
             }
-    
+
             try {
                 const thoughtsCollection = collection(db, 'thoughts');
-    
-                const q = query(
-                    thoughtsCollection, 
-                    where('uid', '==', authStore.user.uid),
-                    where('slug', '==', slug)
-                );
-    
+                const withSlug = query(thoughtsCollection, where('uid', '==', authStore.user.uid),where('slug', '==', slug));
+                const noSlug = query(thoughtsCollection, where('uid', '==', authStore.user.uid))
+                const q = slug ? withSlug : noSlug;    
                 const querySnapshot = await getDocs(q);
     
                 this.thoughts = querySnapshot.docs.map(doc => ({

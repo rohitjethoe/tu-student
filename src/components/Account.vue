@@ -1,17 +1,22 @@
 <script setup>
-import { ref, onMounted } from "vue";
-import { useAuthStore } from '@/stores/authStore.js';
+import { ref, onMounted } from "vue"
+import { useAuthStore } from '@/stores/authStore.js'
 
-const authStore = useAuthStore();
+const authStore = useAuthStore()
 const menuOpened = ref(false)
 
-const logout = async () => authStore.logout();
+const pages = [
+    { title: 'account.details', path: '/account/details' },
+    { title: 'account.markings', path: '/account/markings' }
+]
 
-onMounted(() => authStore.initialize());
+const logout = async () => authStore.logout()
+
+onMounted(() => authStore.initialize())
 </script>
 
 <template>
-    <div v-if="authStore.user" class="fixed w-full top-0 left-0 z-10">
+    <div v-if="authStore.user" class="fixed w-full top-0 h-0 left-0 z-10">
         <div class="bg-gray-200 text-black dark:bg-black dark:text-white w-full px-4 py-2 text-sm flex justify-between items-center">
             <div @click="menuOpened = !menuOpened" class="toggle select-none hover:cursor-pointer font-medium">
                 {{ authStore.user.email }}
@@ -20,13 +25,10 @@ onMounted(() => authStore.initialize());
                 {{ $t('account.logout.title') }}
             </div>
         </div>
-        <div class="h-0 transition-bg transition-text ease-in" :class="menuOpened ? 'h-full bg-gray-100 text-black/100 dark:bg-black/75 dark:text-white/100 pointer-events-all' : 'bg-gray-100/0 text-black/0 dark:bg-black/0 dark:text-white/0 pointer-events-none'">
+        <div class="transition-all ease-in" :class="menuOpened ? 'opacity-100 pointer-events-all' : 'opacity-0 pointer-events-none'">
             <ul>
-                <li class="text-sm px-4 py-2">
-                    {{ $t('account.details') }}
-                </li>
-                <li class="text-sm px-4 py-2">
-                    {{ $t('account.markings') }}
+                <li class="text-sm px-4 py-2 bg-gray-100 dark:bg-black" v-for="page in pages">
+                    <a class="links no-underline" :href="page.path">{{ $t(page.title) }}</a>
                 </li>
             </ul>
         </div>
@@ -43,5 +45,23 @@ onMounted(() => authStore.initialize());
     border-right: .3em solid transparent;
     border-bottom: 0;
     border-left: .3em solid transparent;
+}
+
+.links {
+    color: #fff; 
+
+    @apply transition-all ease-in;
+
+    &:hover {
+        @apply text-gray-400;
+    }
+
+    @media (prefers-color-scheme: light) {
+        color: #242424;
+
+        &:hover {
+            color: #000;
+        }
+    }
 }
 </style>
