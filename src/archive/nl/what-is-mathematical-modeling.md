@@ -30,6 +30,8 @@ $$ f(x) = x^3 $$
 
 $$ f(x) = e^x $$
 
-goniometrische functies
+*goniometrische functies*
+
+$$ f(x) = sin(x) $$
  
 <a href="/archive/what-is-a-function">Ga naar volgende (Wat Is Een Functie?)</a>
