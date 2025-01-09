@@ -41,7 +41,8 @@ const nl = {
                     slug: "what-is-mathematical-modeling"
                 }
             ]
-        }]
+        }],
+        thought: "Voeg gedachte toe"
     },
     account: {
         details: "Accountgegevens",

@@ -26,19 +26,6 @@ a:hover {
   color: #535bf2;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
-
 .container {
   min-height: calc(100svh - 60px);
 }
@@ -69,7 +56,17 @@ a:hover {
   }
 
   .tu-markdown p {
-    @apply py-2;
+    @apply py-2 transition-all ease-in;
+  }
+
+  .tu-markdown p:hover {
+    @apply text-gray-400 cursor-pointer;
+  }
+
+  @media (min-width: 768px) {
+   .tu-markdown p {
+    @apply w-2/3;
+   }
   }
 
   .tu-markdown iframe {
@@ -96,5 +93,22 @@ a:hover {
   .tu-markdown td {
     @apply py-1 pl-2;
     @apply border border-[#555555];
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+
+  .tu-markdown p:hover {
+    @apply text-gray-500;
   }
 }

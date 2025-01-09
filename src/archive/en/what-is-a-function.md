@@ -6,9 +6,7 @@
 
 Mathematics uses functions to describe relationships between quantities and *model reality*. 
 
-A **function** is a rule that associates each object in an input set with exactly one object in an output set.
-
-Functions can be thought of as machines: they take an input and produce a specific output. 
+A **function** is a rule that associates each object in an input set with exactly one object in an output set. Functions can be thought of as machines: they take an input and produce a specific output. 
 
 For example, a database program that returns only the first movie of an actor defines a function. 
 

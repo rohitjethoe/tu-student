@@ -61,7 +61,7 @@ onMounted(() => {
 <template>
   <div>
     <div class="flex gap-3 pt-4">
-      <div class="button text-sm py-1.5 px-3 rounded-md cursor-pointer transition-all ease-in">💭 Add thought</div>
+      <div class="button text-sm py-1.5 px-3 rounded-md cursor-pointer transition-all ease-in">💭 {{ $t('archive.thought') }}</div>
     </div>
     <div class="pb-4 mt-3 italic">
       /archive/{{ locale }}/{{ slug }}.md

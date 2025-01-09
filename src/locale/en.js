@@ -41,7 +41,8 @@ const en = {
                     slug: "what-is-mathematical-modeling"
                 }
             ]
-        }]
+        }],
+        thought: "Add thought"
     },
     account: {
         details: "Account details",
