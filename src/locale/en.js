@@ -1,7 +1,7 @@
 const en = {
     appName: "TU Student Blog",
     home: {
-        update: "Latest update in 8 January 2025",
+        update: "Latest update in January 2025",
         biography: {
             main: `Currently following a Bachelor's degree in Computer Science and Engineering, also known as "Technische Informatica," at a research university in Europe. 🇪🇺`,
             references: {
