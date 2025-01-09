@@ -6,9 +6,14 @@ import { marked } from 'marked';
 import { useAuthStore } from '@/stores/authStore.js';
 import katex from 'katex';
 
+const authStore = useAuthStore();
+
 const { locale } = useI18n();
 const route = useRoute();
 const slug = route.params.slug;
+
+const thoughtBoxIsVisible = ref(false);
+
 const markdownFiles = import.meta.glob(`@/archive/**/*.md`, { query: '?raw', import: 'default' });
 const module = ref(null);
 const content = ref('null');
@@ -31,7 +36,6 @@ const renderKaTeX = (latex, displayMode = false) => {
 
 const loadMarkdown = async () => {
   const filePath = `/src/archive/${locale.value}/${slug}.md`;
-  
   if (filePath in markdownFiles) {
     module.value = await markdownFiles[filePath]();
   } else {
@@ -43,11 +47,9 @@ const loadMarkdown = async () => {
     let processedContent = module.value.replace(BLOCK_MATH_REGEX, (match, latex) => {
       return `<div class="katex-block">${renderKaTeX(latex.trim(), true)}</div>`;
     });
-
     processedContent = processedContent.replace(INLINE_MATH_REGEX, (match, latex) => {
       return `<span class="katex-inline">${renderKaTeX(latex.trim(), false)}</span>`;
     });
-
     content.value = marked(processedContent);
   }
 };
@@ -60,9 +62,32 @@ onMounted(() => {
 
 <template>
   <div>
-    <div class="flex gap-3 pt-4">
-      <div class="button text-sm py-1.5 px-3 rounded-md cursor-pointer transition-all ease-in">💭 {{ $t('archive.thought') }}</div>
+    <div v-if="authStore.user" class="flex gap-3 pt-4 relative">
+      <div @click="thoughtBoxIsVisible = !thoughtBoxIsVisible" class="button text-sm py-1.5 px-3 rounded-md cursor-pointer transition-all ease-in">
+        💭 {{ $t('archive.thought') }}
+      </div>
+      <div :class="thoughtBoxIsVisible ? 'opacity-100 pointer-events-all' : 'opacity-0 pointer-events-none'" class="absolute top-4 left-0 flex items-center justify-between bg-gray-200 dark:bg-[#1b1b1b] w-full py-2 sm:py-4 px-3 sm:px-6 rounded transition-all ease-in">
+        <div class="flex items-center gap-1.5 sm:gap-3">
+          <div>
+            ✨
+          </div>
+          <input 
+            class="bg-gray-200 text-black dark:bg-[#1b1b1b] dark:text-white text-xs p-1.5 focus:outline-none" 
+            :placeholder="$t('archive.placeholder')" 
+            type="text"
+          >
+        </div>
+        <div class="flex items-center">
+          <div class="bg-blue-600 text-white dark:text-black text-xs py-1.5 px-4 transition-all ease-in hover:bg-blue-700 cursor-pointer rounded">
+            {{ $t('archive.submit') }}
+          </div>
+          <div @click="thoughtBoxIsVisible = !thoughtBoxIsVisible" class="text-xs py-1.5 px-4 transition-all ease-in hover:text-orange-800 cursor-pointer rounded">
+            {{ $t('archive.cancel') }} 🔥
+          </div>
+        </div>
+      </div>
     </div>
+    
     <div class="pb-4 mt-3 italic">
       /archive/{{ locale }}/{{ slug }}.md
     </div>
@@ -71,7 +96,6 @@ onMounted(() => {
 </template>
 
 <style lang="scss">
-// Note: removed 'scoped' to allow KaTeX styles to work properly
 .button {
   @apply bg-gray-100;
   &:hover {

@@ -42,7 +42,10 @@ const nl = {
                 }
             ]
         }],
-        thought: "Voeg gedachte toe"
+        thought: "Voeg gedachte toe",
+        placeholder: "Voeg je gedachte toe...",
+        submit: "Voeg toe",
+        cancel: "Verwerp"
     },
     account: {
         details: "Accountgegevens",

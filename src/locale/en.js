@@ -42,7 +42,10 @@ const en = {
                 }
             ]
         }],
-        thought: "Add thought"
+        thought: "Add thought",
+        placeholder: "Add your thought...",
+        submit: "Add",
+        cancel: "Undo"
     },
     account: {
         details: "Account details",
