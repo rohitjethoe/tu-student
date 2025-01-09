@@ -4,50 +4,51 @@ import { useRoute } from 'vue-router';
 import { useI18n } from 'vue-i18n';
 import { marked } from 'marked';
 import { useAuthStore } from '@/stores/authStore.js';
-import katex from 'katex'; 
-import 'katex/dist/katex.min.css'; 
-
-const authStore = useAuthStore();
+import katex from 'katex';
 
 const { locale } = useI18n();
 const route = useRoute();
 const slug = route.params.slug;
-
 const markdownFiles = import.meta.glob(`@/archive/**/*.md`, { query: '?raw', import: 'default' });
 const module = ref(null);
 const content = ref('null');
 
+const INLINE_MATH_REGEX = /\$([^\$]+)\$/g;
+const BLOCK_MATH_REGEX = /\$\$([\s\S]+?)\$\$/g;
+
+const renderKaTeX = (latex, displayMode = false) => {
+  try {
+    return katex.renderToString(latex, {
+      displayMode,
+      throwOnError: false,
+      strict: false
+    });
+  } catch (error) {
+    console.error(`Error rendering ${displayMode ? 'block' : 'inline'} LaTeX:`, error);
+    return latex;
+  }
+};
+
 const loadMarkdown = async () => {
   const filePath = `/src/archive/${locale.value}/${slug}.md`;
-
+  
   if (filePath in markdownFiles) {
-    module.value = await markdownFiles[filePath](); 
+    module.value = await markdownFiles[filePath]();
   } else {
     module.value = null;
+    return;
   }
 
   if (module.value !== null) {
-    let renderedMarkdown = marked(module.value);
-
-    renderedMarkdown = renderedMarkdown.replace(/\\\((.*?)\\\)/g, (match, latex) => {
-      try {
-        return katex.renderToString(latex, { displayMode: false }); 
-      } catch (error) {
-        console.error("Error rendering inline LaTeX:", error);
-        return match;
-      }
+    let processedContent = module.value.replace(BLOCK_MATH_REGEX, (match, latex) => {
+      return `<div class="katex-block">${renderKaTeX(latex.trim(), true)}</div>`;
     });
 
-    renderedMarkdown = renderedMarkdown.replace(/\$\$(.*?)\$\$/g, (match, latex) => {
-      try {
-        return `<div class="katex-block">${katex.renderToString(latex, { displayMode: true })}</div>`; // Render block math
-      } catch (error) {
-        console.error("Error rendering block LaTeX:", error);
-        return match;
-      }
+    processedContent = processedContent.replace(INLINE_MATH_REGEX, (match, latex) => {
+      return `<span class="katex-inline">${renderKaTeX(latex.trim(), false)}</span>`;
     });
 
-    content.value = renderedMarkdown;
+    content.value = marked(processedContent);
   }
 };
 
@@ -69,7 +70,8 @@ onMounted(() => {
   </div>
 </template>
 
-<style lang="scss" scoped> 
+<style lang="scss">
+// Note: removed 'scoped' to allow KaTeX styles to work properly
 .button {
   @apply bg-gray-100;
   &:hover {
@@ -81,5 +83,15 @@ onMounted(() => {
       background-color: rgba(#000, 0.75);
     }
   }
+}
+
+.katex-block {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 1em 0;
+}
+
+.katex-inline {
+  padding: 0 0.2em;
 }
 </style>

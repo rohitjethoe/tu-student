@@ -4,6 +4,7 @@ import { createPinia } from 'pinia';
 import './style.css'
 import App from './App.vue'
 import router from './routes'
+import 'katex/dist/katex.min.css'; 
 
 const pinia = createPinia();
 
