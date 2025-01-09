@@ -4,7 +4,7 @@
  
 Wiskunde, met name calculus, wordt gebruikt om real-world problemen op te lossen door middel van *wiskundige modellering*.
 
-Bijvoorbeeld analyseren van een probleem, het opdelen in kleinere vragen en het beschrijven van relaties tussen variabelen door middel van *functies*.
+Met name analyseren van een probleem, het opdelen in kleinere vragen en het beschrijven van relaties tussen variabelen door middel van *functies*.
 
 Bijvoorbeeld, het optimaliseren van de prestaties van een zonneauto vereist het *modelleren* van de energie-invoer en -verliezen door factoren zoals lucht- en rolweerstand.
 
@@ -12,13 +12,13 @@ Het oplossen van dergelijke modellen omvat vaak vergelijkingen om optimale oplos
 
 Energie-invoer van **de Nuna 7**:
 
-$$ P_{in}=\eta_{eff}∗A∗P_{sun}(\alpha_{sun})∗cos(\alpha_{sun}) $$
+$$ P_{in}=\\eta_{eff}∗A∗P_{sun}(\\alpha_{sun})∗cos(\\alpha_{sun}) $$
 
 Energieverlies van **de Nuna 7**:
 
 $$ P_{loss}=P_{roll}+P_{air}+P_{elec} $$
 
-Toepassingen beslaan velden zoals techniek, geneeskunde en economie, met vragen als het minimaliseren van energieverbruik, het maximaliseren van winst, of het ontwerpen van efficiënte systemen.
+Toepassingen van Calculus beslaan velden zoals <a href="https://nl.m.wikipedia.org/wiki/Techniek" target="_blank">techniek</a>, <a href="https://nl.m.wikipedia.org/wiki/Geneeskunde" target="_blank">geneeskunde</a>en <a href="https://nl.wikipedia.org/wiki/Economie" target="_blank">economie</a>, met vragen als het minimaliseren van energieverbruik, het maximaliseren van winst, of het ontwerpen van efficiënte systemen.
 
 Kernonderwerpen omvatten de eigenschappen en toepassingen van functies zoals:
 
