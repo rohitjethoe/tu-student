@@ -57,7 +57,7 @@ const en = {
     about: "about",
     terms: {
         title: "Terms of service",
-        update: "Last updated on January 2025",
+        update: "Last updated on January 8th 2025",
         definitions: {
             title: "Definities",
             list: [
