@@ -78,7 +78,7 @@ onMounted(() => {
           >
         </div>
         <div class="flex items-center">
-          <div class="bg-blue-600 text-white dark:text-black text-xs py-1.5 px-4 transition-all ease-in hover:bg-blue-700 cursor-pointer rounded">
+          <div class="bg-blue-600 text-white dark:text-black text-xs pt-1 sm:pt-0 pb-1.5 sm:pb-0 sm:py-1.5 px-2 sm:px-4 transition-all ease-in hover:bg-blue-700 cursor-pointer rounded">
             {{ $t('archive.submit') }}
           </div>
           <div @click="thoughtBoxIsVisible = !thoughtBoxIsVisible" class="text-xs py-1.5 px-4 transition-all ease-in hover:text-orange-800 cursor-pointer rounded">
