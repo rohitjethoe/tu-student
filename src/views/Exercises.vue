@@ -16,7 +16,7 @@ const slug = route.params.slug;
 
 const thoughtBoxIsVisible = ref(false);
 
-const markdownFiles = import.meta.glob(`@/archive/**/*.md`, { query: '?raw', import: 'default' });
+const markdownFiles = import.meta.glob(`@/exercises/**/*.md`, { query: '?raw', import: 'default' });
 const module = ref(null);
 const content = ref('null');
 
@@ -37,7 +37,7 @@ const renderKaTeX = (latex, displayMode = false) => {
 };
 
 const loadMarkdown = async () => {
-  const filePath = `/src/archive/${locale.value}/${slug}.md`;
+  const filePath = `/src/exercises/${locale.value}/${slug}.md`;
   if (filePath in markdownFiles) {
     module.value = await markdownFiles[filePath]();
   } else {
@@ -111,8 +111,8 @@ onMounted(() => {
       <div @click="thoughtBoxIsVisible = !thoughtBoxIsVisible" class="button text-sm py-1.5 px-3 rounded-md cursor-pointer transition-all ease-in">
         💭 {{ $t('archive.thought') }}
       </div>
-      <a :href="`/exercises/${slug}`" class="button text-sm py-1.5 px-3 rounded-md cursor-pointer transition-all ease-in no-underline font-[400]">
-        ⭐️ {{ $t('archive.exercises') }}
+      <a :href="`/archive/${slug}`" class="button text-sm py-1.5 px-3 rounded-md cursor-pointer transition-all ease-in no-underline font-[400]">
+        📖 {{ $t('archive.material') }}
       </a>
       <div :class="thoughtBoxIsVisible ? 'opacity-100 pointer-events-all' : 'opacity-0 pointer-events-none'" class="absolute top-2.5 left-0 flex items-center justify-between bg-gray-200 dark:bg-[#1b1b1b] w-full py-2 sm:py-4 px-3 sm:px-6 rounded transition-all ease-in">
         <div class="flex items-center gap-1.5 sm:gap-3">
@@ -138,7 +138,7 @@ onMounted(() => {
     </div>
     
     <div class="pb-4 mt-3 italic">
-      /archive/{{ slug }}.md
+      /exercises/{{ slug }}.md
     </div>
     <div class="tu-markdown" v-html="content"></div>
   </div>

@@ -48,6 +48,8 @@ const en = {
             ]
         }],
         thought: "Add thought",
+        exercises: "Try exercises",
+        material: "View material",
         placeholder: "Add your thought...",
         submit: "Add",
         cancel: "Undo",

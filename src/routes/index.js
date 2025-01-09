@@ -21,6 +21,11 @@ const routes = [
         name: 'Archive',
         component: () => import('@/views/Archive.vue')
     },
+    {
+        path: '/exercises/:slug', 
+        name: 'Exercises',
+        component: () => import('@/views/Exercises.vue')
+    },
     { 
         path: '/login',
         name: 'Login', 
