@@ -31,6 +31,11 @@ const nl = {
             style: "text-purple-400 border-purple-400 bg-purple-400/10",
             posts: [
                 {
+                    title: "Wat Is Een Polynoomfunctie?",
+                    date: "2025-01-10T20:53:04.188Z",
+                    slug: "what-is-a-polynomial"
+                },
+                {
                     title: "Wat Is Een Functie?",
                     date: "2025-01-07T20:53:04.188Z",
                     slug: "what-is-a-function"
