@@ -98,7 +98,7 @@ onMounted(() => {
           {{ locale === "en" ? $t(`archive.days[${new Date(thought.createdAt.seconds).getDay()}]`) : '' }}
         </div>
       </div>
-      <div>
+      <div class="pt-4">
         <a class="text-xs group" href="/account/markings">{{$t('archive.seeAll')}} →</a>
       </div>
     </div>
