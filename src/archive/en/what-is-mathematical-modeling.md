@@ -2,34 +2,42 @@
 
 <iframe width="100%" height="300" src="https://www.youtube.com/embed/M3R7hhQFM4Y?si=NmL7TnM63LntoWet" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-World Solar Challenge: Build the fastest car only using the Sun as power source.
-  
-This is what mathematicians would call a _real-world problem_
-  
-We'll want to maximize power input and minimize power loss:
-<ul class="list-disc pl-4">
-    <li>How much power is harvested?</li>
-    <li>How much power loss due to friction?</li>
-</ul>
- 
+Mathematics, particularly Calculus, is used to solve real-world problems by using *mathematical modeling.* 
 
-_Power input_ of the __Nuna 7__:
+This involves *analyzing* a problem. breaking it into smaller questions, and describing relationships between variables through functions.
 
-$$ P_{in} = \eta_{eff} * A * P_{sun}(\alpha_{sun}) * cos(\alpha_{sun}) $$
+For example, optimizing a solar car’s performance requires *modeling* power input and losses due to factors like air and roll friction.
 
-_Power loss_ of the __Nuna 7__:
+Solving such models often involves equations to find optimal solutions, like maximizing speed under given conditions.
 
-$$ P_{loss} = P_{roll} + P-{air} + P_{elec} $$
+Power input of **the Nuna 7:**
 
-This course is ofcourse called _calculus_, so once we've modeled our problem into functions, we can start making _calculations_.
-  
-These calculations can then be _interpretted_, to make _real-world predictions_, s.t. these can be used in _real-world problems_ again.
-  
-Mathematical modeling is used in __medicine__, __economics__, __science__ and __engineering__:
+$$
+P_{in}=\eta_{eff}∗A∗P_{sun}(\alpha_{sun})∗cos(\alpha_{sun})
+$$
 
-<ul class="list-disc pl-4">
-    <li>"What is the optimum dose for this medicine?"</li>
-    <li>"How can this company maximize profit?"</li>
-</ul>
+Power loss of **the Nuna 7:**
+
+$$
+P_{loss}=P_{roll}+P_{air}+P_{elec}
+$$
+
+Applications span fields like engineering, medicine, and economics, addressing questions such as minimizing energy use, maximizing profit, or designing efficient systems. 
+
+Core topics include the properties and applications of functions like:
+
+*polynomials functions*
+
+$$
+f(x) = x^3
+$$
+
+*exponential functions*
+
+$$
+f(x) = e^x
+$$
+
+*trigonometric functions*
  
 <a href="/archive/what-is-a-function">Go to next (What Is A Function?)</a>
