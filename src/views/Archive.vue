@@ -1,57 +1,28 @@
 <script setup>
-import { onMounted, ref } from 'vue';
+import { onMounted, ref, computed } from 'vue';
 import { useRoute } from 'vue-router';
 import { useI18n } from 'vue-i18n';
-import { marked } from 'marked';
 import { useAuthStore } from '@/stores/authStore.js';
 import { useAccountStore } from '@/stores/accountStore.js';
-import katex from 'katex';
+import { useMarkdownStore } from '@/stores/markdownStore.js';
 
-const authStore = useAuthStore();
-const accountStore = useAccountStore();
+const type = computed(() => {
+  const path = route.path;
+  if (path.startsWith('/archive/')) return 'archive';
+  if (path.startsWith('/exercises/')) return 'exercises';
+  throw new Error('Invalid route path');
+});
+
 const { locale } = useI18n();
 const route = useRoute();
 const slug = route.params.slug;
+
+const markdownStore = useMarkdownStore();
+const authStore = useAuthStore();
+const accountStore = useAccountStore();
+
 const thoughtBoxIsVisible = ref(false);
-const archivedFiles = import.meta.glob(`@/archive/**/*.md`, { query: '?raw', import: 'default' });
-const module = ref(null);
-const content = ref('null');
-const INLINE_MATH_REGEX = /\$([^\$]+)\$/g;
-const BLOCK_MATH_REGEX = /\$\$([\s\S]+?)\$\$/g;
 const thoughtsOpened = ref(false);
-
-const renderKaTeX = (latex, displayMode = false) => {
-  try {
-    return katex.renderToString(latex, {
-      displayMode,
-      throwOnError: false,
-      strict: false
-    });
-  } catch (error) {
-    console.error(`Error rendering ${displayMode ? 'block' : 'inline'} LaTeX:`, error);
-    return latex;
-  }
-};
-
-const loadMarkdown = async () => {
-  const filePath = `/src/archive/${locale.value}/${slug}.md`;
-  if (filePath in archivedFiles) {
-    module.value = await archivedFiles[filePath]();
-  } else {
-    module.value = null;
-    return;
-  }
-
-  if (module.value !== null) {
-    let processedContent = module.value.replace(BLOCK_MATH_REGEX, (match, latex) => {
-      return `<div class="katex-block">${renderKaTeX(latex.trim(), true)}</div>`;
-    });
-    processedContent = processedContent.replace(INLINE_MATH_REGEX, (match, latex) => {
-      return `<span class="katex-inline">${renderKaTeX(latex.trim(), false)}</span>`;
-    });
-    content.value = marked(processedContent);
-  }
-};
 
 const addThought = async () => {
   await accountStore.addThought(slug);
@@ -60,8 +31,8 @@ const addThought = async () => {
 };
 
 onMounted(() => {
-  window.document.title = `${slug.replace(/-/g, ' ').replace(/\b\w/g, char => char.toUpperCase())} | ${locale.value === "en" ? 'www' : locale.value}.tustudent.blog`;
-  loadMarkdown();
+  markdownStore.setPageTitle(slug, locale.value);
+  markdownStore.loadMarkdown(locale.value, slug, type.value);
 
   const unsubscribe = authStore.$subscribe((mutation, state) => {
     if (state.user) {
@@ -135,7 +106,7 @@ onMounted(() => {
     <div class="pb-4 mt-3 italic">
       /archive/{{ slug }}.md
     </div>
-    <div class="tu-markdown" v-html="content"></div>
+    <div class="tu-markdown" v-html="markdownStore.content"></div>
   </div>
 </template>
 
