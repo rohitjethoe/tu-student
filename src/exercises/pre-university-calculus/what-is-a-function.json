@@ -1,0 +1,17 @@
+{
+    "title": "pre-university-calculus",
+    "slug": "what-is-a-function",
+    "description": "What is a function?",
+    "questions": [
+        {
+            "title": "Does this define a function?",
+            "context": "take a number \\$a\\$ and produce its square root, with the set of real numbers as domain and the set of real numbers as codomain.",
+            "options": {
+                "0": "yes",
+                "1": "no"
+            },
+            "answer": "no",
+            "explanation": "The square root of a number is not a function because it has two possible outputs."
+        }
+    ]
+}

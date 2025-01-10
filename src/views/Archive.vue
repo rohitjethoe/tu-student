@@ -5,6 +5,8 @@ import { useI18n } from 'vue-i18n';
 import { useAuthStore } from '@/stores/authStore.js';
 import { useAccountStore } from '@/stores/accountStore.js';
 import { useMarkdownStore } from '@/stores/markdownStore.js';
+import { db } from '@/js/firebase.js';
+import { collection, query, where, getDocs } from 'firebase/firestore';
 
 const type = computed(() => {
   const path = route.path;
@@ -12,6 +14,8 @@ const type = computed(() => {
   if (path.startsWith('/exercises/')) return 'exercises';
   throw new Error('Invalid route path');
 });
+
+const hasExercises = ref(false);
 
 const { locale } = useI18n();
 const route = useRoute();
@@ -30,7 +34,21 @@ const addThought = async () => {
   thoughtBoxIsVisible.value = false;
 };
 
-onMounted(() => {
+const checkForExercises = async () => {
+  try {
+    const exercisesCollection = collection(db, 'exercises'); 
+    const exercisesQuery = query(exercisesCollection, where('slug', '==', slug));
+    const querySnapshot = await getDocs(exercisesQuery);
+
+    hasExercises.value = !querySnapshot.empty;
+  } catch (error) {
+    console.error('Error checking exercises:', error);
+  }
+};
+
+onMounted(async () => {
+  await checkForExercises();
+
   markdownStore.setPageTitle(slug, locale.value);
   markdownStore.loadMarkdown(locale.value, slug, type.value);
 
@@ -74,7 +92,7 @@ onMounted(() => {
     </div>
 
     <div class="flex gap-3 pt-4 relative">
-      <a :href="`/exercises/${slug}`" class="button text-sm py-1.5 px-3 rounded-md cursor-pointer transition-all ease-in no-underline font-[400]">
+      <a v-if="hasExercises" :href="`/exercises/${slug}`" class="button text-sm py-1.5 px-3 rounded-md cursor-pointer transition-all ease-in no-underline font-[400]">
         ⭐️ {{ $t('archive.exercises') }}
       </a>
       <div v-if="authStore.user" @click="thoughtBoxIsVisible = !thoughtBoxIsVisible" class="button text-sm py-1.5 px-3 rounded-md cursor-pointer transition-all ease-in">
