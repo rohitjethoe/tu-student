@@ -1,4 +1,3 @@
-// stores/markdownStore.js
 import { defineStore } from 'pinia';
 import { marked } from 'marked';
 import katex from 'katex';
@@ -24,6 +23,18 @@ export const useMarkdownStore = defineStore('markdown', {
         console.error(`Error rendering ${displayMode ? 'block' : 'inline'} LaTeX:`, error);
         return latex;
       }
+    },
+
+    renderTextWithKaTeX(text) {
+      let processedText = text.replace(BLOCK_MATH_REGEX, (match, latex) => {
+        return `<div class="katex-block">${this.renderKaTeX(latex.trim(), true)}</div>`;
+      });
+    
+      processedText = processedText.replace(INLINE_MATH_REGEX, (match, latex) => {
+        return `<span class="katex-inline">${this.renderKaTeX(latex.trim(), false)}</span>`;
+      });
+    
+      return marked(processedText);
     },
 
     async loadMarkdown(locale, slug, type) {

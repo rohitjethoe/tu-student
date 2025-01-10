@@ -1,38 +1,21 @@
 <script setup>
-import { ref, onMounted } from 'vue';
-import { useRoute, useRouter } from 'vue-router';
-import { getFirestore, doc, getDoc } from 'firebase/firestore';
+import { onMounted } from 'vue';
+import { useRoute } from 'vue-router';
+import { useMarkdownStore } from '@/stores/markdownStore';
+import { useExerciseStore } from '@/stores/exerciseStore';
+
+const markdownStore = useMarkdownStore();
+const exerciseStore = useExerciseStore();
 
 const route = useRoute();
-const router = useRouter();
 const slug = route.params.slug;
 
-const exerciseDoc = ref(null);
-const loading = ref(true);
-const error = ref(null);
-
-const db = getFirestore();
-
-const fetchExercise = async (slug) => {
-  try {
-    const docRef = doc(db, 'exercises', slug);
-    const docSnap = await getDoc(docRef);
-
-    if (docSnap.exists()) {
-      exerciseDoc.value = docSnap.data();
-    } else {
-      router.push('/');
-    }
-  } catch (err) {
-    error.value = err.message;
-    router.push('/');
-  } finally {
-    loading.value = false;
-  }
+const renderKaTeXContent = (text) => {
+  return markdownStore.renderTextWithKaTeX(text);
 };
 
 onMounted(() => {
-  fetchExercise(slug);
+  exerciseStore.fetchExercise(slug);
 });
 </script>
 
@@ -41,25 +24,48 @@ onMounted(() => {
     <div class="pb-4 mt-3 italic">
       /exercises/{{ slug }}.md
     </div>
-    <div v-if="loading">
+    <div v-if="exerciseStore.loading">
       Loading...
     </div>
-    <div v-else-if="error">
-      Error: {{ error }}
+    <div v-else-if="exerciseStore.error">
+      Error: {{ exerciseStore.error }}
     </div>
     <div v-else>
-      <h1>{{ exerciseDoc.title }}</h1>
-      <p>{{ exerciseDoc.description }}</p>
-      <div v-for="(question, index) in exerciseDoc.questions" :key="index">
-        <h3>{{ question.title }}</h3>
-        <p>{{ question.context }}</p>
+      <div v-for="(question, index) in exerciseStore.exerciseDoc.questions" :key="index">
+        <h3 class="pb-2 font-bold" v-html="renderKaTeXContent(question.title)"></h3>
+        <p v-html="renderKaTeXContent(question.context)"></p>
         <ul>
-          <li v-for="(option, key) in question.options" :key="key">
-            {{ key }}: {{ option }}
+          <li 
+            v-for="(option, key) in question.options" 
+            class="w-full flex items-center gap-2 p-2 border-gray-300 border my-2 capitalize"
+            :class="(exerciseStore.selectedOptions[index] === option) && (option == question.answer) ? 'border-green-200 border-2 bg-green-100 dark:bg-green-300 dark:border-green-500' : 'border-gray-300 bg-white dark:bg-[#242424]'" 
+            :key="key"
+          >
+            <input 
+              @click="exerciseStore.saveOption(index, option)"
+              type="radio" 
+              :name="`question-${index}`" 
+              :id="`option-${index}-${key}`"
+            >
+            <label 
+              :for="'option-' + index + '-' + key" 
+              class="flex justify-between w-full pr-2"
+              :class="{ 'text-blue-500': option === exerciseStore.selectedOptions[index] }"
+            >
+              {{ option }}
+              <span 
+                class="transition-all ease-in"
+                :class="`${option === question.answer ? 'block' : 'hidden'} ${option === exerciseStore.selectedOptions[index] ? 'opacity-100' : 'opacity-0'}`"
+              >  
+                🎉
+              </span>
+            </label>
           </li>
         </ul>
-        <p><strong>Answer:</strong> {{ question.answer }}</p>
-        <p><strong>Explanation:</strong> {{ question.explanation }}</p>
+        <div class="text-xs py-1 transition-all" :class="exerciseStore.selectedOptions[index] ? 'opacity-100' : 'opacity-0'">
+          <span class="font-bold">Explanation</span>:
+          {{ question.explanation }}
+        </div>
       </div>
     </div>
   </div>
