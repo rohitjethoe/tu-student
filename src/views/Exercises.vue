@@ -25,10 +25,7 @@ onMounted(() => {
       /exercises/{{ slug }}.md
     </div>
     <div v-if="exerciseStore.loading">
-      Loading...
-    </div>
-    <div v-else-if="exerciseStore.error">
-      Error: {{ exerciseStore.error }}
+      <div class="loader"></div> 
     </div>
     <div v-else>
       <div v-for="(question, index) in exerciseStore.exerciseDoc.questions" :key="index">
@@ -70,3 +67,48 @@ onMounted(() => {
     </div>
   </div>
 </template>
+
+<style lang="scss" scoped>
+.loader {
+  width: 16px;
+  margin: 0 auto;
+  aspect-ratio: 1;
+  display:grid;
+  -webkit-mask: conic-gradient(from 15deg,#0000,#000);
+  animation: l26 1s infinite steps(12);
+}
+.loader,
+.loader:before,
+.loader:after{
+  background:
+    radial-gradient(closest-side at 50% 12.5%,
+     #242424 96%,#0000) 50% 0/20% 80% repeat-y,
+    radial-gradient(closest-side at 12.5% 50%,
+     #242424 96%,#0000) 0 50%/80% 20% repeat-x;
+}
+.loader:before,
+.loader:after {
+  content: "";
+  grid-area: 1/1;
+  transform: rotate(30deg);
+}
+.loader:after {
+  transform: rotate(60deg);
+}
+
+@keyframes l26 {
+  100% {transform:rotate(1turn)}
+}
+
+@media (prefers-color-scheme: dark) {
+  .loader,
+  .loader:before,
+  .loader:after{
+    background:
+      radial-gradient(closest-side at 50% 12.5%,
+      #fff 96%,#0000) 50% 0/20% 80% repeat-y,
+      radial-gradient(closest-side at 12.5% 50%,
+      #fff 96%,#0000) 0 50%/80% 20% repeat-x;
+  }
+}
+</style>
