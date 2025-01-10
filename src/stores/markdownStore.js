@@ -27,14 +27,10 @@ export const useMarkdownStore = defineStore('markdown', {
     },
 
     async loadMarkdown(locale, slug, type) {
-      // Define both glob patterns statically
       const archiveFiles = import.meta.glob('@/archive/**/*.md', { query: '?raw', import: 'default' });
-      // const exerciseFiles = import.meta.glob('@/exercises/**/*.md', { query: '?raw', import: 'default' });
-      
-      // Choose the correct files based on type
-      
-      const files = type === 'archive' ? archiveFiles : exerciseFiles;
-      const filePath = `/src/${type}/${locale}/${slug}.md`;
+          
+      const files = archiveFiles;
+      const filePath = `/src/archive/${locale}/${slug}.md`;
 
       if (filePath in files) {
         this.module = await files[filePath]();

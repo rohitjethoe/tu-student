@@ -77,6 +77,7 @@ const en = {
         heading: "Computer Science and Engineering topics sorted",
         madeBy: "This site is made by www.tustudent.blog",
         builtWith: "This site is built with JavaScript.",
+        privacyPolicy: "Privacy Policy",
         privacy: [
             "We use Google Analytics on this website to track visitor behavior and improve our website. For more information about how Google uses your data, you can read the",
             "Google Privacy Policy",

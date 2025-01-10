@@ -17,7 +17,8 @@ Object.entries(localeModules).forEach(([path, module]) => {
 });
 
 const i18n = createI18n({
-    legacy: false,
+    legacy: false, 
+    globalInjection: true,
     locale: 'en',
     fallbackLocale: 'nl',
     messages
@@ -27,7 +28,7 @@ var host = window.location.host
 var subdomain = host.split('.')[0]
 
 if (subdomain.length === 2) {
-    i18n.global.locale = subdomain;
+    i18n.global.locale.value = subdomain;
 }
 
 createApp(App)
