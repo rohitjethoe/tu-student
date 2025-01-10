@@ -72,7 +72,19 @@ const en = {
             title: "Logout"
         },
     },
-    about: "about",
+    about: {
+        title: "about",
+        heading: "Computer Science and Engineering topics sorted",
+        madeBy: "This site is made by www.tustudent.blog",
+        builtWith: "This site is built with JavaScript.",
+        privacy: [
+            "We use Google Analytics on this website to track visitor behavior and improve our website. For more information about how Google uses your data, you can read the",
+            "Google Privacy Policy",
+            "If you don't want your data to be collected, you can",
+            "use",
+            "We only use functional cookies to ensure the website works properly. We don't use cookies for advertising or other commercial purposes."
+        ]
+    },
     terms: {
         title: "Terms of service",
         update: "Last updated on January 8th 2025",

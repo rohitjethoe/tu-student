@@ -32,6 +32,6 @@ watch(
                 {{ $t('account.login.button') }} Github
             </span>
         </button>
-        <a class="text-sm text-[#242424] dark:text-white" href="/about">{{ $t('about') }} tustudent.blog</a>
+        <a class="text-sm text-[#242424] dark:text-white" href="/about">{{ $t('about.title') }} tustudent.blog</a>
     </div>
 </template>

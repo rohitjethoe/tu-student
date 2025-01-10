@@ -50,7 +50,7 @@ onMounted(() => {
 
 <template>
   <div>
-    <div class="pt-4">
+    <div v-if="authStore.user" class="pt-4">
       <div v-if="thoughtsOpened" class="pb-2">
         <div v-for="thought in accountStore.thoughts" class="flex items-center gap-2 py-0.5">
           <div class="text-xs text-black dark:text-white text-left">

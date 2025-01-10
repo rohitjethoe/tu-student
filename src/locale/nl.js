@@ -72,7 +72,19 @@ const nl = {
             title: "uitloggen"
         },
     },
-    about: 'over',
+    about: {
+        title: 'over',
+        heading: "(Technische) Informatica onderwerpen gesorteerd",
+        madeBy: "Deze site is gemaakt door nl.tustudent.blog &copy; 2025",
+        builtWith: "Deze site is gemaakt met JavaScript.",
+        privacy: [
+            "We gebruiken Google Analytics op deze website om het gedrag van onze bezoekers te volgen en onze website te verbeteren. Voor meer informatie over hoe Google uw gegevens gebruikt, kunt u het",
+            "privacybeleid van Google",
+            "lezen. Als u niet wilt dat uw gegevens worden verzameld, kunt u de",
+            "gebruiken",
+            "We gebruiken verder alleen functionele cookies om de website goed te laten werken. We gebruiken geen cookies voor advertenties of andere commerciële doeleinden."
+        ]
+    },
     terms: {
         title: "Algemene voorwaarden",
         update: "Laatst bijgewerkt op 8 januari 2025",
