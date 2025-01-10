@@ -75,7 +75,7 @@ const nl = {
     about: {
         title: 'over',
         heading: "Technische Informatica onderwerpen gesorteerd",
-        madeBy: "Deze site is gemaakt door nl.tustudent.blog &copy; 2025",
+        madeBy: "Deze site is gemaakt door nl.tustudent.blog",
         builtWith: "Deze site is gemaakt met JavaScript.",
         privacyPolicy: "Privacybeleid",
         privacy: [
