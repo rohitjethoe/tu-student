@@ -35,7 +35,7 @@ onMounted(() => {
           <li 
             v-for="(option, key) in question.options" 
             class="w-full flex items-center gap-2 p-2 border-gray-300 border my-2 capitalize"
-            :class="(exerciseStore.selectedOptions[index] === option) && (option == question.answer) ? 'border-green-200 border-2 bg-green-100 dark:bg-green-300 dark:border-green-500' : 'border-gray-300 bg-white dark:bg-[#242424]'" 
+            :class="(exerciseStore.selectedOptions[index] === option) && (option == question.answer) ? 'border-green-200 border-2 bg-green-100 dark:bg-green-300 dark:border-green-500' : 'border-red-500 bg-red-200'" 
             :key="key"
           >
             <input 
