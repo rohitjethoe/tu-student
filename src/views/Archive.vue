@@ -8,13 +8,6 @@ import { useMarkdownStore } from '@/stores/markdownStore.js';
 import { db } from '@/js/firebase.js';
 import { collection, query, where, getDocs } from 'firebase/firestore';
 
-const type = computed(() => {
-  const path = route.path;
-  if (path.startsWith('/archive/')) return 'archive';
-  if (path.startsWith('/exercises/')) return 'exercises';
-  throw new Error('Invalid route path');
-});
-
 const hasExercises = ref(false);
 
 const { locale } = useI18n();
@@ -50,7 +43,7 @@ onMounted(async () => {
   await checkForExercises();
 
   markdownStore.setPageTitle(slug, locale.value);
-  markdownStore.loadMarkdown(locale.value, slug, type.value);
+  markdownStore.loadMarkdown(locale.value, slug);
 
   const unsubscribe = authStore.$subscribe((mutation, state) => {
     if (state.user) {
