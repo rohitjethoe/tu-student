@@ -13,7 +13,7 @@ $$a_n x^n + a_{n-1} x^{n-1} + \\dots + a_1 x + a_0$$
 Hierbij:
 
 - \$ n \$ is de graad (hoogste macht van \$ x \$ in standaardvorm).
-- \$ a_n, a_{n-1}, \\dots \$ zijn coëfficiënten (reële getallen, mogelijk negatief of fractioneel).  
+- \$ a_n, a_{n-1}, \\dots \$ zijn coëfficiënten (reële getallen, mogelijk negatief of fracties).  
 
 **Stappen om een Polynoom te Vereenvoudigen**  
 1. Breid producten uit door termen te distribueren.  

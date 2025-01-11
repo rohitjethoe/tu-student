@@ -13,7 +13,7 @@ $$a_n x^n + a_{n-1} x^{n-1} + \\dots + a_1 x + a_0$$
 Here:
 
 - \$ n \$ is the degree (highest power of \$ x \$ in standard form).
-- \$ a_n, a_{n-1}, \\dots \$ are coefficients $real numbers, possibly negative or fractional$.  
+- \$ a_n, a_{n-1}, \\dots \$ are coefficients real numbers, possibly negative or fractional.  
 
 **Steps to Simplify a Polynomial**  
 1. Expand products by distributing terms.  

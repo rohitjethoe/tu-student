@@ -77,7 +77,7 @@ a:hover {
 
   @media (min-width: 768px) {
    .tu-markdown p {
-    @apply w-2/3;
+    @apply w-full;
    }
   }
 
