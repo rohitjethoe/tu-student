@@ -72,7 +72,7 @@ onMounted(() => {
                 type="text" 
                 v-model="exerciseStore.selectedOptions[index]" 
                 placeholder="Type your answer in LaTeX..."
-                class="p-2 w-3/4 text-sm focus:outline-none dark:bg-[#242424] border-2 dark:border-gray-300" 
+                class="p-2 w-3/4 text-sm focus:outline-none dark:bg-[#242424] border-2 dark:border-gray-300 rounded-none" 
                 :class="(`$$${exerciseStore.selectedOptions[index]}$$` === question.answer) ? 'bg-green-200 dark:bg-green-300 border-2 border-green-400 dark:text-black font-medium' : ''" 
               >
               <button 
