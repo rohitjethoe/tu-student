@@ -29,3 +29,40 @@ De graad van een polynoom beïnvloedt zijn gedrag:
 Hoewel rekenmachines polynomen efficiënt kunnen evalueren vanwege hun afhankelijkheid van optellen en vermenigvuldigen, benaderen ze functies zoals \$ \\sin(x) \$, \$ \\cos(x) \$, of \$ \\ln(x) \$ met behulp van polynomen (via methoden zoals Taylor-reeksen). Dit toont de veelzijdigheid van polynomen in het benaderen van andere wiskundige functies.
 
 De video eindigt met een teaser om te begrijpen hoe de graad van een polynoom gerelateerd is aan het gedrag van de functie en de benadering van complexere functies.
+
+<iframe width="100%" height="300" src="https://www.youtube.com/embed/H5A-0uoLCMg?si=SNvzHnWcw2dVrlhn&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+1. **Graad 0 (Constante Functies):**
+    - Vorm: \$ f(x) = a \\cdot x^0 \$ (of \$ f(x) = a \$).
+    - Grafiek: Horizontale lijn.
+
+2. **Graad 1 (Lineaire Functies):**
+    - Vorm: \$ f(x) = ax + b \$, waarbij \$ a \\neq 0 \$.
+    - Grafiek: Rechte lijn.
+      - \$ a \$: Hellingshoek.
+      - \$ b \$: \$ y \$-asintercept.
+    - Voorbeeld: \$ f(x) = -\\frac{1}{2}x + 2 \$.
+
+3. **Graad 2 (Kwadratische Functies):**
+    - Vorm: \$ f(x) = ax^2 + bx + c \$.
+    - Grafiek: Parabool met:
+      - Top: \$ x = -\\frac{b}{2a} \$.
+      - Symmetrie: Verticale lijn door de top.
+      - \$ a \$: Bepaalt openheid en oriëntatie:
+         - \$ a > 0 \$: Opent omhoog.
+         - \$ a < 0 \$: Opent omlaag.
+         - Kleinere \$ |a| \$: Breedere parabool.
+      - \$ c \$: \$ y \$-asintercept.
+    - Voorbeeld: \$ f(x) = \\frac{1}{2}x^2 - 3x + \\frac{5}{2} \$.
+
+4. **Andere Kwadratische Vormen:**
+    - **Gefactoriseerde Vorm:** \$ f(x) = a(x-p)(x-q) \$.
+      - \$ p \$ en \$ q \$: \$ x \$-asintercepten.
+    - **Volledig Kwadratische Vorm:** \$ f(x) = a(x-r)^2 + s \$.
+      - Top: \$ (r, s) \$.
+
+5. **Hogere Graad Polynomen:**
+    - Algemene Vorm: \$ f(x) = a_nx^n + a_{n-1}x^{n-1} + \\dots + a_0 \$.
+    - Complexiteit neemt toe met de graad:
+      - Graad \$ n \$: Maximaal \$ n \$ \$ x \$-asintercepten.
+      - Hogere graad: Meer “hobbelige” grafieken.

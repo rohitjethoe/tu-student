@@ -23,9 +23,46 @@ Here:
 **Importance of the Degree**  
 The degree of a polynomial affects its behavior:  
 - As \$ x \\to \\infty \$ or \$ x \\to -\\infty \$, the polynomial approximates the behavior of its highest-degree term \$ a_n x^n \$.  
-- For example, \$ p$x$ = 2x^3 + 8x^2 - 13x \$ behaves like \$ 2x^3 \$ for large \$ |x| \$.  
+- For example, \$ p(x) = 2x^3 + 8x^2 - 13x \$ behaves like \$ 2x^3 \$ for large \$ |x| \$.  
 
 **Calculators and Non-Polynomial Functions**  
 While calculators can efficiently evaluate polynomials due to their reliance on addition and multiplication, they approximate functions like \$ \\sin(x) \$, \$ \\cos(x) \$, or \$ \\ln(x) \$ using polynomials (via methods like Taylor series). This demonstrates the versatility of polynomials in approximating other mathematical functions.
 
 The video concludes with a teaser for understanding how polynomial degree relates to function behavior and the approximation of more complex functions.
+
+<iframe width="100%" height="300" src="https://www.youtube.com/embed/H5A-0uoLCMg?si=SNvzHnWcw2dVrlhn&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+1. **Degree 0 (Constant Functions):**
+   - Form: \$ f(x) = a \\cdot x^0 \$ (or \$ f(x) = a \$).
+   - Graph: Horizontal line.
+
+2. **Degree 1 (Linear Functions):**
+   - Form: \$ f(x) = ax + b \$, where \$ a \\neq 0 \$.
+   - Graph: Straight line.
+     - \$ a \$: Slope (steepness).
+     - \$ b \$: \$ y \$-intercept.
+   - Example: \$ f(x) = -\\frac{1}{2}x + 2 \$.
+
+3. **Degree 2 (Quadratic Functions):**
+   - Form: \$ f(x) = ax^2 + bx + c \$.
+   - Graph: Parabola with:
+     - Vertex: \$ x = -\\frac{b}{2a} \$.
+     - Symmetry: Vertical line through the vertex.
+     - \$ a \$: Determines openness and orientation:
+       - \$ a > 0 \$: Opens upward.
+       - \$ a < 0 \$: Opens downward.
+       - Smaller \$ |a| \$: Wider parabola.
+     - \$ c \$: \$ y \$-intercept.
+   - Example: \$ f(x) = \\frac{1}{2}x^2 - 3x + \\frac{5}{2} \$.
+
+4. **Other Quadratic Forms:**
+   - **Factorized Form:** \$ f(x) = a(x-p)(x-q) \$.
+     - \$ p \$ and \$ q \$: \$ x \$-intercepts.
+   - **Complete Square Form:** \$ f(x) = a(x-r)^2 + s \$.
+     - Vertex: \$ (r, s) \$.
+
+5. **Higher-Degree Polynomials:**
+   - General Form: \$ f(x) = a_nx^n + a_{n-1}x^{n-1} + \\dots + a_0 \$.
+   - Complexity increases with degree:
+     - Degree \$ n \$: At most \$ n \$ \$ x \$-intercepts.
+     - Higher degree: More “wobbly” graphs.
