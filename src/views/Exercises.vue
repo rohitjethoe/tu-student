@@ -27,11 +27,11 @@ onMounted(() => {
     <div v-if="exerciseStore.loading">
       <div class="loader"></div> 
     </div>
-    <div v-else>
-      <div v-for="(question, index) in exerciseStore.exerciseDoc.questions" :key="index">
+    <div class="" v-else>
+      <div v-for="(question, index) in exerciseStore.exerciseDoc.questions" :key="index" class="pb-24">
         <h3 class="pb-2 font-bold" v-html="renderKaTeXContent(question.title)"></h3>
         <p v-html="renderKaTeXContent(question.context)"></p>
-        <ul>
+        <ul v-if="question.options">
           <li 
             v-for="(option, key) in question.options" 
             class="w-full flex items-center gap-2 p-2 border-gray-300 border my-2 capitalize bg-white dark:bg-[#242424]"
@@ -61,9 +61,31 @@ onMounted(() => {
             </label>
           </li>
         </ul>
-        <div class="text-xs py-1 transition-all" :class="exerciseStore.selectedOptions[index] ? 'opacity-100' : 'opacity-0'">
-          <span class="font-bold">Explanation</span>:
-          {{ question.explanation }}
+        <div v-else>
+          <div>
+            <div class="flex justify-between items-center">
+              <input 
+                class="mt-4 mb-2 p-2 w-3/4 text-sm focus:outline-none" 
+                v-model="exerciseStore.selectedOptions[index]" 
+                type="text" 
+                placeholder="Type your answer in LaTeX..."
+                :class="(`$$${exerciseStore.selectedOptions[index]}$$` === question.answer) ? 'bg-green-200 dark:bg-green-300 border-2 border-green-400 dark:text-black font-medium' : ''" 
+              >
+              <button @click="exerciseStore.saveOption(index, exerciseStore.selectedOptions[index])" class="bg-black button text-sm p-2 cursor-pointer transition-all ease-in no-underline font-[400]">
+                Submit
+              </button>
+            </div>
+          </div>
+          <div class="py-2" v-if="exerciseStore.selectedOptions[index]" v-html="renderKaTeXContent(`$$ ${exerciseStore.selectedOptions[index]} $$`)">
+          </div>
+        </div>
+        <div class="text-xs py-1 transition-all flex gap-4" :class="exerciseStore.selectedOptions[index] ? 'opacity-100 h-auto' : 'opacity-0 h-0'">
+          <div class="font-bold">Explanation:</div>
+          <ol>
+            <li class="pb-2" v-for="(explanationLine, index) in question.explanation">
+              <span v-html="renderKaTeXContent(explanationLine)"></span>
+            </li>
+          </ol>
         </div>
       </div>
     </div>
