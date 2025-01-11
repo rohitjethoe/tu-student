@@ -35,8 +35,9 @@ onMounted(() => {
           <li 
             v-for="(option, key) in question.options" 
             class="w-full flex items-center gap-2 p-2 border-gray-300 border my-2 capitalize bg-white dark:bg-[#242424]"
-            :class="(exerciseStore.selectedOptions[index] === option) && (option == question.answer) ? 'border-green-200 border-2 bg-green-100 dark:bg-green-300 dark:border-green-500' : ''
-										+ (exerciseStore.selectedOptions[index] !== option) && (option !== question.answer) ? ' border-red-300 border-2 bg-red-200' : ''" 
+            :class="`
+            ${((exerciseStore.selectedOptions[index] === option) && (option === question.answer)) ? 'bg-green-200 dark:bg-green-300 border-2 border-green-400' : ''}
+            ${((exerciseStore.selectedOptions[index] === option) && (option !== question.answer)) ? 'bg-red-300 dark:bg-red-400 border-2 border-red-500' : ''}`" 
             :key="key"
           >
             <input 
@@ -48,14 +49,14 @@ onMounted(() => {
             <label 
               :for="'option-' + index + '-' + key" 
               class="flex justify-between w-full pr-2"
-              :class="{ 'text-blue-500': option === exerciseStore.selectedOptions[index] }"
+              :class="{ 'text-blue-500 dark:text-white': option === exerciseStore.selectedOptions[index] }"
             >
               {{ option }}
               <span 
                 class="transition-all ease-in"
-                :class="`${option === question.answer ? 'block' : 'hidden'} ${option === exerciseStore.selectedOptions[index] ? 'opacity-100' : 'opacity-0'}`"
+                :class="`${option === exerciseStore.selectedOptions[index] ? 'opacity-100' : 'opacity-0'}`"
               >  
-                🎉
+                {{ option === question.answer ? '🎉' : '🤔' }}
               </span>
             </label>
           </li>
