@@ -6,14 +6,37 @@ import { v4 as uuidv4 } from 'uuid';
 
 const authStore = useAuthStore();
 
+/**
+ * Exercise Store for managing exercises and user selections.
+ * @module useExerciseStore
+ */
 export const useExerciseStore = defineStore('exercise', {
   state: () => ({
+    /**
+     * The currently loaded exercise document.
+     * @type {Object|null}
+     */
     exerciseDoc: null,
+
+    /**
+     * Whether the store is in a loading state.
+     * @type {boolean}
+     */
     loading: true,
+
+    /**
+     * The options selected by the user for the exercise.
+     * @type {Object}
+     */
     selectedOptions: {},
   }),
 
   actions: {
+    /**
+     * Fetches an exercise by slug and loads user selections if authenticated.
+     * @param {string} slug - The unique identifier for the exercise.
+     * @returns {Promise<void>}
+     */
     async fetchExercise(slug) {
       const db = getFirestore();
       const router = useRouter();
@@ -53,6 +76,43 @@ export const useExerciseStore = defineStore('exercise', {
       }
     },
 
+    /**
+     * Deletes the existing saved selection for the current exercise, if any.
+     * @returns {Promise<void>}
+     */
+    async deleteOption() {
+      if (!authStore.isLoggedIn || !authStore.user) {
+        console.error('User is not authenticated. Cannot delete selection.');
+        return;
+      }
+
+      try {
+        const db = getFirestore();
+        const uid = authStore.user.uid;
+        const slug = this.exerciseDoc.slug;
+    
+        const selectionsRef = collection(db, 'completed');
+        const q = query(selectionsRef, where('uid', '==', uid), where('slug', '==', slug));
+        const querySnapshot = await getDocs(q);
+    
+        if (!querySnapshot.empty) {
+          const deletePromises = querySnapshot.docs.map(docSnap => deleteDoc(docSnap.ref)); 
+          await Promise.all(deletePromises);
+          console.log('Selection deleted successfully from Firestore.');
+        } else {
+          console.log('No matching document found to delete.');
+        }
+      } catch (error) {
+        console.error('Error deleting selection from Firestore:', error);
+      }
+    },
+
+    /**
+     * Saves the selected option for the current exercise.
+     * @param {number} index - The index of the option being saved.
+     * @param {string} option - The selected option.
+     * @returns {Promise<void>}
+     */
     async saveOption(index, option) {
       this.selectedOptions = {
         ...this.selectedOptions,
@@ -83,33 +143,5 @@ export const useExerciseStore = defineStore('exercise', {
         console.error('Error saving selection to Firestore:', error);
       }
     },
-
-    async deleteOption() {
-      if (!authStore.isLoggedIn || !authStore.user) {
-        console.error('User is not authenticated. Cannot delete selection.');
-        return;
-      }
-
-      try {
-        const db = getFirestore();
-        const uid = authStore.user.uid;
-        const slug = this.exerciseDoc.slug;
-    
-        const selectionsRef = collection(db, 'completed');
-        const q = query(selectionsRef, where('uid', '==', uid), where('slug', '==', slug));
-        const querySnapshot = await getDocs(q);
-    
-        if (!querySnapshot.empty) {
-          const deletePromises = querySnapshot.docs.map(docSnap => deleteDoc(docSnap.ref)); 
-          await Promise.all(deletePromises);
-          console.log('Selection deleted successfully from Firestore.');
-        } else {
-          console.log('No matching document found to delete.');
-        }
-      } catch (error) {
-        console.error('Error deleting selection from Firestore:', error);
-      }
-      
-    }
   },
 });

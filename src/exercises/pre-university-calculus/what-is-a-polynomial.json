@@ -1,0 +1,13 @@
+{
+    "title": "pre-university-calculus",
+    "slug": "what-is-a-polynomial",
+    "description": "What is a polynomial?",
+    "questions": [
+        {
+            "title": "Rewrite given polynomials to standard form",
+            "context": "Rewrite polynomial to standard form",
+            "answer": "$f(x)=-8x^{3}+12x^{2}-6x+1$",
+            "explanation": "The square root of a number is not a function because it has two possible outputs."
+        }
+    ]
+}

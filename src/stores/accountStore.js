@@ -3,9 +3,27 @@ import { useAuthStore } from './authStore.js';
 import { db } from '@/js/firebase';
 import { collection, addDoc, serverTimestamp, query, where, getDocs } from 'firebase/firestore';
 
+/**
+ * Account Store for managing user thoughts.
+ * @module useAccountStore
+ */
 export const useAccountStore = defineStore('account', {
     state: () => ({
+        /**
+         * List of user thoughts.
+         * @type {Array<Object>}
+         */
         thoughts: [],
+
+        /**
+         * Template for a thought object.
+         * @type {Object}
+         * @property {string|null} uid - Google Auth User ID.
+         * @property {string} value - Thought content.
+         * @property {string} icon - Icon associated with the thought.
+         * @property {string} slug - Optional slug for categorization.
+         * @property {Date|null} createdAt - Timestamp of thought creation.
+         */
         thought: {
             uid: null,
             value: '',
@@ -15,6 +33,11 @@ export const useAccountStore = defineStore('account', {
         },
     }),
     actions: {
+        /**
+         * Add a new thought to the database.
+         * @param {string} slug - Optional slug for categorization.
+         * @returns {Promise<void>} Resolves when the thought is added.
+         */
         async addThought(slug) {    
             const authStore = useAuthStore();
 
@@ -41,6 +64,11 @@ export const useAccountStore = defineStore('account', {
             }
         },
 
+        /**
+         * Fetch thoughts from the database.
+         * @param {string} [slug] - Optional slug for filtering thoughts.
+         * @returns {Promise<void>} Resolves when the thoughts are fetched.
+         */
         async getThoughts(slug) {
             const authStore = useAuthStore();
     
