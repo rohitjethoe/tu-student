@@ -27,18 +27,22 @@ onMounted(() => {
     <div v-if="exerciseStore.loading">
       <div class="loader"></div> 
     </div>
-    <div class="" v-else>
-      <div v-for="(question, index) in exerciseStore.exerciseDoc.questions" :key="index" class="pb-24">
+    <div v-else>
+      <div 
+        v-for="(question, index) in exerciseStore.exerciseDoc.questions" 
+        :key="index" 
+        class="pb-28"
+      >
         <h3 class="pb-2 font-bold" v-html="renderKaTeXContent(question.title)"></h3>
         <p v-html="renderKaTeXContent(question.context)"></p>
         <ul v-if="question.options">
           <li 
             v-for="(option, key) in question.options" 
-            class="w-full flex items-center gap-2 p-2 border-gray-300 border my-2 capitalize bg-white dark:bg-[#242424]"
-            :class="`
-            ${((exerciseStore.selectedOptions[index] === option) && (option === question.answer)) ? 'bg-green-200 dark:bg-green-300 border-2 border-green-400' : ''}
-            ${((exerciseStore.selectedOptions[index] === option) && (option !== question.answer)) ? 'bg-red-300 dark:bg-red-400 border-2 border-red-500' : ''}`" 
             :key="key"
+            class="w-full flex items-center gap-2 p-2 border-gray-300 border my-2 capitalize bg-white dark:bg-[#242424]"
+            :class="
+            `${((exerciseStore.selectedOptions[index] === option) && (option === question.answer)) ? 'bg-green-200 dark:bg-green-300 border-2 border-green-400' : ''}
+            ${((exerciseStore.selectedOptions[index] === option) && (option !== question.answer)) ? 'bg-red-300 dark:bg-red-400 border-2 border-red-500' : ''}`" 
           >
             <input 
               @click="exerciseStore.saveOption(index, option)"
@@ -63,15 +67,18 @@ onMounted(() => {
         </ul>
         <div v-else>
           <div>
-            <div class="flex justify-between items-center">
+            <div class="flex items-start mt-6">
               <input 
-                class="mt-4 mb-2 p-2 w-3/4 text-sm focus:outline-none" 
-                v-model="exerciseStore.selectedOptions[index]" 
                 type="text" 
+                v-model="exerciseStore.selectedOptions[index]" 
                 placeholder="Type your answer in LaTeX..."
+                class="p-2 w-3/4 text-sm focus:outline-none dark:bg-[#242424] border-2 dark:border-gray-300" 
                 :class="(`$$${exerciseStore.selectedOptions[index]}$$` === question.answer) ? 'bg-green-200 dark:bg-green-300 border-2 border-green-400 dark:text-black font-medium' : ''" 
               >
-              <button @click="exerciseStore.saveOption(index, exerciseStore.selectedOptions[index])" class="bg-black button text-sm p-2 cursor-pointer transition-all ease-in no-underline font-[400]">
+              <button 
+                @click="exerciseStore.saveOption(index, exerciseStore.selectedOptions[index])" 
+                class="button text-sm p-2 w-1/4 cursor-pointer transition-all ease-in no-underline font-[400] bg-white dark:bg-[#242424] border-2 dark:border-gray-300"
+              >
                 Submit
               </button>
             </div>
@@ -79,10 +86,16 @@ onMounted(() => {
           <div class="py-2" v-if="exerciseStore.selectedOptions[index]" v-html="renderKaTeXContent(`$$ ${exerciseStore.selectedOptions[index]} $$`)">
           </div>
         </div>
-        <div class="text-xs py-1 transition-all flex gap-4" :class="exerciseStore.selectedOptions[index] ? 'opacity-100 h-auto' : 'opacity-0 h-0'">
+        <div 
+          class="text-xs py-1 transition-all flex gap-2" 
+          :class="exerciseStore.selectedOptions[index] ? 'opacity-100 h-auto' : 'opacity-0 h-0'"
+        >
           <div class="font-bold">Explanation:</div>
           <ol>
-            <li class="pb-2" v-for="(explanationLine, index) in question.explanation">
+            <li 
+              class="pb-2" 
+              v-for="(explanationLine, index) in question.explanation"
+            >
               <span v-html="renderKaTeXContent(explanationLine)"></span>
             </li>
           </ol>
