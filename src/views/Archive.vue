@@ -261,10 +261,11 @@ onMounted(async () => {
       class="tu-markdown relative" 
       v-html="markdownStore.content"
       @mouseup="captureHighlight"
-      @dblclick="handleHighlightRemoval"
+      @dblclick="removeHighlight"
     />
     
-    <div v-if="highlightBoxVisible" class="fixed bottom-4 right-4 flex items-center gap-2 bg-white dark:bg-gray-800 p-2 rounded-lg shadow-lg z-50">
+    
+    <div v-if="highlightBoxVisible && authStore.user.uid" class="fixed bottom-4 right-4 flex items-center gap-2 bg-white dark:bg-gray-800 p-2 rounded-lg shadow-lg z-50">
       <button 
         @click="saveHighlight" 
         class="bg-blue-600 text-white dark:text-black text-xs py-1 px-3 rounded hover:bg-blue-700 transition-colors"
