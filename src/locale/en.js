@@ -28,19 +28,32 @@ const en = {
     archive: {
         posts: [
         {
-            title: "introduction to programming",
-            style: "text-blue-400 border-blue-400 bg-blue-400/10",
+            filter: "Pre-University Physics from TU Delft",
+            title: "Pre-University Physics from T<span class='text-[#00a6d6]'>U</span> Delft",
+            style: "text-[#00a6d6] border-[#00a6d6] bg-[#00a6d6]/10",
             posts: [
                 {
-                    title: "Introduction to Programming",
+                    title: "Welcome to Mechanics",
                     date: "2025-01-12T20:53:04.188Z",
-                    slug: "introduction-to-programming"
+                    slug: "welcome-to-mechanics"
                 }
             ]
         },
+        // {
+        //     title: "introduction to programming",
+        //     style: "text-blue-400 border-blue-400 bg-blue-400/10",
+        //     posts: [
+        //         {
+        //             title: "Introduction to Programming",
+        //             date: "2025-01-12T20:53:04.188Z",
+        //             slug: "introduction-to-programming"
+        //         }
+        //     ]
+        // },
         {
-            title: "pre-university calculus",
-            style: "text-purple-400 border-purple-400 bg-purple-400/10",
+            filter: "Pre-University Calculus from TU Delft",
+            title: "Pre-University Calculus from T<span class='text-[#00a6d6]'>U</span> Delft",
+            style: "text-[#00a6d6] border-[#00a6d6] bg-[#00a6d6]/10",
             posts: [
                 {
                     title: "What Is A Polynomial Function?",

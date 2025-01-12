@@ -43,12 +43,14 @@ onMounted(() => {
 				<p>filter: </p>
 				<select v-model="filter" @input="filterArchives">
 					<option value="">{{ $t('home.archive.filter') }}</option>
-					<option v-for="archive in archives[locale]" :value="archive.title">{{ archive.title }}</option>
+					<option v-for="archive in archives[locale]" :value="archive.filter">{{ archive.filter }}</option>
 				</select>
 			</div>
 			<div class="flex flex-wrap gap-4 items-center" v-for="archive in archives[locale]">
-				<div class="pb-8 pt-4" v-if="filter !== '' ? archive.title === filter : true">
-					<div class="p-3 pt-1.5 pb-2 px-4 border rounded-full inline font-medium" :class="archive.style">{{ archive.title }}</div> 
+				<div class="pb-8 pt-4" v-if="filter !== '' ? archive.filter === filter : true">
+					<!-- <div class="p-3 pt-1.5 pb-2 px-4 border rounded-full inline font-medium" :class="archive.style">{{ archive.title }}</div>  -->
+					 <div class="text-xs font-bold" v-html="archive.title">
+					 </div>
 					<div class="mt-4">
 						<div v-for="post in archive.posts" class="py-2">
 							<a :href="`/archive/${post.slug}`">{{ post.title }}</a>
