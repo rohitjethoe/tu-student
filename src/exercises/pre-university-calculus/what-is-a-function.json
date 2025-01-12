@@ -11,7 +11,9 @@
                 "1": "no"
             },
             "answer": "no",
-            "explanation": "The square root of a number is not a function because it has two possible outputs."
+            "explanation": {
+                "0": "The square root of a number is not a function because it has two possible outputs."
+            }
         }
     ]
 }

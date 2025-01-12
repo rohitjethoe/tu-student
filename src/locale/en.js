@@ -26,7 +26,19 @@ const en = {
     },
     substack: "Subscribe to my substack for notifications",
     archive: {
-        posts: [{
+        posts: [
+        {
+            title: "introduction to programming",
+            style: "text-blue-400 border-blue-400 bg-blue-400/10",
+            posts: [
+                {
+                    title: "Introduction to Programming",
+                    date: "2025-01-12T20:53:04.188Z",
+                    slug: "introduction-to-programming"
+                }
+            ]
+        },
+        {
             title: "pre-university calculus",
             style: "text-purple-400 border-purple-400 bg-purple-400/10",
             posts: [

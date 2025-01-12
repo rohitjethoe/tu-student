@@ -26,7 +26,19 @@ const nl = {
     },
     substack: "Meld aan bij mijn substack voor notificaties",
     archive: {
-        posts: [{
+        posts: [
+        {
+            title: "introductie tot programmeren",
+            style: "text-blue-400 border-blue-400 bg-blue-400/10",
+            posts: [
+                {
+                    title: "Introductie tot Programmeren",
+                    date: "2025-01-12T20:53:04.188Z",
+                    slug: "introduction-to-programming"
+                }
+            ]
+        },
+        {
             title: "vwo wiskunde b",
             style: "text-purple-400 border-purple-400 bg-purple-400/10",
             posts: [
