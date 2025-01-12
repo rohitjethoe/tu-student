@@ -1,19 +1,23 @@
 <script setup>
-import { onMounted, ref, nextTick } from 'vue';
+import { onMounted, nextTick, ref } from 'vue';
 import { useRoute } from 'vue-router';
 import { useI18n } from 'vue-i18n';
 import { useAuthStore } from '@/stores/authStore.js';
 import { useAccountStore } from '@/stores/accountStore.js';
 import { useMarkdownStore } from '@/stores/markdownStore.js';
 import { useHighlightStore } from '@/stores/highlightStore.js';
+import { useHighlightManager } from '@/stores/highlightManagerStore.js';
 import { db } from '@/js/firebase.js';
 import { collection, query, where, getDocs } from 'firebase/firestore';
 
+/** @type {import('vue').Ref<boolean>} */
 const hasExercises = ref(false);
-const markdownContent = ref(null);
-const highlightBoxVisible = ref(false);
-const selectedRange = ref(null);
-const selectedText = ref('');
+
+/** @type {import('vue').Ref<boolean>} */
+const thoughtBoxIsVisible = ref(false);
+
+/** @type {import('vue').Ref<boolean>} */
+const thoughtsOpened = ref(false);
 
 const { locale } = useI18n();
 const route = useRoute();
@@ -23,16 +27,22 @@ const markdownStore = useMarkdownStore();
 const authStore = useAuthStore();
 const accountStore = useAccountStore();
 const highlightStore = useHighlightStore();
+const highlightManager = useHighlightManager();
 
-const thoughtBoxIsVisible = ref(false);
-const thoughtsOpened = ref(false);
-
+/**
+ * Adds a new thought for the current page
+ * @returns {Promise<void>}
+ */
 const addThought = async () => {
   await accountStore.addThought(slug);
   await accountStore.getThoughts(slug);
   thoughtBoxIsVisible.value = false;
 };
 
+/**
+ * Checks if exercises exist for current page
+ * @returns {Promise<void>}
+ */
 const checkForExercises = async () => {
   try {
     const exercisesCollection = collection(db, 'exercises'); 
@@ -44,128 +54,41 @@ const checkForExercises = async () => {
   }
 };
 
-const captureHighlight = () => {
-  const selection = window.getSelection();
-  if (!selection.toString() || !markdownContent.value) return;
-
-  const range = selection.getRangeAt(0);
-  if (!markdownContent.value.contains(range.commonAncestorContainer)) return;
-
-  selectedText.value = selection.toString();
-  selectedRange.value = {
-    startOffset: getTextOffset(markdownContent.value, range.startContainer, range.startOffset),
-    endOffset: getTextOffset(markdownContent.value, range.endContainer, range.endOffset)
-  };
-  highlightBoxVisible.value = true;
-};
-
-const getTextOffset = (root, node, offset) => {
-  const walk = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
-  let count = 0;
-  
-  while (walk.nextNode()) {
-    if (walk.currentNode === node) {
-      return count + offset;
-    }
-    count += walk.currentNode.length;
-  }
-  return count;
-};
-
+/**
+ * Saves current text selection as highlight
+ * @returns {Promise<void>}
+ */
 const saveHighlight = async () => {
-  if (!authStore.user || !selectedRange.value) return;
+  if (!authStore.user || !highlightManager.selectedRange) return;
 
   try {
     await highlightStore.addHighlight({
       userId: authStore.user.uid,
       slug,
-      text: selectedText.value,
-      range: selectedRange.value
+      text: highlightManager.selectedText,
+      range: highlightManager.selectedRange
     });
 
-    highlightBoxVisible.value = false;
-    selectedText.value = '';
-    selectedRange.value = null;
-    
-    await applyHighlights();
+    highlightManager.resetSelection();
+    await highlightManager.applyHighlights(highlightManager.markdownContent, highlightStore.highlights);
   } catch (error) {
     console.error('Error saving highlight:', error);
   }
 };
 
+/**
+ * Removes a highlight from the document
+ * @param {Highlight} highlight - Highlight to remove
+ * @returns {Promise<void>}
+ */
 const removeHighlight = async (highlight) => {
   if (!authStore.user) return;
 
   try {
     await highlightStore.removeHighlight(authStore.user.uid, highlight);
-    await applyHighlights();
+    await highlightManager.applyHighlights(highlightManager.markdownContent, highlightStore.highlights);
   } catch (error) {
     console.error('Error removing highlight:', error);
-  }
-};
-
-const applyHighlights = async () => {
-  await nextTick();
-  if (!markdownContent.value) return;
-
-  // Remove existing highlights
-  const existingHighlights = markdownContent.value.querySelectorAll('.highlight');
-  existingHighlights.forEach(el => {
-    const parent = el.parentNode;
-    parent.replaceChild(document.createTextNode(el.textContent), el);
-  });
-
-  // Apply new highlights
-  highlightStore.highlights.forEach(highlight => {
-    const walk = document.createTreeWalker(markdownContent.value, NodeFilter.SHOW_TEXT);
-    let count = 0;
-    let startContainer, endContainer;
-    let startOffset, endOffset;
-
-    while (walk.nextNode()) {
-      const node = walk.currentNode;
-      const length = node.length;
-
-      if (!startContainer && count + length > highlight.range.startOffset) {
-        startContainer = node;
-        startOffset = highlight.range.startOffset - count;
-      }
-
-      if (!endContainer && count + length > highlight.range.endOffset) {
-        endContainer = node;
-        endOffset = highlight.range.endOffset - count;
-        break;
-      }
-
-      count += length;
-    }
-
-    if (startContainer && endContainer) {
-      const range = document.createRange();
-      range.setStart(startContainer, startOffset);
-      range.setEnd(endContainer, endOffset);
-      
-      const span = document.createElement('span');
-      span.className = 'highlight';
-      span.title = 'Double-click to remove';
-      span.dataset.highlightId = highlight.id;
-      
-      try {
-        range.surroundContents(span);
-      } catch (error) {
-        console.error('Error applying highlight:', error);
-      }
-    }
-  });
-};
-
-const handleHighlightRemoval = (event) => {
-  const highlight = event.target.closest('.highlight');
-  if (highlight) {
-    const highlightData = highlightStore.highlights.find(h => h.id === highlight.dataset.highlightId);
-    if (highlightData) {
-      removeHighlight(highlightData);
-    }
   }
 };
 
@@ -192,8 +115,8 @@ onMounted(async () => {
   }
 
   await nextTick();
-  markdownContent.value = document.querySelector('.tu-markdown');
-  await applyHighlights();
+  highlightManager.markdownContent = document.querySelector('.tu-markdown');
+  await highlightManager.applyHighlights(highlightManager.markdownContent, highlightStore.highlights);
 });
 </script>
 
@@ -208,12 +131,8 @@ onMounted(async () => {
             {{ locale === "en" ? $t(`archive.days[${new Date(thought.createdAt.seconds).getDay()}]`) : '' }}
           </div>
           <div class="flex items-center gap-2 justify-end">
-            <div class="text-xs text-gray-500 dark:text-gray-400">
-              {{ thought.icon }}
-            </div>
-            <div class="text-xs text-gray-500 dark:text-gray-400">
-              {{ thought.value }}
-            </div>
+            <div class="text-xs text-gray-500 dark:text-gray-400">{{ thought.icon }}</div>
+            <div class="text-xs text-gray-500 dark:text-gray-400">{{ thought.value }}</div>
           </div>
         </div>
       </div>
@@ -252,20 +171,16 @@ onMounted(async () => {
       </div>
     </div>
     
-    <div class="pb-4 mt-3 italic">
-      /archive/{{ slug }}.md
-    </div>
+    <div class="pb-4 mt-3 italic">/archive/{{ slug }}.md</div>
 
     <div 
-      ref="markdownContent"
       class="tu-markdown relative" 
       v-html="markdownStore.content"
-      @mouseup="captureHighlight"
+      @mouseup="highlightManager.captureHighlight(highlightManager.markdownContent)"
       @dblclick="removeHighlight"
     />
     
-    
-    <div v-if="highlightBoxVisible && authStore.user.uid" class="fixed bottom-4 right-4 flex items-center gap-2 bg-white dark:bg-gray-800 p-2 rounded-lg shadow-lg z-50">
+    <div v-if="highlightManager.highlightBoxVisible && authStore.user?.uid" class="fixed bottom-4 right-4 flex items-center gap-2 bg-white dark:bg-gray-800 p-2 rounded-lg shadow-lg z-50">
       <button 
         @click="saveHighlight" 
         class="bg-blue-600 text-white dark:text-black text-xs py-1 px-3 rounded hover:bg-blue-700 transition-colors"
@@ -273,7 +188,7 @@ onMounted(async () => {
         Save highlight ✨
       </button>
       <button 
-        @click="highlightBoxVisible = false" 
+        @click="highlightManager.resetSelection()" 
         class="text-xs py-1 px-3 hover:text-orange-800 transition-colors"
       >
         Cancel 🔥
@@ -298,16 +213,6 @@ onMounted(async () => {
       @apply text-white;
     }
   }
-}
-
-.katex-block {
-  overflow-x: auto;
-  overflow-y: hidden;
-  padding: 1em 0;
-}
-
-.katex-inline {
-  padding: 0 0.2em;
 }
 
 .highlight {
