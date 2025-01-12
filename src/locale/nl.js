@@ -3,17 +3,7 @@ const nl = {
     home: {
         update: "Laatst geupdate in januari 2025",
         biography: {
-            main: `Momenteel volg ik de WO Bacheloropleiding Technische Informatica, ook wel bekend als Computer Science and Engineering bij een onderzoeksuniversiteit in Europa. 🇪🇺`,
-            references: {
-                textual: "Wat is",
-                textual2: "Wikipedia zegt dat",
-                textual3: "de studie is van",
-                textual4: 'en',
-                computerscience: "Technische Informatica",
-                computation: "berekeningen",
-                information: "informatie",
-                automation: "automatisering"
-            }   
+            main: `Momenteel toegelaten voor de Bacheloropleiding Technische Informatica en doe mee aan de selectieprocedure voor Lucht- en Ruimtevaarttechniek bij een onderzoeksuniversiteit in Europa. 🇪🇺`,
         },
         translated: "Zoek je een vertaalde versie van deze pagina?",
         archive: { 
@@ -27,38 +17,52 @@ const nl = {
     substack: "Meld aan bij mijn substack voor notificaties",
     archive: {
         posts: [
-        {
-            title: "introductie tot programmeren",
-            style: "text-blue-400 border-blue-400 bg-blue-400/10",
-            posts: [
-                {
-                    title: "Introductie tot Programmeren",
-                    date: "2025-01-12T20:53:04.188Z",
-                    slug: "introduction-to-programming"
-                }
-            ]
-        },
-        {
-            title: "vwo wiskunde b",
-            style: "text-purple-400 border-purple-400 bg-purple-400/10",
-            posts: [
-                {
-                    title: "Wat Is Een Polynoomfunctie?",
-                    date: "2025-01-10T20:53:04.188Z",
-                    slug: "what-is-a-polynomial"
-                },
-                {
-                    title: "Wat Is Een Functie?",
-                    date: "2025-01-07T20:53:04.188Z",
-                    slug: "what-is-a-function"
-                },
-                {
-                    title: "Wat Is Wiskundige Modellering?",
-                    date: "2025-01-06T20:53:04.188Z",
-                    slug: "what-is-mathematical-modeling"
-                }
-            ]
-        }],
+            {
+                filter: "VWO Natuurkunde van TU Delft",
+                title: "VWO Natuurkunde van T<span class='text-[#00a6d6]'>U</span> Delft",
+                style: "text-[#00a6d6] border-[#00a6d6] bg-[#00a6d6]/10",
+                posts: [
+                    {
+                        title: "Force and Motion",
+                        date: "2025-01-12T20:53:04.188Z",
+                        slug: "force-and-motion"
+                    }
+                ]
+            },
+            // {
+            //     title: "introductie tot programmeren",
+            //     style: "text-blue-400 border-blue-400 bg-blue-400/10",
+            //     posts: [
+            //         {
+            //             title: "Introductie tot Programmeren",
+            //             date: "2025-01-12T20:53:04.188Z",
+            //             slug: "introduction-to-programming"
+            //         }
+            //     ]
+            // },
+            {
+                filter: "VWO Natuurkunde van TU Delft",
+                title: "VWO Wiskunde B van T<span class='text-[#00a6d6]'>U</span> Delft",
+                style: "text-purple-400 border-purple-400 bg-purple-400/10",
+                posts: [
+                    {
+                        title: "Wat Is Een Polynoomfunctie?",
+                        date: "2025-01-10T20:53:04.188Z",
+                        slug: "what-is-a-polynomial"
+                    },
+                    {
+                        title: "Wat Is Een Functie?",
+                        date: "2025-01-07T20:53:04.188Z",
+                        slug: "what-is-a-function"
+                    },
+                    {
+                        title: "Wat Is Wiskundige Modellering?",
+                        date: "2025-01-06T20:53:04.188Z",
+                        slug: "what-is-mathematical-modeling"
+                    }
+                ]
+            }
+        ],
         thought: "Voeg gedachte toe",
         exercises: "Opdrachten oefenen",
         material: "Materiaal bekijken",

@@ -3,17 +3,7 @@ const en = {
     home: {
         update: "Latest update in January 2025",
         biography: {
-            main: `Currently following a Bachelor's degree in Computer Science and Engineering, also known as "Technische Informatica," at a research university in Europe. 🇪🇺`,
-            references: {
-                textual: "What is",
-                textual2: "Wikipedia says that",
-                textual3: "is the study of",
-                textual4: "and",
-                computerscience: "Computer Science",
-                computation: "computation",
-                information: "information",
-                automation: "automation"
-            }   
+            main: `Currently accepted for Bachelor's degree in Computer Science and Engineering, and enrolled in the selection procedure for Aerospace Engineering at a research university in Europe. 🇪🇺`,
         },
         translated: "Looking for a translated version of this page?",
         archive: { 
