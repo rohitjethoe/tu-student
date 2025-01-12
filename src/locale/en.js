@@ -33,9 +33,9 @@ const en = {
             style: "text-[#00a6d6] border-[#00a6d6] bg-[#00a6d6]/10",
             posts: [
                 {
-                    title: "Welcome to Mechanics",
+                    title: "Force and Motion",
                     date: "2025-01-12T20:53:04.188Z",
-                    slug: "welcome-to-mechanics"
+                    slug: "force-and-motion"
                 }
             ]
         },
