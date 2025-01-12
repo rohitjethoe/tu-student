@@ -319,5 +319,9 @@ onMounted(async () => {
   &:hover {
     opacity: 0.8;
   }
+
+  @media (prefers-color-scheme: dark) {
+    @apply bg-yellow-500;
+  }
 }
 </style>

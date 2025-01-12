@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted } from 'vue';
+import { onMounted, ref } from 'vue';
 import { useRoute } from 'vue-router';
 import { useMarkdownStore } from '@/stores/markdownStore';
 import { useExerciseStore } from '@/stores/exerciseStore';
@@ -12,6 +12,17 @@ const slug = route.params.slug;
 
 const renderKaTeXContent = (text) => {
   return markdownStore.renderTextWithKaTeX(text);
+};
+
+const explanation = ref([]);
+
+const explanationHandler = (index) => {
+  if (!explanation) {
+    explanation.value[index] = true;
+  }
+
+  explanation.value[index] = !explanation.value[index];
+  console.log(explanation.value);
 };
 
 onMounted(() => {
@@ -90,11 +101,12 @@ onMounted(() => {
           class="text-xs py-1 transition-all flex gap-2" 
           :class="exerciseStore.selectedOptions[index] ? 'opacity-100 h-auto' : 'opacity-0 h-0'"
         >
-          <div class="font-bold">Explanation:</div>
+          <a @click="explanationHandler(index)" class="font-bold hover:cursor-pointer">{{ explanation[index] ? 'Hide' : 'View' }} Solution:</a>
           <ol>
             <li 
               class="pb-2" 
               v-for="(explanationLine, index) in question.explanation"
+              v-if="explanation[index]"
             >
               <span v-html="renderKaTeXContent(explanationLine)"></span>
             </li>
