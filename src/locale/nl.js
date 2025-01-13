@@ -11,7 +11,6 @@ const nl = {
             filter: "alle",
             months: ['januari', 'februari', 'maart', 'april', 'mei', 'juni', 'juli', 'augustus', 'september', 'oktober', 'november', 'december'],
             days: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31'],
-            error: "Oeps, helaas niet gevonden, ga terug naar",
         },
     },
     substack: "Meld aan bij mijn substack voor notificaties",
@@ -187,6 +186,11 @@ const nl = {
         },
         continue: "Door gebruik te maken van de website en diensten, verklaart de gebruiker akkoord te gaan met deze algemene voorwaarden."
     },
+    error: {
+        error: "Foutmelding",
+        title: "Sorry, we konden deze pagina niet vinden.",
+        return: "Terug naar homepagina"
+    }
 };
 
 export default nl;

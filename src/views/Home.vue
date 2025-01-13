@@ -1,30 +1,36 @@
 <script setup>
 import { onMounted, ref } from 'vue';
 import { useI18n } from 'vue-i18n';
-
 import en from '@/locale/en.js';
 import nl from '@/locale/nl.js';
 
 const { locale } = useI18n();
-
 const filter = ref("");
-const archives = { en: en.archive.posts, nl: nl.archive.posts }
+const archives = { 
+	en: en.archive.posts,
+	nl: nl.archive.posts 
+}
 
 onMounted(() => {
-	window.document.title = `home | ${locale.value === "en" ? 'www' : locale.value}.tustudent.blog`;
+	const windowLocale = locale.value === "en" ? 'www' : locale.value;
+	window.document.title = `home | ${windowLocale}.tustudent.blog`;
 })
 </script>
 
 <template>
 	<div>
 		<div class="py-3">
-			<p class="text-red-400 font-bold italic">{{ $t('home.update') }}</p>
+			<p class="text-red-400 font-bold italic">
+				{{ $t('home.update') }}
+			</p>
 		</div>
 		<div class="pb-3">
 			<p>
 				{{ $t('home.biography.main') }}
 				<br><br>
-				<i>{{ $t('home.translated') }}</i>
+				<i>
+					{{ $t('home.translated') }}
+				</i>
 			</p>
 			<ul class="list-disc pl-4">
 				<li>
@@ -42,17 +48,29 @@ onMounted(() => {
 		</div>
 		<div>
 			<div class="flex gap-2 pb-6">
-				<p>filter: </p>
-				<select v-model="filter" @input="filterArchives">
-					<option value="">{{ $t('home.archive.filter') }}</option>
-					<option v-for="archive in archives[locale]" :value="archive.filter">{{ archive.filter }}</option>
+				<p class="text-sm">
+					filter: 
+				</p>
+				<select 
+					v-model="filter" 
+					@input="filterArchives" 
+					class="text-sm"
+				>
+					<option value="">
+						{{ $t('home.archive.filter') }}
+					</option>
+					<option 
+						v-for="archive in archives[locale]" 
+						:value="archive.filter"
+					>
+						{{ archive.filter }}
+					</option>
 				</select>
 			</div>
 			<div class="flex flex-wrap gap-4 items-center" v-for="archive in archives[locale]">
 				<div class="pb-8" v-if="filter !== '' ? archive.filter === filter : true">
-					<!-- <div class="p-3 pt-1.5 pb-2 px-4 border rounded-full inline font-medium" :class="archive.style">{{ archive.title }}</div>  -->
-					 <div class="text-xs font-bold" v-html="archive.title">
-					 </div>
+					<div class="text-xs font-bold" v-html="archive.title">
+					</div>
 					<div class="mt-4">
 						<div v-for="post in archive.posts" class="py-2">
 							<a :href="`/archive/${post.slug}`">{{ post.title }}</a>

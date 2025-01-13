@@ -10,13 +10,8 @@ import { useHighlightManager } from '@/stores/highlightManagerStore.js';
 import { db } from '@/js/firebase.js';
 import { collection, query, where, getDocs } from 'firebase/firestore';
 
-/** @type {import('vue').Ref<boolean>} */
 const hasExercises = ref(false);
-
-/** @type {import('vue').Ref<boolean>} */
 const thoughtBoxIsVisible = ref(false);
-
-/** @type {import('vue').Ref<boolean>} */
 const thoughtsOpened = ref(false);
 
 const { locale } = useI18n();
@@ -29,20 +24,12 @@ const accountStore = useAccountStore();
 const highlightStore = useHighlightStore();
 const highlightManager = useHighlightManager();
 
-/**
- * Adds a new thought for the current page
- * @returns {Promise<void>}
- */
 const addThought = async () => {
   await accountStore.addThought(slug);
   await accountStore.getThoughts(slug);
   thoughtBoxIsVisible.value = false;
 };
 
-/**
- * Checks if exercises exist for current page
- * @returns {Promise<void>}
- */
 const checkForExercises = async () => {
   try {
     const exercisesCollection = collection(db, 'exercises'); 
@@ -54,10 +41,6 @@ const checkForExercises = async () => {
   }
 };
 
-/**
- * Saves current text selection as highlight
- * @returns {Promise<void>}
- */
 const saveHighlight = async () => {
   if (!authStore.user || !highlightManager.selectedRange) return;
 
@@ -76,11 +59,6 @@ const saveHighlight = async () => {
   }
 };
 
-/**
- * Removes a highlight from the document
- * @param {Highlight} highlight - Highlight to remove
- * @returns {Promise<void>}
- */
 const removeHighlight = async (highlight) => {
   if (!authStore.user) return;
 

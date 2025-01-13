@@ -1,12 +1,11 @@
 <script setup>
 import { useI18n } from 'vue-i18n';
-
 const { locale } = useI18n();
 </script>
 
 <template>
-    <div>
-        <h2 class="pt-4 pb-2">
+    <div class="pt-4">
+        <h2 class="pb-2">
             {{ $t('about.heading') }}
         </h2>
         <p class="font-bold">
