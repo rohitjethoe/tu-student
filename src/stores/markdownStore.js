@@ -68,11 +68,12 @@ export const useMarkdownStore = defineStore('markdown', {
      * @param {string} type - The type of the file (not used in this function but included for flexibility).
      * @returns {Promise<void>}
      */
-    async loadMarkdown(locale, slug) {
+    async loadMarkdown(locale, slug, type) {
       const archiveFiles = import.meta.glob('@/archive/**/*.md', { query: '?raw', import: 'default' });
-          
-      const files = archiveFiles;
-      const filePath = `/src/archive/${locale}/${slug}.md`;
+      const examFiles = import.meta.glob('@/exams/**/*.md', { query: '?raw', import: 'default' });
+         
+      const files = type === 'archive' ? archiveFiles : examFiles;
+      const filePath = `/src/${type}/${locale}/${slug}.md`;
 
       if (filePath in files) {
         this.module = await files[filePath]();

@@ -12,9 +12,39 @@ const nl = {
             months: ['januari', 'februari', 'maart', 'april', 'mei', 'juni', 'juli', 'augustus', 'september', 'oktober', 'november', 'december'],
             days: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31'],
         },
+        exams: {
+            title: "Laatste Examens"
+        }
     },
     substack: "Meld aan bij mijn substack voor notificaties",
+    exams: {
+        posts: [
+            {
+                title: "VWO Wiskunde B van <a class='text-[#154273]' href='https://examenblad.nl' target='_blank'>Examenblad.nl</a>",
+                categories: [
+                    {
+                        title: "logarithmic functions",
+                        questions: [
+                            {
+                                title: "Prove the inverse property of logarithmic and exponential functions",
+                                slug: "exercise-1-2022-i"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
     archive: {
+        thought: "Voeg gedachte toe",
+        exercises: "Opdrachten oefenen",
+        material: "Materiaal bekijken",
+        placeholder: "Voeg je gedachte toe...",
+        submit: "Voeg toe",
+        cancel: "Verwerp",
+        months: ['januari', 'februari', 'maart', 'april', 'mei', 'juni', 'juli', 'augustus', 'september', 'oktober', 'november', 'december'],
+        days: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31'],
+        addedOn: "toegevoegd op",
         posts: [
             {
                 filter: "VWO Natuurkunde van TU Delft",
@@ -28,17 +58,6 @@ const nl = {
                     }
                 ]
             },
-            // {
-            //     title: "introductie tot programmeren",
-            //     style: "text-blue-400 border-blue-400 bg-blue-400/10",
-            //     posts: [
-            //         {
-            //             title: "Introductie tot Programmeren",
-            //             date: "2025-01-12T20:53:04.188Z",
-            //             slug: "introduction-to-programming"
-            //         }
-            //     ]
-            // },
             {
                 filter: "VWO Natuurkunde van TU Delft",
                 title: "VWO Wiskunde B van T<span class='text-[#00a6d6]'>U</span> Delft",
@@ -62,15 +81,6 @@ const nl = {
                 ]
             }
         ],
-        thought: "Voeg gedachte toe",
-        exercises: "Opdrachten oefenen",
-        material: "Materiaal bekijken",
-        placeholder: "Voeg je gedachte toe...",
-        submit: "Voeg toe",
-        cancel: "Verwerp",
-        months: ['januari', 'februari', 'maart', 'april', 'mei', 'juni', 'juli', 'augustus', 'september', 'oktober', 'november', 'december'],
-        days: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31'],
-        addedOn: "toegevoegd op",
         seeAll: {
             closed: "Bekijk gedachten",
             opened: "Sluit gedachten"

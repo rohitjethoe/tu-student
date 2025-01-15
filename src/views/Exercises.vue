@@ -50,8 +50,8 @@ onMounted(() => {
 						:key="key"
 						class="w-full flex items-center gap-2 p-2 border-gray-300 border my-2 capitalize bg-white dark:bg-[#242424]"
 						:class="`
-							${((exerciseStore.selectedOptions[index] === option) && (option === question.answer)) ? 'bg-green-200 dark:bg-green-300 border-2 border-green-400' : ''}
-							${((exerciseStore.selectedOptions[index] === option) && (option !== question.answer)) ? 'bg-red-300 dark:bg-red-400 border-2 border-red-500' : ''}
+							${((exerciseStore.selectedOptions[index] === option) && (question.answer.includes(option))) ? 'bg-green-200 dark:bg-green-300 border-2 border-green-400' : ''}
+							${((exerciseStore.selectedOptions[index] === option) && (!question.answer.includes(option))) ? 'bg-red-300 dark:bg-red-400 border-2 border-red-500' : ''}
 						`" 
 					>
 						<input 

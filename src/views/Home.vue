@@ -6,9 +6,25 @@ import nl from '@/locale/nl.js';
 
 const { locale } = useI18n();
 const filter = ref("");
+
 const archives = { 
 	en: en.archive.posts,
 	nl: nl.archive.posts 
+}
+
+const exams = {
+	en: en.exams.posts,
+	nl: nl.exams.posts
+}
+
+const categories = ref([])
+
+const openCategory = (title) => {
+	if (categories.value.includes(title)) {
+		categories.value.pop(title);
+	} else {
+		categories.value.push(title);
+	}
 }
 
 onMounted(() => {
@@ -41,7 +57,27 @@ onMounted(() => {
 				</li>
 			</ul>
 		</div>
-		<div class="py-3">
+		<div class="pt-12">
+			<h2 class="text-lg font-bold italic">
+				{{ $t('home.exams.title') }}
+			</h2>
+		</div>
+		<div>
+			<div class="flex flex-col flex-wrap gap-4 items-start pt-4" v-for="exam in exams[locale]">
+				<div class="text-xs font-bold" v-html="exam.title" />
+				<div v-for="category in exam.categories">
+					<div @click="openCategory(category.title)" class="text-sm font-medium select-none cursor-pointer">
+						⏩️ {{ category.title }}
+					</div>
+					<ul class="pl-4 list-disc">
+						<li v-if="categories.includes(category.title)" v-for="question in category.questions" class="py-2">
+							<a class="text-sm" :href="`/exams/${question.slug}`">{{ question.title }}</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="pt-12 pb-3">
 			<h2 class="text-lg font-bold italic">
 				{{ $t('home.archive.title') }}
 			</h2>

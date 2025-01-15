@@ -68,6 +68,22 @@ a:hover {
 
   .tu-markdown img {
     @apply py-3;
+
+    width: 100%;
+
+    @media (min-width: 640px) {
+      width: 40%;
+    }
+  }
+
+  .tu-markdown svg {
+    @apply p-2 pb-0;
+
+    width: 60%;
+
+    @media (min-width: 640px) {
+      width: 50%;
+    }
   }
   
   @media (min-width: 768px) {

@@ -37,6 +37,11 @@ const routes = [
         component: () => import('@/views/Archive.vue')
     },
     {
+        path: '/exams/:slug',
+        name: 'Exams',
+        component: () => import('@/views/Exams.vue')
+    },
+    {
         path: '/exercises/:slug', 
         name: 'Exercises',
         component: () => import('@/views/Exercises.vue')

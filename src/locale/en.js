@@ -12,14 +12,43 @@ const en = {
             months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
             days: ['0', '1st', '2nd', '3rd', '4th', '5th', '6th', '7th', '8th', '9th', '10th', '11th', '12th', '13th', '14th', '15th', '16th', '17th', '18th', '19th', '20th', '21st', '22nd', '23rd', '24th', '25th', '26th', '27th', '28th', '29th', '30th', '31st'],
         },
+        exams: {
+            title: "Latest Exams"
+        }
     },
     substack: "Subscribe to my substack for notifications",
+    exams: {
+        posts: [
+            {
+                title: "Analysis and Approaches HL from <span class='text-[#154273]'>Examenblad.nl</span>",
+                categories: [
+                    {
+                        title: "logarithmic functions",
+                        questions: [
+                            {
+                                title: "Prove the inverse property of logarithmic and exponential functions",
+                                slug: "exercise-1-2022-i"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
     archive: {
+        thought: "Add thought",
+        exercises: "Try exercises",
+        material: "View material",
+        placeholder: "Add your thought...",
+        submit: "Add",
+        cancel: "Undo",
+        months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+        days: ['0', '1st', '2nd', '3rd', '4th', '5th', '6th', '7th', '8th', '9th', '10th', '11th', '12th', '13th', '14th', '15th', '16th', '17th', '18th', '19th', '20th', '21st', '22nd', '23rd', '24th', '25th', '26th', '27th', '28th', '29th', '30th', '31st'],
+        addedOn: "added on",
         posts: [
         {
             filter: "Pre-University Physics from TU Delft",
             title: "Pre-University Physics from T<span class='text-[#00a6d6]'>U</span> Delft",
-            style: "text-[#00a6d6] border-[#00a6d6] bg-[#00a6d6]/10",
             posts: [
                 {
                     title: "Force and Motion",
@@ -28,21 +57,9 @@ const en = {
                 }
             ]
         },
-        // {
-        //     title: "introduction to programming",
-        //     style: "text-blue-400 border-blue-400 bg-blue-400/10",
-        //     posts: [
-        //         {
-        //             title: "Introduction to Programming",
-        //             date: "2025-01-12T20:53:04.188Z",
-        //             slug: "introduction-to-programming"
-        //         }
-        //     ]
-        // },
         {
             filter: "Pre-University Calculus from TU Delft",
             title: "Pre-University Calculus from T<span class='text-[#00a6d6]'>U</span> Delft",
-            style: "text-[#00a6d6] border-[#00a6d6] bg-[#00a6d6]/10",
             posts: [
                 {
                     title: "What Is A Polynomial Function?",
@@ -61,15 +78,6 @@ const en = {
                 }
             ]
         }],
-        thought: "Add thought",
-        exercises: "Try exercises",
-        material: "View material",
-        placeholder: "Add your thought...",
-        submit: "Add",
-        cancel: "Undo",
-        months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-        days: ['0', '1st', '2nd', '3rd', '4th', '5th', '6th', '7th', '8th', '9th', '10th', '11th', '12th', '13th', '14th', '15th', '16th', '17th', '18th', '19th', '20th', '21st', '22nd', '23rd', '24th', '25th', '26th', '27th', '28th', '29th', '30th', '31st'],
-        addedOn: "added on",
         seeAll: {
             closed: "View thoughts",
             opened: "Close thoughts"

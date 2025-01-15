@@ -1,3 +1,6 @@
+###### **1.2 Functions**
+
+
 <iframe width="100%" height="300" src="https://www.youtube.com/embed/UvpH5Uj7BuE?si=WjKBYlQln08lJPr7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Mathematics uses functions to describe relationships between quantities and *model reality*. 
@@ -25,7 +28,7 @@ Functions can be describes in four main ways:
 
 $$ f : x → x^2 $$
 
-is read as 'f colon x to x squared'.
+$$ \\text{is read as 'f colon x to x squared'.} $$
 
 Formulas are powerful but may not always be practical or possible for real-world data.
 
@@ -70,8 +73,9 @@ Tables have a drawback that they only represent finite points, as with our funct
 
 3. __Graph__: Offers visual overview of a functions behavior, showing trends like <u>increasing</u>, <u>decreasing</u>, or <u>extrema</u>. 
 
+<img src="https://upload.wikimedia.org/wikipedia/commons/7/76/Polynomial_of_degree_three.svg" />
+
 <span class="text-xs">Illustration: "Polynomial of third degree" by [Helfrich](https://commons.wikimedia.org/wiki/User:Helfrich), modified, used under [CC-BY-SA-4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en).</span>
-<img width="33%" src="https://upload.wikimedia.org/wikipedia/commons/7/76/Polynomial_of_degree_three.svg" />
 
 Graphs make properties easy to interpret; __but__ lack <u>precision</u> and cannot represent the full domain
 
