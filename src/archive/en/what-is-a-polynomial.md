@@ -32,9 +32,15 @@ The video concludes with a teaser for understanding how polynomial degree relate
 
 <iframe width="100%" height="300" src="https://www.youtube.com/embed/H5A-0uoLCMg?si=SNvzHnWcw2dVrlhn&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
+<span class="text-xs">Illustration: "Constant Functions" by [Lfahberg](https://commons.wikimedia.org/wiki/User:Lfahlberg), used under [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/deed.en)</span>
+<img class="pl-4 pt-4 pb-4" width="150" src="https://upload.wikimedia.org/wikipedia/commons/d/d3/Wiki_constant_function_175_200.png" />  
+
 1. **Degree 0 (Constant Functions):**
    - Form: \$ f(x) = a \\cdot x^0 \$ (or \$ f(x) = a \$).
    - Graph: Horizontal line.
+
+<span class="text-xs">Illustration: "Linear Functions"</span>
+<img class="pl-4 pt-4 pb-4" width="150" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Linear_Function_Graph.svg/1920px-Linear_Function_Graph.svg.png" />
 
 2. **Degree 1 (Linear Functions):**
    - Form: \$ f(x) = ax + b \$, where \$ a \\neq 0 \$.
@@ -42,6 +48,9 @@ The video concludes with a teaser for understanding how polynomial degree relate
      - \$ a \$: Slope (steepness).
      - \$ b \$: \$ y \$-intercept.
    - Example: \$ f(x) = -\\frac{1}{2}x + 2 \$.
+
+<span class="text-xs">Illustration: "Quadratic Functions"</span>
+<img class="pl-4 pt-4 pb-4" width="150" src="https://upload.wikimedia.org/wikipedia/commons/f/f8/Polynomialdeg2.svg" />
 
 3. **Degree 2 (Quadratic Functions):**
    - Form: \$ f(x) = ax^2 + bx + c \$.

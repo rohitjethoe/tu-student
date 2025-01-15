@@ -66,6 +66,10 @@ a:hover {
     @apply list-decimal pl-6;
   }
 
+  .tu-markdown img {
+    @apply py-3;
+  }
+  
   @media (min-width: 768px) {
    .tu-markdown p {
     @apply w-full;

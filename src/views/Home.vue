@@ -13,7 +13,7 @@ const archives = {
 
 onMounted(() => {
 	const windowLocale = locale.value === "en" ? 'www' : locale.value;
-	window.document.title = `home | ${windowLocale}.tustudent.blog`;
+	window.document.title = `${windowLocale}.tustudent.blog`;
 })
 </script>
 

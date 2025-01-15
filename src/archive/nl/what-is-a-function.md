@@ -1,31 +1,34 @@
 <iframe width="100%" height="300" src="https://www.youtube.com/embed/UvpH5Uj7BuE?si=WjKBYlQln08lJPr7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-Wiskunde gebruikt functies om relaties te beschrijven en *de realiteit te modelleren*. 
+Wiskunde gebruikt functies om relaties tussen hoeveelheden te beschrijven en *de werkelijkheid te modelleren*.
 
-Een **functie** is een regel die elk object in een invoerset koppelt aan precies één object in een uitvoerset. Functies kunnen worden gezien als machines: ze nemen een invoer en produceren een *specifieke* uitvoer. 
+Een **functie** is een regel die elk object in een inputverzameling koppelt aan precies één object in een outputverzameling. Functies kunnen worden gezien als machines: ze nemen een invoer en produceren een specifieke uitvoer.
 
-In de calculus worden functies beperkt tot reële getallen, waarbij elke invoer precies één uitvoer produceert. 
+Bijvoorbeeld, een databaseprogramma dat alleen de eerste film van een acteur teruggeeft, definieert een functie.
 
-Bijvoorbeeld, de "kwadratische functie" neemt een getal zoals 3 en geeft 9 als uitvoer, waarbij zowel de *domein* als de *codomein* de verzameling reële getallen \$\\R\$ is.
+In calculus zijn functies beperkt tot reële getallen, waarbij elke invoer precies één uitvoer produceert.
 
-Samenvattend: een functie is een machine die een relatie legt tussen twee verzamelingen, met de voorwaarde dat **elke** invoer precies **één** uitvoer oplevert.
- 
- 
+Bijvoorbeeld, de "kwadratische functie" neemt een getal zoals 3 en geeft 9 terug, waarbij zowel het *domein* als het *codomein* de verzameling van reële getallen \$\\R\$ is.
+
+Samenvattend: een functie is een machine die een relatie legt tussen twee verzamelingen, met de voorwaarde dat elke invoer precies één uitvoer oplevert.
+
 <iframe width="100%" height="300" src="https://www.youtube.com/embed/isqc36BSKWo?si=K_PHZjYYaDP-nceH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
- 
-Hoe beschrijven we een functie? We zullen ons natuurlijk enkel focussen op functies die getallen naar andere getallen sturen.
 
-Een logische vraag: gegeven een functie, hoe beschrijven we wat het doet met zijn mogelijke invoerwaarden?
+Hoe beschrijven we een functie? We beschouwen hier alleen functies die getallen naar getallen sturen.
+
+Een logische vraag: gegeven een functie, hoe beschrijf je wat deze doet met mogelijke inputs?
 
 Functies kunnen op vier manieren worden beschreven:
 
-1. __Formule__: Biedt een beknopte, universele regel voor alle invoerwaarden. De kwadratische functie kan worden uitgedrukt als \$f(x) = x^2\$, waarbij \$x\$ de invoer is en \$x^2\$ de uitvoer; of als:
+1. __Formule__: Geeft een beknopte, universele regel voor alle inputs. De kwadratische functie kan worden uitgedrukt als \$f(x) = x^2\$, waarbij \$x\$ de invoer is en \$x^2\$ de uitvoer; of als:  
 
-$$ f : x → x^2 $$
+   $$ f : x → x^2 $$  
 
-Formules zijn krachtig, maar niet altijd praktisch of mogelijk voor gegevens uit de echte wereld.
+   Dit wordt gelezen als 'f dubbele punt x naar x in het kwadraat'.  
 
-2. __Tabel__: Vat relaties samen tussen specifieke invoer- en uitvoerwaarden, zoals rondetijden bij een race of bevolkingsgegevens over de jaren.
+   Formules zijn krachtig, maar zijn mogelijk niet altijd praktisch of toepasbaar op gegevens uit de echte wereld.
+
+2. __Tabel__: Vat relaties samen tussen specifieke inputs en outputs, zoals rondetijden in een race of bevolkingsdata door de jaren heen.
 
 <table>
     <thead>
@@ -62,14 +65,15 @@ Formules zijn krachtig, maar niet altijd praktisch of mogelijk voor gegevens uit
     </tbody>
 </table>
 
-Tabellen hebben als nadeel dat ze alleen een aantal invoerwaardes representeren; zoals bij onze functie \$x^2\$, is het onpraktisch.
+Tabellen hebben als nadeel dat ze slechts eindige punten weergeven. Voor onze functie \$x^2\$ is het bijvoorbeeld niet praktisch.
 
-3. __Grafiek__: Biedt een visueel overzicht van het gedrag van een functie, zoals <u>stijging</u>, <u>daling</u> of <u>extreme waarden</u>. 
+3. __Grafiek__: Geeft een visueel overzicht van het gedrag van een functie, waarbij trends zoals <u>stijgend</u>, <u>dalend</u> of <u>extrema</u> zichtbaar worden.
 
-Grafieken maken eigenschappen gemakkelijk te interpreteren; __maar__ missen <u>precisie</u> en kunnen niet het volledige domein weergeven.
+<span class="text-xs">Illustratie: "Polynoom van de derde graad" door [Helfrich](https://commons.wikimedia.org/wiki/User:Helfrich), aangepast, gebruikt onder [CC-BY-SA-4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.nl).</span>
+<img width="33%" src="https://upload.wikimedia.org/wikipedia/commons/7/76/Polynomial_of_degree_three.svg" />
 
-4. __Woorden__: Beschrijf het gedrag van de functie in <u>natuurlijke taal</u>.
+Grafieken maken eigenschappen gemakkelijk te interpreteren; __maar__ ze missen <u>precisie</u> en kunnen niet het volledige domein weergeven.
 
-Bijvoorbeeld, de _floor function_ stelt dat \$x\$ gelijk is aan het grootste gehele getal dat kleiner is dan of gelijk is aan \$x\$. Woorden kunnen verduidelijken wat tabellen, grafieken of formules mogelijk <u>verborgen houden</u>.
+4. __Woorden__: Beschrijf het gedrag van de functie in <u>eenvoudige taal</u>.
 
-Het is nuttig en belangrijk om tussen deze vier manieren te kunnen schakelen bij het beschrijven van een functie, vooral bij standaardfuncties.
+Bijvoorbeeld: de _vloerfunctie_ koppelt een getal \$x\$ aan het grootste gehele getal dat kleiner is dan

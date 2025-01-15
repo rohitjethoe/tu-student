@@ -70,6 +70,9 @@ Tables have a drawback that they only represent finite points, as with our funct
 
 3. __Graph__: Offers visual overview of a functions behavior, showing trends like <u>increasing</u>, <u>decreasing</u>, or <u>extrema</u>. 
 
+<span class="text-xs">Illustration: "Polynomial of third degree" by [Helfrich](https://commons.wikimedia.org/wiki/User:Helfrich), modified, used under [CC-BY-SA-4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en).</span>
+<img width="33%" src="https://upload.wikimedia.org/wikipedia/commons/7/76/Polynomial_of_degree_three.svg" />
+
 Graphs make properties easy to interpret; __but__ lack <u>precision</u> and cannot represent the full domain
 
 4. __Words__: Describe the function's behavior in <u>plain language</u>.

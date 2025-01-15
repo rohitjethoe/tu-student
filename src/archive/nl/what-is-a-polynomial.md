@@ -32,18 +32,27 @@ De video eindigt met een teaser om te begrijpen hoe de graad van een polynoom ge
 
 <iframe width="100%" height="300" src="https://www.youtube.com/embed/H5A-0uoLCMg?si=SNvzHnWcw2dVrlhn&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
+<span class="text-xs">Afbeelding: "Constante Functies" door [Lfahberg](https://commons.wikimedia.org/wiki/User:Lfahlberg), gebruikt onder licentie [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/deed.en)</span>
+<img class="pl-4 pt-4 pb-4" width="150" src="https://upload.wikimedia.org/wikipedia/commons/d/d3/Wiki_constant_function_175_200.png" />  
+
 1. **Graad 0 (Constante Functies):**
     - Vorm: \$ f(x) = a \\cdot x^0 \$ (of \$ f(x) = a \$).
     - Grafiek: Horizontale lijn.
 
-2. **Graad 1 (Lineaire Functies):**
+<span class="text-xs">Afbeelding: "Lineaire Functies"</span>
+<img class="pl-4 pt-4 pb-4" width="150" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Linear_Function_Graph.svg/1920px-Linear_Function_Graph.svg.png" />
+
+2. **Eerste graads (Lineaire Functies):**
     - Vorm: \$ f(x) = ax + b \$, waarbij \$ a \\neq 0 \$.
     - Grafiek: Rechte lijn.
       - \$ a \$: Hellingshoek.
       - \$ b \$: \$ y \$-asintercept.
     - Voorbeeld: \$ f(x) = -\\frac{1}{2}x + 2 \$.
 
-3. **Graad 2 (Kwadratische Functies):**
+<span class="text-xs">Afbeelding: "Kwadratische Functies"</span>
+<img class="pl-4 pt-4 pb-4" width="150" src="https://upload.wikimedia.org/wikipedia/commons/f/f8/Polynomialdeg2.svg" />
+
+3. **Tweede graads (Kwadratische Functies):**
     - Vorm: \$ f(x) = ax^2 + bx + c \$.
     - Grafiek: Parabool met:
       - Top: \$ x = -\\frac{b}{2a} \$.
