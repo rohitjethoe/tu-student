@@ -13,6 +13,8 @@ In calculus, functions are restricted to real numbers, where each input produces
 For example, the "square function" takes a number like 3 and outputs 9, with both the *domain* and *codomain* being the set of real numbers \$\\R\$.
 
 In summary, a function is a machine that establishes a relationship between two sets, with the condition that each input produces exactly one output.
+
+<br />
  
 ###### **1.2.2 Ways to describe functions**
  
