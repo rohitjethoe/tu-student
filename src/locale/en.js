@@ -3,7 +3,7 @@ const en = {
     home: {
         update: "Latest update in January 2025",
         biography: {
-            main: `Currently accepted for Bachelor's Computer Science and Engineering and enrolled in the selection procedure for Aerospace Engineering at a research university in Europe. 🇪🇺`,
+            main: `Currently accepted for BSc Computer Science and Engineering and enrolled in the selection procedure for BSc Aerospace Engineering at a research university in Europe. 🇪🇺`,
         },
         translated: "Looking for a translated version of this page?",
         archive: { 
