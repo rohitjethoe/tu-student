@@ -96,7 +96,7 @@ onMounted(() => {
 					</div>
 					<ul class="pl-4 list-disc">
 						<li v-if="categories.includes(category.title)" v-for="question in category.questions" class="py-2">
-							<a :class="exerciseStore.finishedExams.some(exam => exam.slug === question.slug) ? 'finished' : ''" class="text-sm" :href="`/exams/${question.slug}`">{{ question.title }}</a>
+							<a :class="exerciseStore.finishedExams.some(exam => exam.slug === question.slug) ? 'finished-link' : ''" class="text-sm" :href="`/exams/${question.slug}`">{{ question.title }}</a>
 						</li>
 					</ul>
 				</div>
