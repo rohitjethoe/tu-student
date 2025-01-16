@@ -3,6 +3,11 @@ import { onMounted, ref } from 'vue';
 import { useI18n } from 'vue-i18n';
 import en from '@/locale/en.js';
 import nl from '@/locale/nl.js';
+import { useExerciseStore } from '@/stores/exerciseStore.js';
+import { useAuthStore } from '@/stores/authStore.js';
+
+const authStore	= useAuthStore();
+const exerciseStore = useExerciseStore();
 
 const { locale } = useI18n();
 const filter = ref("");
@@ -18,6 +23,7 @@ const exams = {
 }
 
 const categories = ref([])
+// const finishedExams = ref([]);
 
 const openCategory = (title) => {
 	if (categories.value.includes(title)) {
@@ -27,9 +33,28 @@ const openCategory = (title) => {
 	}
 }
 
+// const addFinishedExam = async (slug) => {
+// 	for (exam in exerciseStore.finishedExams) {
+// 		console.log(exam)
+// 	}
+// }
+
 onMounted(() => {
 	const windowLocale = locale.value === "en" ? 'www' : locale.value;
 	window.document.title = `${windowLocale}.tustudent.blog`;
+
+	const unsubscribe = authStore.$subscribe((mutation, state) => {
+		if (state.user) {
+			exerciseStore.getFinishedExams();
+			unsubscribe();
+		}
+	});
+
+	if (authStore.user) {
+		exerciseStore.getFinishedExams();
+
+		unsubscribe();
+	}
 })
 </script>
 
@@ -71,7 +96,7 @@ onMounted(() => {
 					</div>
 					<ul class="pl-4 list-disc">
 						<li v-if="categories.includes(category.title)" v-for="question in category.questions" class="py-2">
-							<a class="text-sm" :href="`/exams/${question.slug}`">{{ question.title }}</a>
+							<a :class="exerciseStore.finishedExams.some(exam => exam.slug === question.slug) ? 'finished' : ''" class="text-sm" :href="`/exams/${question.slug}`">{{ question.title }}</a>
 						</li>
 					</ul>
 				</div>

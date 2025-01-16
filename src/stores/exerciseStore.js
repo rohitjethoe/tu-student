@@ -35,6 +35,12 @@ export const useExerciseStore = defineStore('exercise', {
      * @type {boolean}
      */
     finished: false,
+
+    /**
+     * Whether the exam is finished by the user.
+     * @type {Array}
+     */
+    finishedExams: [],
   }),
 
   actions: {
@@ -223,6 +229,39 @@ export const useExerciseStore = defineStore('exercise', {
         }
       } catch (error) {
         console.error('Error deleting finished exam:', error);
+      }
+    },
+
+    /**
+     * Retrieves all finished exams for the current authenticated user.
+     * This function queries the 'completed' collection in Firestore to 
+     * fetch all documents where the user has completed the exam (finished = true).
+     * The resulting data is stored in the finishedExams state property.
+     *
+     * @returns {Promise<void>} A promise that resolves once the finished exams 
+     *                          are fetched from Firestore and stored in the state.
+     * 
+     * @throws {Error} If there is an error during the Firestore query, it will be 
+     *                 logged in the console.
+     */
+    async getFinishedExams() {
+      try {
+        const db = getFirestore();
+        const uid = authStore.user.uid;
+
+        const completedRef = collection(db, 'completed');
+        const q = query(completedRef, where('uid', '==', uid), where('finished', '==', true));
+        const querySnapshot = await getDocs(q);
+
+        if (!querySnapshot.empty) {
+          this.finishedExams = querySnapshot.docs.map(docSnap => docSnap.data());
+          console.log('Finished exams retrieved successfully:', this.finishedExams);
+        } else {
+          this.finishedExams = [];
+          console.log('No finished exams found for this user.');
+        }
+      } catch (error) {
+        console.error('Error retrieving finished exams:', error);
       }
     },
   },
