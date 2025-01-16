@@ -14,13 +14,21 @@
 
 The functions \$ f_p(x)=ln⁡(px) \$ and \$ g_p(x)=e^{x/p} \$ (where \$ p \\neq 0 \$) are inverses of each other.
 
-###### **3p**
+<div class="flex gap-2 font-bold">
+
+###### 3p
 1) Prove this statement
+
+</div>
 
 Let \$ p=-1 \$. \$ \\text{V} \$ is the region enclosed by the graphs of \$ f_{-1}(x) \$ and \$ g_{-1}(x) \$, the x-axis, and the y-axis. Refer to figure 1.
 
-###### **5p** 
+<div class="flex gap-2 font-bold">
+
+###### 5p
 2) Calculate the area of \$ \\text{V} \$, giving your final answer to two decimal places.
+
+</div>
 
 There exists a value of \$p\$ such that the line \$y=x\$ is the common tangent to the graphs of \$f_p(x)\$ and \$g_p(x)\$. This situation is depicted in figure 2.
 
@@ -36,5 +44,9 @@ There exists a value of \$p\$ such that the line \$y=x\$ is the common tangent t
 
 ###### Figure 2
 
-###### **5p**
+<div class="flex gap-2 font-bold">
+
+###### 5p
 3) Calculate the exact value of \$p\$ for which the line \$y=x\$ is the common tangent.
+
+</div>

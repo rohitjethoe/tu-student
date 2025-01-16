@@ -10,6 +10,7 @@ import { useHighlightManager } from '@/stores/highlightManagerStore.js';
 
 const thoughtBoxIsVisible = ref(false);
 const thoughtsOpened = ref(false);
+const solutionsOpened = ref(false);
 
 const { locale } = useI18n();
 const route = useRoute();
@@ -55,6 +56,16 @@ const removeHighlight = async (highlight) => {
     console.error('Error removing highlight:', error);
   }
 };
+
+const solutionsHandler = async () => {
+  if (solutionsOpened.value) {
+    solutionsOpened.value = false;
+    await markdownStore.loadMarkdown(locale.value, slug, 'exams');
+  } else {
+    await markdownStore.loadMarkdown(locale.value, slug, 'solutions');
+    solutionsOpened.value = true;
+  }
+}
 
 onMounted(async () => {
   markdownStore.setPageTitle(slug, locale.value);
@@ -106,8 +117,11 @@ onMounted(async () => {
     </div>
 
     <div class="flex gap-3 pt-4 relative">
-      <div v-if="authStore.user" @click="thoughtBoxIsVisible = !thoughtBoxIsVisible" class="button text-sm py-1.5 px-3 rounded-md cursor-pointer transition-all ease-in">
+      <div v-if="authStore.user" @click="thoughtBoxIsVisible = !thoughtBoxIsVisible" class="button text-sm py-1.5 px-3 rounded-md cursor-pointer transition-all ease-in select-none">
         💭 {{ $t('archive.thought') }}
+      </div>
+      <div v-if="authStore.user" @click="solutionsHandler" class="button text-sm py-1.5 px-3 rounded-md cursor-pointer transition-all ease-in select-none">
+        🎼 {{ $t('exams.solutions') }}
       </div>
       <div :class="thoughtBoxIsVisible ? 'opacity-100 pointer-events-all' : 'opacity-0 pointer-events-none'" class="absolute top-2.5 left-0 flex items-center justify-between bg-gray-200 dark:bg-[#1b1b1b] w-full py-2 sm:py-4 px-3 sm:px-6 rounded transition-all ease-in">
         <div class="flex items-center gap-1.5 sm:gap-3">
@@ -130,10 +144,10 @@ onMounted(async () => {
       </div>
     </div>
     
-    <div class="pb-4 mt-3 italic">/archive/{{ slug }}.md</div>
+    <div class="pb-3 mt-3 italic">/archive/{{ slug }}.md</div>
 
     <div 
-      class="tu-markdown relative" 
+      class="tu-markdown relative pb-24" 
       v-html="markdownStore.content"
       @mouseup="highlightManager.captureHighlight(highlightManager.markdownContent)"
       @dblclick="removeHighlight"

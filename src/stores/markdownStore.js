@@ -71,8 +71,25 @@ export const useMarkdownStore = defineStore('markdown', {
     async loadMarkdown(locale, slug, type) {
       const archiveFiles = import.meta.glob('@/archive/**/*.md', { query: '?raw', import: 'default' });
       const examFiles = import.meta.glob('@/exams/**/*.md', { query: '?raw', import: 'default' });
-         
-      const files = type === 'archive' ? archiveFiles : examFiles;
+      const solutionFiles = import.meta.glob('@/solutions/**/*.md', { query: '?raw', import: 'default' });
+
+      let files = null;
+
+      switch (type) {
+        case 'archive': 
+          files = archiveFiles;
+          break;
+        case 'exams':
+          files = examFiles;
+          break;
+        case 'solutions':
+          files = solutionFiles;
+          break;
+        default:
+          console.log('Invalid type');
+          break;
+      }
+
       const filePath = `/src/${type}/${locale}/${slug}.md`;
 
       if (filePath in files) {
