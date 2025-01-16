@@ -85,6 +85,14 @@ a:hover {
     }
   }
 
+  .tu-markdown .small {
+    width: 52%;
+
+    @media (min-width: 640px) {
+      width: 40%;
+    }
+  }
+
   .tu-markdown svg {
     @apply p-2 pb-0;
 
