@@ -1,5 +1,4 @@
-###### **1.2 Functions**
-
+###### **1.2.1 Functions**
 
 <iframe width="100%" height="300" src="https://www.youtube.com/embed/UvpH5Uj7BuE?si=WjKBYlQln08lJPr7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -15,6 +14,7 @@ For example, the "square function" takes a number like 3 and outputs 9, with bot
 
 In summary, a function is a machine that establishes a relationship between two sets, with the condition that each input produces exactly one output.
  
+###### **1.2.2 Ways to describe functions**
  
 <iframe width="100%" height="300" src="https://www.youtube.com/embed/isqc36BSKWo?si=K_PHZjYYaDP-nceH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
  

@@ -64,6 +64,16 @@ const en = {
             title: "Pre-University Calculus from T<span class='text-[#00a6d6]'>U</span> Delft",
             posts: [
                 {
+                    title: "What Are Power Functions?",
+                    date: "2025-01-16T20:53:04.188Z",
+                    slug: "power-functions"
+                },
+                {
+                    title: "What Is A Rational Function?",
+                    date: "2025-01-16T20:53:04.188Z",
+                    slug: "what-is-a-rational"
+                },
+                {
                     title: "What Is A Polynomial Function?",
                     date: "2025-01-10T20:53:04.188Z",
                     slug: "what-is-a-polynomial"
