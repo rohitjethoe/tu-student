@@ -67,7 +67,7 @@ onMounted(() => {
 				<div class="text-xs font-bold" v-html="exam.title" />
 				<div v-for="category in exam.categories">
 					<div @click="openCategory(category.title)" class="text-sm font-medium select-none cursor-pointer">
-						⏩️ {{ category.title }}
+						{{ categories.includes(category.title) ? '⏬️' : '⏩' }} {{ category.title }}
 					</div>
 					<ul class="pl-4 list-disc">
 						<li v-if="categories.includes(category.title)" v-for="question in category.questions" class="py-2">
