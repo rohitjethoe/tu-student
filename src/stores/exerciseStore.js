@@ -29,6 +29,12 @@ export const useExerciseStore = defineStore('exercise', {
      * @type {Object}
      */
     selectedOptions: {},
+
+    /**
+     * Whether the exam is finished by the user.
+     * @type {boolean}
+     */
+    finished: false,
   }),
 
   actions: {
@@ -50,9 +56,7 @@ export const useExerciseStore = defineStore('exercise', {
 
         if (docSnap.exists()) {
           this.exerciseDoc = docSnap.data();
-        } else {
-          router.push('/');
-        }
+        } 
       } catch (err) {
         this.error = err.message;
         router.push('/');
@@ -68,8 +72,7 @@ export const useExerciseStore = defineStore('exercise', {
         const q = query(selectionsRef, where('uid', '==', uid), where('slug', '==', slug));
         const querySnapshot = await getDocs(q);
         
-        console.log(querySnapshot.docs);
-        if (await !querySnapshot.empty) {
+        if (querySnapshot.size > 0) {
           const selectionDoc = querySnapshot.docs[0];
           this.selectedOptions = selectionDoc.data().selectedOptions || {};
         } 
@@ -141,6 +144,85 @@ export const useExerciseStore = defineStore('exercise', {
         console.log('Selection saved successfully to Firestore.');
       } catch (error) {
         console.error('Error saving selection to Firestore:', error);
+      }
+    },
+
+    /**
+     * Retrieves the finished exam details for the given slug.
+     * @param {string} slug - The unique identifier for the exam.
+     * @returns {Promise<void>}
+     */
+    async getFinishedExam(slug) {
+      try {
+        const db = getFirestore();
+        const uid = authStore.user.uid;
+
+        const completedRef = collection(db, 'completed');
+        const q = query(completedRef, where('uid', '==', uid), where('slug', '==', slug));
+        const querySnapshot = await getDocs(q);
+
+        if (!querySnapshot.empty) {
+          const docData = querySnapshot.docs[0].data();
+          this.finished = docData.finished;
+          console.log('Retrieved finished exam data:', docData);
+        } else {
+          this.selectedOptions = {}; // Default if no data
+          this.finished = false;
+          console.log('No finished exam found for the provided slug.');
+        }
+      } catch (error) {
+        console.error('Error retrieving finished exam:', error);
+      }
+    },
+
+    /**
+     * Adds a finished exam for the user.
+     * @param {string} slug - The unique identifier for the exam.
+     * @returns {Promise<void>}
+     */
+    async addFinishedExam(slug) {
+      try {
+        const db = getFirestore();
+        const uid = authStore.user.uid;
+
+        const docRef = doc(db, 'completed', uuidv4());
+        await setDoc(docRef, {
+          uid,
+          slug,
+          finished: true,
+          timestamp: new Date().toISOString(),
+        });
+
+        console.log('Finished exam added successfully.');
+      } catch (error) {
+        console.error('Error adding finished exam:', error);
+      }
+    },
+
+    /**
+     * Deletes a finished exam for the user.
+     * @param {string} slug - The unique identifier for the exam.
+     * @returns {Promise<void>}
+     */
+    async deleteFinishedExam(slug) {
+      try {
+        const db = getFirestore();
+        const uid = authStore.user.uid;
+
+        const completedRef = collection(db, 'completed');
+        const q = query(completedRef, where('uid', '==', uid), where('slug', '==', slug));
+        const querySnapshot = await getDocs(q);
+
+        if (!querySnapshot.empty) {
+          const deletePromises = querySnapshot.docs.map(docSnap => deleteDoc(docSnap.ref));
+          await Promise.all(deletePromises);
+          this.finished = false;
+          console.log('Finished exam deleted successfully.');
+        } else {
+          console.log('No matching document found to delete.');
+        }
+      } catch (error) {
+        console.error('Error deleting finished exam:', error);
       }
     },
   },

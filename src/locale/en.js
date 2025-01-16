@@ -19,6 +19,7 @@ const en = {
     substack: "Subscribe to my substack for notifications",
     exams: {
         solutions: "View solutions",
+        questions: "View questions",
         posts: [
             {
                 title: "Analysis and Approaches HL from <span class='text-[#154273]'>Examenblad.nl</span>",

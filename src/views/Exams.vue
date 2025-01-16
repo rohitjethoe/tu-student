@@ -7,6 +7,14 @@ import { useAccountStore } from '@/stores/accountStore.js';
 import { useMarkdownStore } from '@/stores/markdownStore.js';
 import { useHighlightStore } from '@/stores/highlightStore.js';
 import { useHighlightManager } from '@/stores/highlightManagerStore.js';
+import { useExerciseStore } from '@/stores/exerciseStore.js';
+
+const markdownStore = useMarkdownStore();
+const authStore = useAuthStore();
+const accountStore = useAccountStore();
+const highlightStore = useHighlightStore();
+const highlightManager = useHighlightManager();
+const exerciseStore = useExerciseStore();
 
 const thoughtBoxIsVisible = ref(false);
 const thoughtsOpened = ref(false);
@@ -15,12 +23,6 @@ const solutionsOpened = ref(false);
 const { locale } = useI18n();
 const route = useRoute();
 const slug = route.params.slug;
-
-const markdownStore = useMarkdownStore();
-const authStore = useAuthStore();
-const accountStore = useAccountStore();
-const highlightStore = useHighlightStore();
-const highlightManager = useHighlightManager();
 
 const addThought = async () => {
   await accountStore.addThought(slug);
@@ -67,6 +69,16 @@ const solutionsHandler = async () => {
   }
 }
 
+const examHandler = async () => {
+  if (exerciseStore.finished) {
+    await exerciseStore.deleteFinishedExam(slug);
+    await exerciseStore.getFinishedExam(slug);
+  } else {
+    await exerciseStore.addFinishedExam(slug);
+    await exerciseStore.getFinishedExam(slug);
+  }
+}
+
 onMounted(async () => {
   markdownStore.setPageTitle(slug, locale.value);
   await markdownStore.loadMarkdown(locale.value, slug, 'exams');
@@ -76,6 +88,7 @@ onMounted(async () => {
       accountStore.getThoughts(slug);
       highlightStore.initializeUserHighlights(state.user.id);
       highlightStore.fetchHighlights(state.user.id, slug);
+      exerciseStore.getFinishedExam(slug);
       unsubscribe();
     }
   });
@@ -84,6 +97,7 @@ onMounted(async () => {
     accountStore.getThoughts(slug);
     await highlightStore.initializeUserHighlights(authStore.user.uid);
     await highlightStore.fetchHighlights(authStore.user.uid, slug);
+    exerciseStore.getFinishedExam(slug);
     unsubscribe();
   }
 
@@ -117,11 +131,14 @@ onMounted(async () => {
     </div>
 
     <div class="flex gap-3 pt-4 relative">
-      <div v-if="authStore.user" @click="thoughtBoxIsVisible = !thoughtBoxIsVisible" class="button text-sm py-1.5 px-3 rounded-md cursor-pointer transition-all ease-in select-none">
+      <div v-if="authStore.user" @click="examHandler" class="button finished text-sm py-1.5 px-3 rounded-md cursor-pointer transition-all ease-in select-none" :class="exerciseStore.finished ? 'bg-green-200 hover:bg-green-300' : 'bg-gray-100 hover:bg-gray-200'">
+        {{ exerciseStore.finished ? '✅' : '⏺️' }} 
+      </div>
+      <div v-if="authStore.user" @click="thoughtBoxIsVisible = !thoughtBoxIsVisible" class="button bg-gray-100 hover:bg-gray-200 text-sm py-1.5 px-3 rounded-md cursor-pointer transition-all ease-in select-none">
         💭 {{ $t('archive.thought') }}
       </div>
-      <div v-if="authStore.user" @click="solutionsHandler" class="button text-sm py-1.5 px-3 rounded-md cursor-pointer transition-all ease-in select-none">
-        🎼 {{ $t('exams.solutions') }}
+      <div v-if="authStore.user" @click="solutionsHandler" class="button bg-gray-100 hover:bg-gray-200 text-sm py-1.5 px-3 rounded-md cursor-pointer transition-all ease-in select-none">
+         {{ solutionsOpened ? `🎸 ${$t('exams.questions')}` : `🎼  ${$t('exams.solutions')}` }}
       </div>
       <div :class="thoughtBoxIsVisible ? 'opacity-100 pointer-events-all' : 'opacity-0 pointer-events-none'" class="absolute top-2.5 left-0 flex items-center justify-between bg-gray-200 dark:bg-[#1b1b1b] w-full py-2 sm:py-4 px-3 sm:px-6 rounded transition-all ease-in">
         <div class="flex items-center gap-1.5 sm:gap-3">
@@ -144,7 +161,7 @@ onMounted(async () => {
       </div>
     </div>
     
-    <div class="pb-3 mt-3 italic">/archive/{{ slug }}.md</div>
+    <div class="pb-3 mt-3 italic">/exams/{{ slug }}.md</div>
 
     <div 
       class="tu-markdown relative pb-24" 
@@ -172,12 +189,7 @@ onMounted(async () => {
 
 <style lang="scss">
 .button {
-  @apply bg-gray-100;
   @apply text-black;
-  &:hover {
-    @apply bg-gray-200;
-    @apply text-black;
-  }
   @media (prefers-color-scheme: dark) {
     background-color: rgba(#000, 0.25);
     @apply text-white;
