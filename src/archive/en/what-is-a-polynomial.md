@@ -1,4 +1,4 @@
-###### **1.3 Polynomials**
+###### **1.3.1 Polynomials**
 
 <iframe width="100%" height="300" src="https://www.youtube.com/embed/EDRItJVUrH4?si=c2LnHOf6JuFyNnLu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -31,6 +31,8 @@ The degree of a polynomial affects its behavior:
 While calculators can efficiently evaluate polynomials due to their reliance on addition and multiplication, they approximate functions like \$ \\sin(x) \$, \$ \\cos(x) \$, or \$ \\ln(x) \$ using polynomials (via methods like Taylor series). This demonstrates the versatility of polynomials in approximating other mathematical functions.
 
 The video concludes with a teaser for understanding how polynomial degree relates to function behavior and the approximation of more complex functions.
+
+###### **1.3.2 Graphs of Polynomial Functions**
 
 <iframe width="100%" height="300" src="https://www.youtube.com/embed/H5A-0uoLCMg?si=SNvzHnWcw2dVrlhn&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -69,8 +71,14 @@ The video concludes with a teaser for understanding how polynomial degree relate
 4. **Other Quadratic Forms:**
    - **Factorized Form:** \$ f(x) = a(x-p)(x-q) \$.
      - \$ p \$ and \$ q \$: \$ x \$-intercepts.
+
+<img class="small pl-4 pt-4 pb-4" src="/assets/factorized-form.png" />
+  
    - **Complete Square Form:** \$ f(x) = a(x-r)^2 + s \$.
      - Vertex: \$ (r, s) \$.
+
+<img class="small pl-4 pt-4 pb-4" src="/assets/complete-square-form.png" />
+
 
 5. **Higher-Degree Polynomials:**
    - General Form: \$ f(x) = a_nx^n + a_{n-1}x^{n-1} + \\dots + a_0 \$.
