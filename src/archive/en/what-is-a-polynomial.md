@@ -72,10 +72,14 @@ The video concludes with a teaser for understanding how polynomial degree relate
    - **Factorized Form:** \$ f(x) = a(x-p)(x-q) \$.
      - \$ p \$ and \$ q \$: \$ x \$-intercepts.
 
+<span class="text-xs">Illustration: "Factorized Form"</span>
+
 <img class="small pl-4 pt-4 pb-4" src="/assets/factorized-form.png" />
   
    - **Complete Square Form:** \$ f(x) = a(x-r)^2 + s \$.
      - Vertex: \$ (r, s) \$.
+
+<span class="text-xs">Illustration: "Complete Square Form"</span>
 
 <img class="small pl-4 pt-4 pb-4" src="/assets/complete-square-form.png" />
 
