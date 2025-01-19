@@ -58,7 +58,7 @@ const en = {
                     slug: "measurements-and-uncertainties"
                 }
             ],
-        }
+        },
         {
             filter: "Pre-University Physics from TU Delft",
             title: "Pre-University Physics from T<span class='text-[#00a6d6]'>U</span> Delft",
