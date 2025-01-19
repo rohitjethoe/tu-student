@@ -49,6 +49,17 @@ const en = {
         addedOn: "added on",
         posts: [
         {
+            filter: "IB Oxford Programme Mathematics AA HL",
+            title: "IB Oxford Programme Mathematics AA HL",
+            posts: [
+                {
+                    title: "Sequences series and proofs",
+                    date: "2025-01-20T20:53:04.188Z",
+                    slug: "sequences-series-and-proofs"
+                }
+            ],
+        },
+        {
             filter: "IB Oxford Programme Physics HL",
             title: "IB Oxford Programme Physics HL",
             posts: [
