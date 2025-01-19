@@ -106,7 +106,7 @@ onMounted(() => {
 			<h2 class="text-lg font-bold italic">
 				{{ $t('home.archive.title') }}
 			</h2>
-      <p class="text-gray-500 font-semibold text-xs">
+      <p class="text-gray-500 font-semibold text-xs pt-2">
 				 Archive contains my revisions on following courses
       </p>
 		</div>
