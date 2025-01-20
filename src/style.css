@@ -138,6 +138,23 @@ a:hover {
   .tu-markdown blockquote {
     @apply border-l-2 border-[#555555] pl-4 my-4 italic;
   }
+
+  .tu-markdown pre {
+    @apply bg-[#383838] p-2 rounded-sm;
+  }
+
+  .tu-markdown code {
+    @apply text-sm;
+    font-family:Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New;
+  }
+
+  .tu-markdown .gray {
+    @apply bg-gray-200 dark:bg-gray-600 p-0.5;
+  }
+
+  .tu-markdown .circle {
+    list-style-type: circle;
+  }
 }
 
 @media (prefers-color-scheme: light) {
@@ -153,6 +170,10 @@ a:hover {
   }
 
   .tu-markdown th {
+    @apply bg-[#f9f9f9];
+  }
+
+  .tu-markdown pre {
     @apply bg-[#f9f9f9];
   }
 }

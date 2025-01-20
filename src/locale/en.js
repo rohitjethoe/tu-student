@@ -64,9 +64,9 @@ const en = {
             title: "IB Oxford Programme Physics HL",
             posts: [
                 {
-                    title: "Measurements and Uncertainties",
+                    title: "Measurements in Physics",
                     date: "2025-01-20T20:53:04.188Z",
-                    slug: "measurements-and-uncertainties"
+                    slug: "measurements-in-physics"
                 }
             ],
         },
