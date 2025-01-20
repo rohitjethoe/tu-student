@@ -1,3 +1,4 @@
+###### **Quantities and Units**
 **Physical quantities** are those things that are *measurable*:
 - Such as mass, length, time, electrical current.
 - Quantities are related to <span class="gray">equations</span>
@@ -33,7 +34,21 @@ We use units that have <span class="gray">unambigious</span> meaning:
 
 The SI defines both units and prefixes — letters used to form decimal multiples or sub-multiples of the units (kg; g, km; m).
 
+<br />
+
 The <span class="gray">units themselves are classified as</span> being either:
 - fundamental (or *base*)
 - derived
 - supplementary
+
+There are <span class="gray">two supplementary units in SI</span>:
+- *the radian (rad)* — the unit of angle measurements
+    <ul class="circle">
+        <li>useful alternative to the degree,</li>
+        <li>defined as <u>the angle subtended by an arc of a circle having the same length as the radius</u>.</li>
+    </ul>
+- *the steradian (sr)* — the unit of solid angle
+    <ul>
+        <li>three-dimensional equivalent of the radion,</li>
+        <li>uses the idea of mapping a circle on the surface of a sphere.</li>
+    </ul>
