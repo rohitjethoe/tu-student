@@ -152,6 +152,10 @@ a:hover {
     @apply bg-gray-200 dark:bg-gray-600 p-0.5;
   }
 
+  .tu-markdown .list {
+    @apply ml-6 mb-4;
+  }
+
   .tu-markdown .circle {
     list-style-type: circle;
   }

@@ -83,4 +83,40 @@ $$ \\nu = \\dfrac{\\Delta s}{\\Delta t} $$
 
 where $ \\Delta s $ means change in distance and $ \\Delta t $ means change in time. <span class="gray">Both distance (length) and time are fundamental quantities, speed is a derived quantity.</span>
 
-<u>Fundamental quantities</u> use <u>fundamental units</u>, and <u>derived quantities</u> use <u>derived units</u>
+<u>Fundamental quantitites</u> have their own basic units (e.g., meter, kilogram, second). 
+
+<u>Derived quantities</u> have units that are combinations of these fundamental units. 
+
+For instance <span class="gray">the pascal (Pa) unit</span>: $ m^{-1} \\cdot kg \\cdot s^{-2} $
+
+<br /> 
+
+**Example of how we relate fundamental and derived units, like with newton (N)**
+
+1. The unit of force is the newton (N) <span class="gray">this is a derived unit</span> and can be expressed in terms of fundamental units as kgms<sup>-2</sup>. 
+
+2. This is <span class="gray">because force is defined as the product of *mass* and *acceleration*</span> or $ F = ma $.
+
+3. <span class="gray">*Mass* is a fundamental quantity but *acceleration* is not</span>. Acceleration is the rate of change of velocity or: 
+
+$$ a = \\dfrac{\\Delta v}{\\Delta t} $$
+
+<span class="list">Where $ \\Delta v $ represents <span class="gray">change in velocity</span> and $ \\Delta t $ again being <span class="gray">change in time</span>.</span>
+
+<br />
+
+4. *Time* is a fundamental quantity but *velocity* is not. Velocity is <span class="gray">the rate of change of displacement</span> or
+$$ v = \\dfrac{\\Delta s }{\\Delta t} $$
+
+<span class="list">
+With $ \\Delta s $ being change in displacement and $ \\Delta t $ being the change in time, which are both fundamental units.
+</span>
+
+<br />
+<br />
+
+5. The unit of velocity is $ m \\cdot s^{-1} $. The units of acceleration will therefore be $ \\dfrac{m \\cdot s^{-1}}{s} $ which is written as $ m \\cdot s^{-2} $.
+
+This unit is named newton (N), since it's so common.
+
+$$ N \\equiv kgms^{-2} $$
