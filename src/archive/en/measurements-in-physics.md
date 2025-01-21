@@ -52,3 +52,35 @@ There are <span class="gray">two supplementary units in SI</span>:
         <li>three-dimensional equivalent of the radion,</li>
         <li>uses the idea of mapping a circle on the surface of a sphere.</li>
     </ul>
+
+###### **Fundamental and derived units**
+
+SI uses <span class="gray">seven</span> **fundamental units** and we use <span class="gray">six</span>.
+
+- length
+- mass
+- time
+- electric current
+- thermodynamic temperature
+- amount of substance
+- luminous intensity
+
+These quantities have <span class="gray">exact definitions and are precisely reproducible</span>
+
+1. **<u>metre (m)</u>**
+2. **<u>kilogram (kg)</u>**
+3. **<u>seconds (s)</u>**
+4. **<u>ampere (A)</u>**
+5. **<u>kelvin (K)</u>**
+6. **<u>mole (mol)</u>**
+7. **<u>candle (cd)</u>** (not included in Diploma Programme)
+
+Quantities that are not fundament are known as <span class="gray">*derived quantities*</span>
+
+Derived quantities can be expressed through relevant questions; for example, <span class="gray">speed is the rate of change of distance with respect to time</span> or in equation form:
+
+$$ \\nu = \\dfrac{\\Delta s}{\\Delta t} $$
+
+where $ \\Delta s $ means change in distance and $ \\Delta t $ means change in time. <span class="gray">Both distance (length) and time are fundamental quantities, speed is a derived quantity.</span>
+
+<u>Fundamental quantities</u> use <u>fundamental units</u>, and <u>derived quantities</u> use <u>derived units</u>
