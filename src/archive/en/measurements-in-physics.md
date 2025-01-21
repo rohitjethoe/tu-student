@@ -120,3 +120,14 @@ With $ \\Delta s $ being change in displacement and $ \\Delta t $ being the chan
 This unit is named newton (N), since it's so common.
 
 $$ N \\equiv kgms^{-2} $$
+
+###### **Significant figures**
+
+How many digits do we write down in answers?
+
+Scientists use a method of to a certain number of significant figures (abbreviated to s.f.) <span class="gray">"Significant" means meaningful</span>.
+
+Consider our number 
+
+
+
