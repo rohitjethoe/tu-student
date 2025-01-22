@@ -53,9 +53,14 @@ const en = {
             title: "IB Oxford Programme Mathematics AA HL",
             posts: [
                 {
-                    title: "Sequences series and proofs",
-                    date: "2025-01-20T20:53:04.188Z",
-                    slug: "sequences-series-and-proofs"
+                    title: "Arithmetic and geometric sequences and series",
+                    date: "2025-01-20T22:53:04.188Z",
+                    slug: "arithmetic-and-geometric-sequences-and-series"
+                },
+                {
+                    title: "Sequences, series and Sigma notation",
+                    date: "2025-01-20T22:53:04.188Z",
+                    slug: "sequences-series-and-sigma-notation"
                 }
             ],
         },
