@@ -29,7 +29,7 @@ A **series** = all of the terms in a sequence added together
 
 <br />
 
-The set of positive integers $ Z^+ $ can be written as:
+The set of positive integers $ \\Z^+ $ can be written as:
 
 $$ \\{1, 2, 3, 4, 5, ..., r, ... \\} $$
 
