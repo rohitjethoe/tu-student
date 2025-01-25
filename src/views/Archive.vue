@@ -7,10 +7,7 @@ import { useAccountStore } from '@/stores/accountStore.js';
 import { useMarkdownStore } from '@/stores/markdownStore.js';
 import { useHighlightStore } from '@/stores/highlightStore.js';
 import { useHighlightManager } from '@/stores/highlightManagerStore.js';
-import { db } from '@/js/firebase.js';
-import { collection, query, where, getDocs } from 'firebase/firestore';
 
-const hasExercises = ref(false);
 const thoughtBoxIsVisible = ref(false);
 const thoughtsOpened = ref(false);
 
@@ -28,17 +25,6 @@ const addThought = async () => {
   await accountStore.addThought(slug);
   await accountStore.getThoughts(slug);
   thoughtBoxIsVisible.value = false;
-};
-
-const checkForExercises = async () => {
-  try {
-    const exercisesCollection = collection(db, 'exercises'); 
-    const exercisesQuery = query(exercisesCollection, where('slug', '==', slug));
-    const querySnapshot = await getDocs(exercisesQuery);
-    hasExercises.value = !querySnapshot.empty;
-  } catch (error) {
-    console.error('Error checking exercises:', error);
-  }
 };
 
 const saveHighlight = async () => {
@@ -71,8 +57,6 @@ const removeHighlight = async (highlight) => {
 };
 
 onMounted(async () => {
-  await checkForExercises();
-
   markdownStore.setPageTitle(slug, locale.value);
   await markdownStore.loadMarkdown(locale.value, slug, 'archive');
 
@@ -122,9 +106,6 @@ onMounted(async () => {
     </div>
 
     <div class="flex gap-3 pt-4 relative">
-      <a v-if="hasExercises" :href="`/exercises/${slug}`" class="button text-sm py-1.5 px-3 rounded-md cursor-pointer transition-all ease-in no-underline font-[400]">
-        ⭐️ {{ $t('archive.exercises') }}
-      </a>
       <div v-if="authStore.user" @click="thoughtBoxIsVisible = !thoughtBoxIsVisible" class="button text-sm py-1.5 px-3 rounded-md cursor-pointer transition-all ease-in">
         💭 {{ $t('archive.thought') }}
       </div>
