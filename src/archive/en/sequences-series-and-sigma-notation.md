@@ -49,4 +49,16 @@ $$ 1 + \\dfrac{1}{2} + \\dfrac{1}{3} + ... + \\dfrac{1}{r} + ... $$
 
 Series can be represented <span class="gray">in compact form using</span> **sigma ($ \\Sigma $) notation**.
 
-- Sigma uses the general term, which often represents a positive integer.
+- Sigma uses the general term in terms of $r$, which often represents a positive integer.
+
+$$ \\sum_{r = 1}^{10} r$$
+
+Read this as <span class="gray">"The sum of $r$, from $r = 1$ to $r = 10$"</span>
+
+Let's say we want the sum of positive multiples of 5 less than 100:
+
+$$ \\sum_{r = 1}^{20} 5r = 5 + 10 + 15 + ... + 100 $$
+
+Or sometimes our sum expands into individual terms:
+
+$$ \\sum^{4}_{r=0} (2r+1) = (2 \\cdot 0 + 1) + ... + (2 \\cdot 4 + 1)  $$

@@ -37,8 +37,6 @@ const nl = {
     },
     archive: {
         thought: "Voeg gedachte toe",
-        exercises: "Opdrachten oefenen",
-        material: "Materiaal bekijken",
         placeholder: "Voeg je gedachte toe...",
         submit: "Voeg toe",
         cancel: "Verwerp",
