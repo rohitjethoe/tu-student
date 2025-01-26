@@ -53,6 +53,8 @@ There are <span class="gray">two supplementary units in SI</span>:
         <li>uses the idea of mapping a circle on the surface of a sphere.</li>
     </ul>
 
+<br />
+
 ###### **Fundamental and derived units**
 
 SI uses <span class="gray">seven</span> **fundamental units** and we use <span class="gray">six</span>.
@@ -115,11 +117,13 @@ With $ \\Delta s $ being change in displacement and $ \\Delta t $ being the chan
 <br />
 <br />
 
-5. The unit of velocity is $ m \\cdot s^{-1} $. The units of acceleration will therefore be $ \\dfrac{m \\cdot s^{-1}}{s} $ which is written as $ m \\cdot s^{-2} $.
+5. The unit of velocity is $ m \\cdot s^{-1} $. The <span class="gray">units of acceleration</span> will therefore be $ \\dfrac{m \\cdot s^{-1}}{s} $ which is written as $ m \\cdot s^{-2} $.
 
-This unit is named newton (N), since it's so common.
+This unit is named <span class="gray">newton</span> ($N$), since it's so common.
 
 $$ N \\equiv kgms^{-2} $$
+
+<br />
 
 ###### **Significant figures**
 
@@ -127,7 +131,32 @@ How many digits do we write down in answers?
 
 Scientists use a method of to a certain number of significant figures (abbreviated to s.f.) <span class="gray">"Significant" means meaningful</span>.
 
-Consider our number 
+<span class="gray">Some rules for using significant figures</span>:
+- Non-zero digits are always significant — 345 (3 s.f.)
+- Zeros that occur <span class="gray">sandwiched</span> between non-zero digits are **always significant** — 3405 (4 s.f.); 10.3405 (6 s.f.)
+- Zeros that occur to the right of the decimal point **are significant** — 1.034 (4 s.f.); 1.00 (3 s.f.); 0.34500 (5 s.f.); 0.003 (1 s.f.)
 
+- Non-sandwiched zeroes occuring to the left of a non-zero digit are **not significant** — 0.345 (3 s.f.); 0.034 (2 s.f.)
 
+- When there is no decimal point, trailing zeros are **not significant** (to make them significant there NEEDS to be a decimal point) — 400 (1 s.f.); 400. (3 s.f.) — **this is rarely written**.
 
+<br />
+
+###### **Scientific notation**
+Physicists deal with the very large (e.g. the universe) and the very small (e.g. electrons) — Many physical constant are also very large or very small. We can <span class="gray">avoid writing many digits</span> by using **scientific notation**.
+
+The speed of *light* has a value of 299 792 458 m s <sup>-1</sup>. This can be rounded to <span class="gray">three significant figures</span> as 300 000 000 m s <sup>-1</sup> 
+
+**In scientific notation** this number is written as 3.00 × 10<sup>8</sup> m s 
+- Mass of the *Sun* could be written as 1.989 × 10<sup>30</sup> kg
+
+**Small numbers** like the *electron* **use similar ideas**. 
+- An electron approximately 0.000 000 000 000 000 000 1602 coulombs. We write our coefficient as 1.602
+- The base is always 10 and moving our decimal point to the right means the exponent is negative.
+- So an electron is approximately 1.602 × 10<sup>-19</sup> C.
+
+Some rules for scientific notation:
+- When **adding** or **subtracting** numbers, the exponent must be the same 
+- When **multiplying** numbers we add the exponents
+- When **dividing** numbers we subtract one exponent from the other
+- When **raising** numbers we raise the coefficient to the power and multiply the exponent by the power.

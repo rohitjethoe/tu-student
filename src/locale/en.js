@@ -22,6 +22,20 @@ const en = {
         questions: "View questions",
         posts: [
             {
+                title: "Analysis and Approaches HL from International Bacceleaureate",
+                categories: [
+                    {
+                        title: "sequences and series",
+                        questions: [
+                            {
+                                title: "Question 5a and 5b from 2024 TZ1 Paper 1",
+                                slug: "exercise-5-2024-tz1-p1"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
                 title: "Analysis and Approaches HL from <span class='text-[#154273]'>Examenblad.nl</span>",
                 categories: [
                     {
