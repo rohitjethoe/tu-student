@@ -22,7 +22,7 @@ const en = {
         questions: "View questions",
         posts: [
             {
-                title: "Analysis and Approaches HL from International Bacceleaureate",
+                title: "<div class='flex align-items gap-1.5'>Analysis and Approaches HL from <img src='/assets/ib-logo.svg' style='width: 13px; height: auto;' />Diploma Programme</div>",
                 categories: [
                     {
                         title: "sequences and series",
@@ -64,6 +64,11 @@ const en = {
             filter: "IB Oxford Programme Mathematics AA HL",
             title: "IB Oxford Programme Mathematics AA HL",
             posts: [
+                {
+                    title: "Proof",
+                    date: "2025-01-27T22:53:04.188Z",
+                    slug: "proof"
+                },
                 {
                     title: "Arithmetic and geometric sequences and series",
                     date: "2025-01-20T22:53:04.188Z",
