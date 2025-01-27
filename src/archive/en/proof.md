@@ -23,3 +23,5 @@ When setting out a <span class="gray">proof by contradiction</span>:
 - Assume the implication is false
 - Use axioms, theorems, etc to arrive at a contradiction
 - This proves that the original statement must be true
+
+A **counterexample**, or **counterclaim**, is an acceptable <span class="gray">"proof" of the fact that a statement is false</span>.
