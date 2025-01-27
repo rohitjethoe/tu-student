@@ -80,4 +80,14 @@ $$ \\Rightarrow 2S = 1 $$
 
 $$ \\Rightarrow S = \\dfrac{1}{2} $$
 
-This paradox arsies because we stumbled on the concept of infinity. If the number of terms were finite, the result would be 0 for even number of terms and 1 if the number of terms were odd, but an infinite sum never ends.
+This paradox arises because we <span class="gray">stumbled on the concept of infinity</span>. If the number of terms were finite, the result would be 0 for even number of terms and 1 if the number of terms were odd, but an infinite sum never ends.
+
+<br />
+
+###### **Sum of a geometric sequence**
+
+The sum of a **finite geometric series** is given by:
+
+$$ S_n = \\dfrac{u_1(1-r^n)}{1 -r} \\text{, where r} \\neq 1$$
+
+Where $n$ is *the number of terms*, $u_1$ is *the first term* and $r$ is *the common ratio*.
