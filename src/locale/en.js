@@ -1,7 +1,7 @@
 const en = {
     appName: "TU Student Blog",
     home: {
-        update: "Latest update in January 2025",
+        update: "Latest update in February 2025",
         biography: {
             main: `Currently accepted for BSc Computer Science and Engineering and enrolled in the selection procedure for BSc Aerospace Engineering at a research university in Europe. 🇪🇺`,
         },

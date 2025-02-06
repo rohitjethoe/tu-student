@@ -1,7 +1,7 @@
 const nl = {
     appName: "TU Student Blog",
     home: {
-        update: "Laatst geupdate in januari 2025",
+        update: "Laatst geupdate in februari van 2025",
         biography: {
             main: `Momenteel toegelaten voor de Bacheloropleiding Technische Informatica en doe mee aan de selectieprocedure voor Lucht- en Ruimtevaarttechniek bij een onderzoeksuniversiteit in Europa. 🇪🇺`,
         },
@@ -43,7 +43,7 @@ const nl = {
                         title: "logarithmische functies",
                         questions: [
                             {
-                                title: "Prove the inverse property of logarithmic and exponential functions",
+                                title: "Bewijs de inverse eigenschap van logarithmische en exponentiële functies",
                                 slug: "exercise-1-2022-i"
                             }
                         ]
@@ -66,20 +66,20 @@ const nl = {
                 title: "<div class='flex gap-1.5 items-center'><img src='/assets/ib-logo.svg' style='width: 13px; height: auto;' /> IB Oxford Diploma Programme Analysis and Approaches HL</div>",
                 collections: [
                     {
-                        title: "Sequences, Series and Proofs",
+                        title: "Reeksen, Rijen en Bewijzen",
                         posts: [
                             {
-                                title: "Proof",
+                                title: "Bewijzen",
                                 date: "2025-01-27T22:53:04.188Z",
                                 slug: "proof"
                             },
                             {
-                                title: "Arithmetic and geometric sequences and series",
+                                title: "Reeksen en rijen II",
                                 date: "2025-01-20T22:53:04.188Z",
                                 slug: "arithmetic-and-geometric-sequences-and-series"
                             },
                             {
-                                title: "Sequences, series and Sigma notation",
+                                title: "Reeksen en rijen I",
                                 date: "2025-01-20T22:53:04.188Z",
                                 slug: "sequences-series-and-sigma-notation"
                             }
