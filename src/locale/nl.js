@@ -23,7 +23,7 @@ const nl = {
         questions: "Bekijk vragen",
         posts: [
             {
-                title: "<div class='flex align-items gap-1.5'>Analysis and Approaches HL van <img src='/assets/ib-logo.svg' style='width: 13px; height: auto;' />Diploma Programma</div>",
+                title: "<div>Analysis and Approaches HL van <img class='inline mr-2 ml-1' src='/assets/ib-logo.svg' style='width: 11px; height: auto;' />Diploma Programma</div>",
                 categories: [
                     {
                         title: "rijen en reeksen",
@@ -63,7 +63,7 @@ const nl = {
         posts: [
             {
                 filter: "IB Oxford Diploma Programma Mathematics AA HL",
-                title: "<div class='flex gap-1.5 items-center'><img src='/assets/ib-logo.svg' style='width: 13px; height: auto;' /> IB Oxford Diploma Programme Analysis and Approaches HL</div>",
+                title: "<div'><img class='inline mr-1' src='/assets/ib-logo.svg' style='width: 11px; height: auto;' /> IB Oxford Diploma Programme Analysis and Approaches HL</div>",
                 collections: [
                     {
                         title: "Reeksen, Rijen en Bewijzen",
