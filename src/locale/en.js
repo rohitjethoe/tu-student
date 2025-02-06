@@ -36,7 +36,7 @@ const en = {
                 ]
             },
             {
-                title: "Analysis and Approaches HL from <span class='text-[#154273]'>Examenblad.nl</span>",
+                title: "Mathematics B VWO from <span class='text-[#154273]'>Examenblad.nl</span>",
                 categories: [
                     {
                         title: "logarithmic functions",
@@ -62,28 +62,33 @@ const en = {
         posts: [
         {
             filter: "IB Oxford Programme Mathematics AA HL",
-            title: "IB Oxford Programme Mathematics AA HL",
-            posts: [
+            title: "<div class='flex gap-1.5 items-center'><img src='/assets/ib-logo.svg' style='width: 13px; height: auto;' /> IB Oxford Diploma Programme Analysis and Approaches HL</div>",
+            collections: [
                 {
-                    title: "Proof",
-                    date: "2025-01-27T22:53:04.188Z",
-                    slug: "proof"
-                },
-                {
-                    title: "Arithmetic and geometric sequences and series",
-                    date: "2025-01-20T22:53:04.188Z",
-                    slug: "arithmetic-and-geometric-sequences-and-series"
-                },
-                {
-                    title: "Sequences, series and Sigma notation",
-                    date: "2025-01-20T22:53:04.188Z",
-                    slug: "sequences-series-and-sigma-notation"
+                    title: "Sequences, Series and Proofs",
+                    posts: [
+                        {
+                            title: "Proof",
+                            date: "2025-01-27T22:53:04.188Z",
+                            slug: "proof"
+                        },
+                        {
+                            title: "Arithmetic and geometric sequences and series",
+                            date: "2025-01-20T22:53:04.188Z",
+                            slug: "arithmetic-and-geometric-sequences-and-series"
+                        },
+                        {
+                            title: "Sequences, series and Sigma notation",
+                            date: "2025-01-20T22:53:04.188Z",
+                            slug: "sequences-series-and-sigma-notation"
+                        }
+                    ],
                 }
             ],
         },
         {
             filter: "IB Oxford Programme Physics HL",
-            title: "IB Oxford Programme Physics HL",
+            title: "<div class='flex gap-1.5 items-center'><img src='/assets/ib-logo.svg' style='width: 13px; height: auto;' /> IB Oxford Diploma Programme Physics HL</div>",
             posts: [
                 {
                     title: "Measurements in Physics",
@@ -92,52 +97,11 @@ const en = {
                 }
             ],
         },
-        {
-            filter: "Pre-University Physics from TU Delft",
-            title: "Pre-University Physics from T<span class='text-[#00a6d6]'>U</span> Delft",
-            posts: [
-                {
-                    title: "Force and Motion",
-                    date: "2025-01-12T20:53:04.188Z",
-                    slug: "force-and-motion"
-                }
-            ]
-        },
-        {
-            filter: "Pre-University Calculus from TU Delft",
-            title: "Pre-University Calculus from T<span class='text-[#00a6d6]'>U</span> Delft",
-            posts: [
-                {
-                    title: "What Are Power Functions?",
-                    date: "2025-01-16T20:53:04.188Z",
-                    slug: "power-functions"
-                },
-                {
-                    title: "What Is A Rational Function?",
-                    date: "2025-01-16T20:53:04.188Z",
-                    slug: "what-is-a-rational"
-                },
-                {
-                    title: "What Is A Polynomial Function?",
-                    date: "2025-01-10T20:53:04.188Z",
-                    slug: "what-is-a-polynomial"
-                },
-                {
-                    title: "What Is A Function?",
-                    date: "2025-01-07T20:53:04.188Z",
-                    slug: "what-is-a-function"
-                },
-                {
-                    title: "What Is Mathematical Modeling?",
-                    date: "2025-01-06T20:53:04.188Z",
-                    slug: "what-is-mathematical-modeling"
-                }
-            ]
-        }],
-        seeAll: {
-            closed: "View thoughts",
-            opened: "Close thoughts"
-        }
+    ],
+    seeAll: {
+        closed: "View thoughts",
+        opened: "Close thoughts"
+    }
     },
     account: {
         details: "Account details",

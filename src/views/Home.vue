@@ -135,13 +135,18 @@ onMounted(() => {
 				<div class="pb-8" v-if="filter !== '' ? archive.filter === filter : true">
 					<div class="text-xs font-bold" v-html="archive.title">
 					</div>
-					<div class="mt-4">
-						<div v-for="post in archive.posts" class="py-2">
-							<a :href="`/archive/${post.slug}`">{{ post.title }}</a>
-							— 
-							<span class="italic">
-								{{ (locale === "nl") ? $t(`home.archive.days[${new Date(post.date).getDate()}]`) : '' }} {{ $t(`home.archive.months[${new Date(post.date).getMonth()}]`) }} {{ locale === "en" ? $t(`home.archive.days[${new Date(post.date).getDate()}]`) : '' }} {{ new Date(post.date).getFullYear() }}
-							</span>
+					<div class="mt-2">
+						<div v-for="collection in archive.collections" class="py-2">
+							<span class="text-xs underline">{{ collection.title }}</span>
+							<div class="pt-2">
+								<div v-for="post in collection.posts" class="py-1">
+									<a :href="`/archive/${post.slug}`">{{ post.title }}</a>
+									— 
+									<span class="italic">
+										{{ (locale === "nl") ? $t(`home.archive.days[${new Date(post.date).getDate()}]`) : '' }} {{ $t(`home.archive.months[${new Date(post.date).getMonth()}]`) }} {{ locale === "en" ? $t(`home.archive.days[${new Date(post.date).getDate()}]`) : '' }} {{ new Date(post.date).getFullYear() }}
+									</span>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
