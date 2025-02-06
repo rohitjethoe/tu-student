@@ -74,12 +74,12 @@ const nl = {
                                 slug: "proof"
                             },
                             {
-                                title: "Reeksen en rijen II",
+                                title: "Reeksen en rijen",
                                 date: "2025-01-20T22:53:04.188Z",
                                 slug: "arithmetic-and-geometric-sequences-and-series"
                             },
                             {
-                                title: "Reeksen en rijen I",
+                                title: "Reeksen en rijen",
                                 date: "2025-01-20T22:53:04.188Z",
                                 slug: "sequences-series-and-sigma-notation"
                             }
