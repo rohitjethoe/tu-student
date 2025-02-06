@@ -23,7 +23,6 @@ const exams = {
 }
 
 const categories = ref([])
-// const finishedExams = ref([]);
 
 const openCategory = (title) => {
 	if (categories.value.includes(title)) {
@@ -32,13 +31,6 @@ const openCategory = (title) => {
 		categories.value.push(title);
 	}
 }
-
-// const addFinishedExam = async (slug) => {
-// 	for (exam in exerciseStore.finishedExams) {
-// 		console.log(exam)
-// 	}
-// }
-
 onMounted(() => {
 	const windowLocale = locale.value === "en" ? 'www' : locale.value;
 	window.document.title = `${windowLocale}.tustudent.blog`;
@@ -106,9 +98,9 @@ onMounted(() => {
 			<h2 class="text-lg font-bold italic">
 				{{ $t('home.archive.title') }}
 			</h2>
-      <p class="text-gray-500 font-semibold text-xs py-2">
-				 Archive contains my revisions on following courses
-      </p>
+			<p class="text-gray-500 font-semibold text-xs py-2">
+				{{ $t('home.archive.subtitle') }}
+			</p>
 		</div>
 		<div>
 			<div class="flex gap-2 pb-6">

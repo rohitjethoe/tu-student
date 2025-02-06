@@ -8,6 +8,7 @@ const nl = {
         translated: "Zoek je een vertaalde versie van deze pagina?",
         archive: { 
             title: "Laatste Archief",
+            subtitle: "Archief bevat mijn revisies over de volgende vakken",
             filter: "alle",
             months: ['januari', 'februari', 'maart', 'april', 'mei', 'juni', 'juli', 'augustus', 'september', 'oktober', 'november', 'december'],
             days: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31'],
@@ -18,12 +19,28 @@ const nl = {
     },
     substack: "Meld aan bij mijn substack voor notificaties",
     exams: {
+        solutions: "Bekijk oplossingen",
+        questions: "Bekijk vragen",
         posts: [
             {
-                title: "VWO Wiskunde B van <a class='text-[#154273]' href='https://examenblad.nl' target='_blank'>Examenblad.nl</a>",
+                title: "<div class='flex align-items gap-1.5'>Analysis and Approaches HL van <img src='/assets/ib-logo.svg' style='width: 13px; height: auto;' />Diploma Programma</div>",
                 categories: [
                     {
-                        title: "logarithmic functions",
+                        title: "rijen en reeksen",
+                        questions: [
+                            {
+                                title: "Vraag 5a en 5b van Paper 1 2024 TZ1",
+                                slug: "exercise-5-2024-tz1-p1"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                title: "VWO Wiskunde B <span class='text-[#154273]'>Examenblad.nl</span>",
+                categories: [
+                    {
+                        title: "logarithmische functies",
                         questions: [
                             {
                                 title: "Prove the inverse property of logarithmic and exponential functions",
@@ -45,39 +62,31 @@ const nl = {
         addedOn: "toegevoegd op",
         posts: [
             {
-                filter: "VWO Natuurkunde van TU Delft",
-                title: "VWO Natuurkunde van T<span class='text-[#00a6d6]'>U</span> Delft",
-                style: "text-[#00a6d6] border-[#00a6d6] bg-[#00a6d6]/10",
-                posts: [
+                filter: "IB Oxford Diploma Programma Mathematics AA HL",
+                title: "<div class='flex gap-1.5 items-center'><img src='/assets/ib-logo.svg' style='width: 13px; height: auto;' /> IB Oxford Diploma Programme Analysis and Approaches HL</div>",
+                collections: [
                     {
-                        title: "Force and Motion",
-                        date: "2025-01-12T20:53:04.188Z",
-                        slug: "force-and-motion"
+                        title: "Sequences, Series and Proofs",
+                        posts: [
+                            {
+                                title: "Proof",
+                                date: "2025-01-27T22:53:04.188Z",
+                                slug: "proof"
+                            },
+                            {
+                                title: "Arithmetic and geometric sequences and series",
+                                date: "2025-01-20T22:53:04.188Z",
+                                slug: "arithmetic-and-geometric-sequences-and-series"
+                            },
+                            {
+                                title: "Sequences, series and Sigma notation",
+                                date: "2025-01-20T22:53:04.188Z",
+                                slug: "sequences-series-and-sigma-notation"
+                            }
+                        ],
                     }
-                ]
+                ],
             },
-            {
-                filter: "VWO Natuurkunde van TU Delft",
-                title: "VWO Wiskunde B van T<span class='text-[#00a6d6]'>U</span> Delft",
-                style: "text-purple-400 border-purple-400 bg-purple-400/10",
-                posts: [
-                    {
-                        title: "Wat Is Een Polynoomfunctie?",
-                        date: "2025-01-10T20:53:04.188Z",
-                        slug: "what-is-a-polynomial"
-                    },
-                    {
-                        title: "Wat Is Een Functie?",
-                        date: "2025-01-07T20:53:04.188Z",
-                        slug: "what-is-a-function"
-                    },
-                    {
-                        title: "Wat Is Wiskundige Modellering?",
-                        date: "2025-01-06T20:53:04.188Z",
-                        slug: "what-is-mathematical-modeling"
-                    }
-                ]
-            }
         ],
         seeAll: {
             closed: "Bekijk gedachten",

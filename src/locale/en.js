@@ -8,6 +8,7 @@ const en = {
         translated: "Looking for a translated version of this page?",
         archive: { 
             title: "Latest Archive",
+            subtitle: "Archive contains my revisions on following courses",
             filter: "all",
             months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
             days: ['0', '1st', '2nd', '3rd', '4th', '5th', '6th', '7th', '8th', '9th', '10th', '11th', '12th', '13th', '14th', '15th', '16th', '17th', '18th', '19th', '20th', '21st', '22nd', '23rd', '24th', '25th', '26th', '27th', '28th', '29th', '30th', '31st'],
@@ -60,48 +61,37 @@ const en = {
         days: ['0', '1st', '2nd', '3rd', '4th', '5th', '6th', '7th', '8th', '9th', '10th', '11th', '12th', '13th', '14th', '15th', '16th', '17th', '18th', '19th', '20th', '21st', '22nd', '23rd', '24th', '25th', '26th', '27th', '28th', '29th', '30th', '31st'],
         addedOn: "added on",
         posts: [
-        {
-            filter: "IB Oxford Programme Mathematics AA HL",
-            title: "<div class='flex gap-1.5 items-center'><img src='/assets/ib-logo.svg' style='width: 13px; height: auto;' /> IB Oxford Diploma Programme Analysis and Approaches HL</div>",
-            collections: [
-                {
-                    title: "Sequences, Series and Proofs",
-                    posts: [
-                        {
-                            title: "Proof",
-                            date: "2025-01-27T22:53:04.188Z",
-                            slug: "proof"
-                        },
-                        {
-                            title: "Arithmetic and geometric sequences and series",
-                            date: "2025-01-20T22:53:04.188Z",
-                            slug: "arithmetic-and-geometric-sequences-and-series"
-                        },
-                        {
-                            title: "Sequences, series and Sigma notation",
-                            date: "2025-01-20T22:53:04.188Z",
-                            slug: "sequences-series-and-sigma-notation"
-                        }
-                    ],
-                }
-            ],
-        },
-        {
-            filter: "IB Oxford Programme Physics HL",
-            title: "<div class='flex gap-1.5 items-center'><img src='/assets/ib-logo.svg' style='width: 13px; height: auto;' /> IB Oxford Diploma Programme Physics HL</div>",
-            posts: [
-                {
-                    title: "Measurements in Physics",
-                    date: "2025-01-20T20:53:04.188Z",
-                    slug: "measurements-in-physics"
-                }
-            ],
-        },
-    ],
-    seeAll: {
-        closed: "View thoughts",
-        opened: "Close thoughts"
-    }
+            {
+                filter: "IB Oxford Programme Mathematics AA HL",
+                title: "<div class='flex gap-1.5 items-center'><img src='/assets/ib-logo.svg' style='width: 13px; height: auto;' /> IB Oxford Diploma Programme Analysis and Approaches HL</div>",
+                collections: [
+                    {
+                        title: "Sequences, Series and Proofs",
+                        posts: [
+                            {
+                                title: "Proof",
+                                date: "2025-01-27T22:53:04.188Z",
+                                slug: "proof"
+                            },
+                            {
+                                title: "Arithmetic and geometric sequences and series",
+                                date: "2025-01-20T22:53:04.188Z",
+                                slug: "arithmetic-and-geometric-sequences-and-series"
+                            },
+                            {
+                                title: "Sequences, series and Sigma notation",
+                                date: "2025-01-20T22:53:04.188Z",
+                                slug: "sequences-series-and-sigma-notation"
+                            }
+                        ],
+                    }
+                ],
+            },
+        ],
+        seeAll: {
+            closed: "View thoughts",
+            opened: "Close thoughts"
+        }
     },
     account: {
         details: "Account details",
