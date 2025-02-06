@@ -23,7 +23,7 @@ const en = {
         questions: "View questions",
         posts: [
             {
-                title: "<div class='flex align-items gap-1.5'>Analysis and Approaches HL from <img src='/assets/ib-logo.svg' style='width: 13px; height: auto;' />Diploma Programme</div>",
+                title: "<div>Analysis and Approaches HL from <img class='inline ml-1 mr-1.5' src='/assets/ib-logo.svg' style='width: 11px; height: auto;' />Diploma Programme</div>",
                 categories: [
                     {
                         title: "sequences and series",
@@ -63,7 +63,7 @@ const en = {
         posts: [
             {
                 filter: "IB Oxford Programme Mathematics AA HL",
-                title: "<div class='flex gap-1.5 items-center'><img src='/assets/ib-logo.svg' style='width: 13px; height: auto;' /> IB Oxford Diploma Programme Analysis and Approaches HL</div>",
+                title: "<div class=''><img src='/assets/ib-logo.svg' class='inline mr-1' style='width: 11px; height: auto;' /> IB Oxford Diploma Programme Analysis and Approaches HL</div>",
                 collections: [
                     {
                         title: "Sequences, Series and Proofs",
