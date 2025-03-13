@@ -23,10 +23,7 @@ A sequence can also be written in terms of **the general term** $\\{u_r\\}$
 
 A **series** = all terms in a sequence added together, can also either be <span class="gray">finite</span> or <span class="gray">infinite</span>
 
-The **set of positive integers** $\\Z^+$ can be written as $\\{1,2,3,4,5,...,r,...\\}$
-- $r$ represents the general term
-If **positive integers which are multiples of 5** are considered $\\{5,10,15,20,25,...,r,...\\}$
-Then the **harmonic series** = the infinite sum of reciprocals of positive integers:
+The **harmonic series** = infinite sum of reciprocals of positive integers:
 $$ \\text{i.e. } 1 + \\dfrac{1}{2} + \\dfrac{1}{3} + ... + \\dfrac{1}{r} + ...$$
 
 <br /> 
