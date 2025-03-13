@@ -29,9 +29,9 @@ Consider the growth of arithmetic sequence with first term $u_1$ and common diff
 Consider the growth of a geometric sequence with first term $u_1$ and common ratio $r$
 
 - First term: $u_1$
-- Second term: $u_2 = u_1 r$
-- Third term: $u_3 = u_2 r = u_1 r^2$
-- Four term: $u_4 = u_3 r = u_1 r^3$
+- Second term: $u_2 = u_1 × r$
+- Third term: $u_3 = u_2 r = u_1 × r^2$
+- Four term: $u_4 = u_3 r = u_1 × r^3$
 
 > A geometric sequence with first term $u_1$ and common ratio $r$ has **general term** $u_n = u_1 * r^{n -1} \\text{ with } r \\neq 1, 0, -1 \\text{ and } u_1 \\neq 0$
 
